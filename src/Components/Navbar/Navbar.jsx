@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import CaravanStorageLogo from "../CaravansLogo/CaravanStorageLogo"
 import "./Navbar.css";
+import Logo from "../../assets/snglogo-removebg-preview.png"
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -33,7 +33,7 @@ export default function Navbar() {
         <header className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
             <nav className="container navbar__inner">
                 <Link to="/" className="navbar__logo">
-                    <CaravanStorageLogo size={100} />
+                    <img alt="SNG Logo" src={Logo}/>
                 </Link>
 
                 <ul className={`navbar__links ${menuOpen ? "open" : ""}`}>
