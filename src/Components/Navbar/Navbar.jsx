@@ -43,34 +43,34 @@ export default function Navbar() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="About-company/" onClick={() => { closeMenu(), handleClick() }}>
+                        <Link to="/" onClick={() => { closeMenu(), handleClick() }}>
                             About company
                         </Link>
                     </li>
                     <li>
-                        <Link to="Services/" onClick={() => { closeMenu(), handleClick() }}
+                        <Link to="/" onClick={() => { closeMenu(), handleClick() }}
                         >
                             Services
                         </Link>
                     </li>
                     <li>
-                        <Link to="Gallery/" onClick={() => { closeMenu(), handleClick() }}>
+                        <Link to="/" onClick={() => { closeMenu(), handleClick() }}>
                             Gallery
                         </Link>
                     </li>
                     <li>
-                        <Link to="Testimonials/" onClick={() => { closeMenu(), handleClick() }}>
+                        <Link to="/" onClick={() => { closeMenu(), handleClick() }}>
                             Testimonials
                         </Link>
                     </li>
                     <li>
-                        <Link to="Contact-us/" onClick={() => { closeMenu(), handleClick() }}>
+                        <Link to="/" onClick={() => { closeMenu(), handleClick() }}>
                             Contact us
                         </Link>
                     </li>
                 </ul>
 
-                <Link to="/book-online" onClick={() => { handleClick() }} className="btn-primary navbar__cta">
+                <Link to="/" onClick={() => { handleClick() }} className="btn-primary navbar__cta">
                     Check Availability
                 </Link>
 
