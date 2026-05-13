@@ -17,9 +17,8 @@ const ScrollText = () => {
                     Get A Quote
                 </Link>
                 <div className='text-box'>
-                    <p>
-                        Welcome to SNG Maintenance Services
-                        <br></br>
+                        <h2>Welcome to SNG Maintenance Services</h2>
+                        <p>
                         SNG Maintenance Services is dedicated to delivering reliable and high-quality landscaping and property maintenance solutions across Sydney and surrounding suburbs. Our services include garden care, lawn maintenance, high-pressure cleaning, and complete property upkeep for residential, strata, and commercial properties.
                         <br></br>
                         With more than a decade of industry experience, we have proudly designed, improved, and maintained outdoor spaces for a wide range of developments throughout Sydney. Our team focuses on creating gardens that are both visually appealing and practical, helping properties look their best all year round.

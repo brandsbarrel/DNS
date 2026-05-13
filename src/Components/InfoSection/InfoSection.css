@@ -10,6 +10,10 @@
   padding: 0 24px;
 }
 
+.icon-image{
+  border-radius: 50%;
+}
+
 /* ── Heading ── */
 .info__heading {
   font-size: 22px;
@@ -34,7 +38,7 @@
 
 /* ── Card ── */
 .info__card {
-  background: #ffffff;
+  background: #DEE8CF;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 32px 20px 24px;
