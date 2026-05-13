@@ -1,0 +1,32 @@
+.scroll-text {
+    margin-top: 10px;
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.scroll-text-content {
+    background-color: #DEE8CF;
+    padding: 10px 8px;
+    font-size: 22px;
+    color: #415D2F;
+}
+
+.scroll-quote {
+    background-color: #415D2F;
+    color: #ffffff;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 12px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+.text-box {
+    padding: 10px;
+    text-align: center;
+
+}
