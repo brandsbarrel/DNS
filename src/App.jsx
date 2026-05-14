@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { HelmetProvider } from 'react-helmet-async';
 import Layout from './Components/Layout/Layout'
 import Home from './Pages/Home/Home'
-import CaravanStorageLogo from "./Components/CaravansLogo/CaravanStorageLogo"
 import ContactUs from './Pages/ContactUs/ContactUs';
 import BookOnline from './Pages/BookOnline/BookOnline';
 import MyBooking from './Pages/MyBooking/MyBooking';
@@ -13,6 +12,7 @@ import PaymentFailed from './Components/Paymentfailed/Paymentfailed';
 import PaymentSuccess from './Components/Paymentsuccess/Paymentsuccess';
 import TermsAndConditions from './Components/TermsAndConditions/TermsAndConditions';
 import ForgotPassword from './Components/ForgotPassword/ForgotPassword';
+import Services from './Pages/Services/Services';
 
 const App = () => {
   useEffect(() => {
@@ -32,7 +32,7 @@ const App = () => {
           <Routes>
             <Route path='/' element={<Layout />}>
               <Route index element={<Home />} />
-              {/* <Route path='contact/' element={<ContactUs />} /> */}
+              <Route path='services/' element={<Services/>} />
               {/* <Route path='/my-booking' element={<MyBooking />} /> */}
               {/* <Route path='/my-booking-dashboard' element={<MyBookingsDashboard />} /> */}
               {/* <Route path='/book-online' element={<BookOnline />} /> */}

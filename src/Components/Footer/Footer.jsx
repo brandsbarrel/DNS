@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import './Footer.css';
-import CaravanStorageLogo from "../CaravansLogo/CaravanStorageLogo"
 
 export default function Footer() {
     const handleClick = () => {
@@ -13,9 +12,6 @@ export default function Footer() {
         <footer className="footer" role="contentinfo">
             <div className="container footer__grid">
                 <section className="footer__brand" aria-label="Brand info">
-                    <div className="footer__logo">
-                        <CaravanStorageLogo size={85} />
-                    </div>
                     <p className="footer__brand-desc">
                         Providing premium, high-security storage solutions for caravan enthusiasts across the Central Coast, NSW.
                     </p>
