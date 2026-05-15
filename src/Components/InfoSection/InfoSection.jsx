@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "./InfoSection.css";
 import prm from "../../assets/prm.jpeg"
@@ -12,6 +12,7 @@ import barkBlowing from "../../assets/bark-blowing.jpeg"
 import spary_t from "../../assets/sprat-treatment.jpeg"
 import Property_Maintenance_Second from "../../assets/Property_Maintenance_Second.jpeg"
 import mowing_Second from "../../assets/mowing_Second.jpeg"
+import { UserContext } from "../../context/UserContext";
 
 const services = [
   {
@@ -67,6 +68,7 @@ export default function InfoSection() {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
   const navigate = useNavigate();
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -98,21 +100,23 @@ export default function InfoSection() {
                 <p className="info__name">{service.name}</p>
               </div>
 
-              {service.img && (
+              {user === "Services" && (
                 <div className="service-image">
                   <img src={service.img} alt={service.name} />
                 </div>
               )}
 
-              <button
-                className="service-arrow-btn"
-                onClick={() => navigate(`/services/${service.slug}`)}
-                aria-label={`View ${service.name} details`}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </button>
+              {user === "Services" && (
+                <button
+                  className="service-arrow-btn"
+                  onClick={() => navigate(`/services/${service.slug}`)}
+                  aria-label={`View ${service.name} details`}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </button>
+              )}
             </div>
           ))}
         </div>

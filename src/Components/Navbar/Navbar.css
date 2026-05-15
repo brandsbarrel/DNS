@@ -21,16 +21,7 @@
     height: 100px;
 }
 
-.navbar__logo {
-    /* display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--font-display);
-    font-size: 18px;
-    font-weight: 700;
-    color: #415D2F;
-    transition: color 0.3s ease;
-    */
+.navbar__logo{
     display: flex;
     align-items: center;
     gap: 8px;
@@ -39,7 +30,12 @@
     font-weight: 700;
     color: #415D2F;
     transition: color 0.3s ease;
-    line-height: 0; /* image ke neeche extra space hatata hai */
+    line-height: 0;
+    text-decoration: none !important;
+}
+
+a{
+    text-decoration: none;
 }
 
 .navbar__logo img {
