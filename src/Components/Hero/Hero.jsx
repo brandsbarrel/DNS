@@ -1,5 +1,5 @@
 import "./Hero.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import image1 from "../../assets/4.jpeg";
@@ -8,12 +8,14 @@ import video1 from "../../assets/hero-vdo.mp4";
 
 export default function Hero() {
 
+    const VIDEO_START_TIME = 5;
+
     const slides = [
         {
             type: "video",
             src: video1,
             title: "A Beautiful Garden Starts Here!",
-            duration: 12000
+            duration: null
         },
         {
             type: "image",
@@ -30,20 +32,73 @@ export default function Hero() {
     ];
 
     const [current, setCurrent] = useState(0);
+    const videoRef = useRef(null);
+    const hasSeekeddRef = useRef(false); // pehli baar seek hua ya nahi
+    const secondPlayRef = useRef(false); // second play chal rahi hai ya nahi
 
+    const goNext = () => {
+        hasSeekeddRef.current = false;
+        secondPlayRef.current = false;
+        setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    };
+
+    // Image slides auto-advance
     useEffect(() => {
-        const timeout = setTimeout(() => {
-            setCurrent((prev) =>
-                prev === slides.length - 1 ? 0 : prev + 1
-            );
-        }, slides[current].duration);
+        if (slides[current].duration === null) return;
+        const timeout = setTimeout(goNext, slides[current].duration);
         return () => clearTimeout(timeout);
+    }, [current]);
+
+    // Jab video mount ho, sirf ek baar 5s par seek karo
+    useEffect(() => {
+        const video = videoRef.current;
+        if (!video) return;
+
+        const handleCanPlay = () => {
+            if (!hasSeekeddRef.current) {
+                hasSeekeddRef.current = true;
+                video.currentTime = VIDEO_START_TIME;
+            }
+        };
+
+        const handleSeeked = () => {
+            // Seek complete hone ke baad play karo
+            if (!secondPlayRef.current) {
+                video.play().catch(() => {});
+            }
+        };
+
+        const handleEnded = () => {
+            if (!secondPlayRef.current) {
+                // Pehli play khatam: 0 se dobara
+                secondPlayRef.current = true;
+                video.currentTime = 0;
+                video.play().catch(() => {});
+            } else {
+                // Doosri play khatam: next slide
+                goNext();
+            }
+        };
+
+        video.addEventListener("canplay", handleCanPlay);
+        video.addEventListener("seeked", handleSeeked);
+        video.addEventListener("ended", handleEnded);
+
+        // Agar already ready hai
+        if (video.readyState >= 3) {
+            handleCanPlay();
+        }
+
+        return () => {
+            video.removeEventListener("canplay", handleCanPlay);
+            video.removeEventListener("seeked", handleSeeked);
+            video.removeEventListener("ended", handleEnded);
+        };
     }, [current]);
 
     return (
         <section className="hero">
 
-            {/* FIX: container class nahi — hero full width chahiye */}
             <div className="hero__content">
                 <div className="hero__text">
                     <h1 className="hero__title">
@@ -57,7 +112,6 @@ export default function Hero() {
                 </div>
             </div>
 
-            {/* Background Media */}
             <div className="hero__bg">
                 {slides[current].type === "image" ? (
                     <div
@@ -66,18 +120,17 @@ export default function Hero() {
                     />
                 ) : (
                     <video
+                        ref={videoRef}
                         className="hero__bg-video"
-                        autoPlay
                         muted
-                        loop
                         playsInline
+                        preload="auto"
                     >
                         <source src={slides[current].src} type="video/mp4" />
                     </video>
                 )}
             </div>
 
-            {/* Dots */}
             <div className="hero__dots">
                 {slides.map((_, index) => (
                     <span
