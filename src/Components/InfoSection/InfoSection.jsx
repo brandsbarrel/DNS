@@ -18,6 +18,7 @@ import mowing_Second from "../../assets/mowing_Second.jpeg"
 import Pressure_cleaning from "../../assets/pressure_cleaning.jpeg"
 import spray_treatments_second from "../../assets/spray_treatments_second.jpeg"
 import strata_garden_maintenance from "../../assets/strata_garden_maintenance.jpeg"
+import Soft_Fall_Landscaping from "../../assets/Soft_Fall_Landscaping.jpeg"
 import { UserContext } from "../../context/UserContext";
 
 const services = [
@@ -36,12 +37,13 @@ const services = [
   {
     name: "Soft Fall Landscaping",
     icon: <img className="icon-image" src={sfl} alt="" />,
+    img: Soft_Fall_Landscaping,
     slug: "soft-fall-landscaping",
   },
   {
     name: "Strata Garden Maintenance",
     icon: <img className="icon-image" src={sgm} alt="" />,
-    img:strata_garden_maintenance,
+    img: strata_garden_maintenance,
     slug: "strata-garden-maintenance",
   },
   {
@@ -59,13 +61,13 @@ const services = [
   {
     name: "Irrigation",
     icon: <img className="icon-image" src={irrigation} alt="" />,
-    img : irrigation_Second,
+    img: irrigation_Second,
     slug: "irrigation",
   },
   {
     name: "Bark Blowing",
     icon: <img className="icon-image" src={barkBlowing} alt="" />,
-    img:blowing_Second,
+    img: blowing_Second,
     slug: "bark-blowing",
   },
   {
