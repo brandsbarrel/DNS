@@ -13,7 +13,6 @@
   border-radius: 50%;
 }
 
-/* ── Heading ── */
 .info__heading {
   font-size: 22px;
   font-weight: 700;
@@ -33,19 +32,18 @@
   background: #DEE8CF;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  padding: 20px 8px 12px;
+  padding: 10px 8px 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
 }
 
-/* ── Card ── */
 .info__card {
   background: #DEE8CF;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  padding: 20px 8px 12px;
+  padding: 15px 8px 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,7 +64,6 @@
   transform: translateY(0);
 }
 
-/* Staggered delay */
 .info.animate.show .info__card:nth-child(1) { transition-delay: 0.05s; }
 .info.animate.show .info__card:nth-child(2) { transition-delay: 0.15s; }
 .info.animate.show .info__card:nth-child(3) { transition-delay: 0.25s; }
@@ -79,7 +76,6 @@
   transform: translateY(-4px);
 }
 
-/* ── Icon area ── */
 .info__icon {
   width: 114px;
   height: 114px;
@@ -97,10 +93,9 @@
   display: block;
 }
 
-/* ── Label ── */
 .info__name {
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: bolder;
   color: #333;
   text-align: center;
   margin: 0;
@@ -121,7 +116,6 @@
   border-radius: 8px;
 }
 
-/* ── More Info Button ── */
 .service-more-btn {
   display: inline-flex;
   align-items: center;
@@ -169,7 +163,6 @@
   }
 }
 
-/* ≥ 900px — 3 cards per row */
 @media (min-width: 900px) {
   .info__grid {
     grid-template-columns: repeat(3, 1fr);
@@ -192,10 +185,10 @@
 
   .info__name {
     font-size: 16px;
+    font-weight: bolder;
   }
 }
 
-/* ≥ 1100px — still 3 columns, more breathing room */
 @media (min-width: 1100px) {
   .info {
     padding: 96px 0;

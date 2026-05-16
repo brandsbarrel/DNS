@@ -111,7 +111,7 @@ export default function InfoSection() {
                 style={{ transitionDelay: `${i * 0.07}s` }}
               >
                 <div className="info__icon">{service.icon}</div>
-                <p className="info__name">{service.name}</p>
+                <h1 className="info__name">{service.name}</h1>
               </div>
 
               {user === "Services" && (
