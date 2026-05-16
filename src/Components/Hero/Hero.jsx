@@ -35,15 +35,6 @@ export default function Hero() {
         return () => clearTimeout(timeout);
     }, [current]);
 
-    const goTo = (index) => {
-        if (index === current) return;
-        setFade(false);
-        setTimeout(() => {
-            setCurrent(index);
-            setFade(true);
-        }, 350);
-    };
-
     const slide = slides[current];
 
     return (
@@ -76,7 +67,7 @@ export default function Hero() {
                     to="/contact"
                     className={`hero__btn ${current === 0 ? "" : "hero__btn--hidden"}`}
                 >
-                    GET A FREE QUOTE ›
+                    GET A QUOTE ›
                 </Link>
             </div>
 

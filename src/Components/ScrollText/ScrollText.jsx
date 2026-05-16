@@ -13,9 +13,9 @@ const ScrollText = () => {
     return (
         <>
             <div className='scroll-text'>
-                <Link to="/book-online" onClick={() => { handleClick() }} className='scroll-quote .btn-primary'>
+                {/* <Link to="/book-online" onClick={() => { handleClick() }} className='scroll-quote .btn-primary'>
                     Get A Quote
-                </Link>
+                </Link> */}
                 <div className='text-box'>
                         <h2>Welcome to SNG Maintenance Services</h2>
                         <p>
