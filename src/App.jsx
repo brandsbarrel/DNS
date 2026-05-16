@@ -13,6 +13,7 @@ import PaymentSuccess from './Components/Paymentsuccess/Paymentsuccess';
 import TermsAndConditions from './Components/TermsAndConditions/TermsAndConditions';
 import ForgotPassword from './Components/ForgotPassword/ForgotPassword';
 import Services from './Pages/Services/Services';
+import ServiceDetail from './Components/ServiceDetail/ServiceDetail';
 
 const App = () => {
   useEffect(() => {
@@ -33,6 +34,7 @@ const App = () => {
             <Route path='/' element={<Layout />}>
               <Route index element={<Home />} />
               <Route path='services/' element={<Services/>} />
+              <Route path="/services/:slug" element={<ServiceDetail />} />
               {/* <Route path='/my-booking' element={<MyBooking />} /> */}
               {/* <Route path='/my-booking-dashboard' element={<MyBookingsDashboard />} /> */}
               {/* <Route path='/book-online' element={<BookOnline />} /> */}

@@ -11,7 +11,13 @@ import irrigation from "../../assets/irrigation.jpeg"
 import barkBlowing from "../../assets/bark-blowing.jpeg"
 import spary_t from "../../assets/sprat-treatment.jpeg"
 import Property_Maintenance_Second from "../../assets/Property_Maintenance_Second.jpeg"
+import blowing_Second from "../../assets/blowing_Second.jpeg"
+import Fartilising_Second from "../../assets/Fartilising_Second.jpeg"
+import irrigation_Second from "../../assets/irrigation_Second.jpeg"
 import mowing_Second from "../../assets/mowing_Second.jpeg"
+import Pressure_cleaning from "../../assets/pressure_cleaning.jpeg"
+import spray_treatments_second from "../../assets/spray_treatments_second.jpeg"
+import strata_garden_maintenance from "../../assets/strata_garden_maintenance.jpeg"
 import { UserContext } from "../../context/UserContext";
 
 const services = [
@@ -35,31 +41,37 @@ const services = [
   {
     name: "Strata Garden Maintenance",
     icon: <img className="icon-image" src={sgm} alt="" />,
+    img:strata_garden_maintenance,
     slug: "strata-garden-maintenance",
   },
   {
     name: "Pressure Cleaning",
     icon: <img className="icon-image" src={pressure_cleaning} alt="" />,
+    img: Pressure_cleaning,
     slug: "pressure-cleaning",
   },
   {
     name: "Fertilising",
     icon: <img className="icon-image" src={fertilising} alt="" />,
+    img: Fartilising_Second,
     slug: "fertilising",
   },
   {
     name: "Irrigation",
     icon: <img className="icon-image" src={irrigation} alt="" />,
+    img : irrigation_Second,
     slug: "irrigation",
   },
   {
     name: "Bark Blowing",
     icon: <img className="icon-image" src={barkBlowing} alt="" />,
+    img:blowing_Second,
     slug: "bark-blowing",
   },
   {
     name: "Spray Treatments",
     icon: <img className="icon-image" src={spary_t} alt="" />,
+    img: spray_treatments_second,
     slug: "spray-treatments",
   },
 ];
