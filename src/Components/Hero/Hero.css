@@ -164,7 +164,7 @@
         margin-top: 2%;
         height: auto;
         min-height: auto;
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: stretch;
         padding-top: 100px;
         background: #415D2F;
