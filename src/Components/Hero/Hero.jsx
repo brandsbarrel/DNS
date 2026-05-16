@@ -9,59 +9,84 @@ import Hero_image from "../../assets/Hero_image.jpeg";
 const slides = [
     {
         src: Hero_image,
-        title: "A Beautiful Garden Starts Here!",
     },
     {
         src: image1,
-        title: "With Years of Experience, We Keep Gardens Looking Their Best",
     },
     {
         src: image2,
-        title: "Providing Quality Garden Services at Affordable Prices",
     }
 ];
 
-const SLIDE_DURATION = 4000;
+const SLIDE_DURATION = 5000;
 
 export default function Hero() {
     const [current, setCurrent] = useState(0);
+    const [fade, setFade] = useState(true);
 
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setCurrent((prev) => (prev + 1) % slides.length);
+            setFade(false);
+            setTimeout(() => {
+                setCurrent((prev) => (prev + 1) % slides.length);
+                setFade(true);
+            }, 350);
         }, SLIDE_DURATION);
         return () => clearTimeout(timeout);
     }, [current]);
 
+    const goTo = (index) => {
+        if (index === current) return;
+        setFade(false);
+        setTimeout(() => {
+            setCurrent(index);
+            setFade(true);
+        }, 350);
+    };
+
+    const slide = slides[current];
+
     return (
         <section className="hero">
 
-            <div className="hero__bg">
+            {/* Full screen image */}
+            <img
+                src={slide.src}
+                alt=""
+                className={`hero__img ${fade ? "is-visible" : "is-hidden"}`}
+            />
+
+            {/* Green fade overlay */}
+            <div className="hero__overlay" />
+
+            {/* Text always on top */}
+            <div className={`hero__content ${fade ? "is-visible" : "is-hidden"}`}>
+                <h1 className="hero__title">
+                    <span className="black">{slide.title} </span>
+                    <span className="red">{slide.titleRed}</span>
+                    <br />
+                    <span className="black">{slide.titleEnd}</span>
+                </h1>
                 <div
-                    className="hero__bg-image"
-                    style={{ backgroundImage: `url(${slides[current].src})` }}
+                    className="hero__divider"
+                    style={{ display: current === 0 ? "block" : "none" }}
                 />
+                <p className="hero__sub">{slide.sub}</p>
+                <Link
+                    to="/contact"
+                    className={`hero__btn ${current === 0 ? "" : "hero__btn--hidden"}`}
+                >
+                    GET A FREE QUOTE ›
+                </Link>
             </div>
 
-            <div className="hero__content">
-                <div className="hero__text">
-                    <h1 className="hero__title">
-                        {slides[current].title}
-                    </h1>
-                    <div className="hero__actions">
-                        <Link to="/contact" className="hero__cta-btn">
-                            GET A QUOTE
-                        </Link>
-                    </div>
-                </div>
-            </div>
-
+            {/* Dots */}
             <div className="hero__dots">
-                {slides.map((_, index) => (
+                {slides.map((_, i) => (
                     <span
-                        key={index}
-                        className={`hero__dot ${current === index ? "active" : ""}`}
-                        onClick={() => setCurrent(index)}
+                        key={i}
+                        className={`hero__dot ${current === i ? "active" : ""}`}
+                        onClick={() => goTo(i)}
                     />
                 ))}
             </div>
