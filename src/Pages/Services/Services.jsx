@@ -56,7 +56,7 @@ export default function Services() {
 
     return (
         <>
-            <section className="hero">
+            <section className="services-page">
 
                 {/* <div className="container hero__content">
                     <div className="hero__text">

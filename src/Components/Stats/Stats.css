@@ -1,6 +1,6 @@
 .stats-section {
     padding: 100px 0;
-    background: #f8fafc;
+    background: #E7EAD9;
 }
 
 .stats-top {
@@ -88,7 +88,7 @@
 @media (max-width: 1024px) {
 
     .stats-section {
-        background: #f8fafc;
+        background: #E7EAD9;
     }
 
     .stats-top {
