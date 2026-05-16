@@ -238,7 +238,7 @@
         padding-top: 80px;
         height: auto;
         min-height: auto;
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: stretch;
         background: #ffffff;
     }
