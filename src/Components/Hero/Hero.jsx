@@ -80,17 +80,6 @@ export default function Hero() {
                 </Link>
             </div>
 
-            {/* Dots */}
-            <div className="hero__dots">
-                {slides.map((_, i) => (
-                    <span
-                        key={i}
-                        className={`hero__dot ${current === i ? "active" : ""}`}
-                        onClick={() => goTo(i)}
-                    />
-                ))}
-            </div>
-
         </section>
     );
 }
