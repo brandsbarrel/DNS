@@ -1,13 +1,13 @@
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import Logo from "../../assets/logo.png"
+import Logo from "../../assets/SNG_red.png"
 import { UserContext } from "../../context/UserContext";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    const { user, setUser } = useContext(UserContext);
+    const { setUser } = useContext(UserContext);
 
     const handleClick = () => {
         window.scrollTo({

@@ -96,7 +96,6 @@ a {
     margin-left: 20px;
 }
 
-/* Hamburger — hidden on desktop */
 .navbar__hamburger {
     display: none;
     flex-direction: column;
@@ -105,7 +104,6 @@ a {
     border: none;
     cursor: pointer;
     padding: 4px;
-    /* FIX: margin-left auto pushes it to the right end */
     margin-left: auto;
 }
 
@@ -130,9 +128,6 @@ a {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ─────────────────────────────
-   MOBILE ≤ 768px
-───────────────────────────── */
 @media (max-width: 768px) {
 
     .navbar{
@@ -141,16 +136,14 @@ a {
 
     .navbar__inner {
         height: 80px;
-        /* FIX: logo left, hamburger right — space-between handles it */
         justify-content: space-between;
         padding: 0 16px;
     }
 
-    /* Hide desktop nav links & CTA */
     .navbar__links {
         display: none;
         position: fixed;
-        top: 80px;           /* exactly below navbar */
+        top: 80px;
         left: 0;
         right: 0;
         width: 100%;
@@ -162,7 +155,6 @@ a {
         z-index: 999;
     }
 
-    /* When open — show as flex */
     .navbar__links.open {
         display: flex;
     }
@@ -177,7 +169,6 @@ a {
         display: none;
     }
 
-    /* FIX: show hamburger, push to right */
     .navbar__hamburger {
         display: flex;
         flex-direction: column;
@@ -187,7 +178,7 @@ a {
     }
 
     .navbar__logo img {
-        height: 70px;
+        height: 60px;
     }
 
     .navbar--scrolled .navbar__logo img {

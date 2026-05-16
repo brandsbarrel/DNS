@@ -51,14 +51,11 @@
   align-items: center;
   gap: 16px;
 
-  /* FIX: Default visible — JS se show class add ho tab bhi,
-     na ho tab bhi cards dikh jayein */
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.25s ease;
 }
 
-/* FIX: Animation sirf tab chale jab JS explicitly animate class dega */
 .info.animate .info__card {
   opacity: 0;
   transform: translateY(28px);
@@ -69,7 +66,7 @@
   transform: translateY(0);
 }
 
-/* Staggered delay for a nicer entrance */
+/* Staggered delay */
 .info.animate.show .info__card:nth-child(1) { transition-delay: 0.05s; }
 .info.animate.show .info__card:nth-child(2) { transition-delay: 0.15s; }
 .info.animate.show .info__card:nth-child(3) { transition-delay: 0.25s; }
@@ -124,35 +121,41 @@
   border-radius: 8px;
 }
 
-.service-arrow-btn {
-  display: flex;
+/* ── More Info Button ── */
+.service-more-btn {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 2px solid #5cb85c;
-  background: transparent;
-  color: #5cb85c;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
-  margin-top: 4px;
-}
-
-.service-arrow-btn svg {
-  display: block;
-  stroke: #5cb85c;
-  flex-shrink: 0;
-}
-
-.service-arrow-btn:hover {
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 6px;
+  border: none;
   background: #5cb85c;
-  color: #fff;
-  transform: translateY(3px);
+  color: #DEE8CF;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 4px;
+  letter-spacing: 0.3px;
+  align-self: center;
 }
 
-.service-arrow-btn:hover svg {
-  stroke: #fff;
+.service-more-btn svg {
+  display: block;
+  stroke: #DEE8CF;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.service-more-btn:hover {
+  background: #4aa34a;
+  box-shadow: 0 4px 14px rgba(92, 184, 92, 0.35);
+  transform: translateY(-2px);
+}
+
+.service-more-btn:hover svg {
+  transform: translateX(3px);
 }
 
 @media (min-width: 600px) {
