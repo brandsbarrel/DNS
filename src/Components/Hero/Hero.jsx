@@ -1,103 +1,47 @@
 import "./Hero.css";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import image1 from "../../assets/4.jpeg";
 import image2 from "../../assets/6.jpeg";
-import video1 from "../../assets/hero-vdo.mp4";
+import Hero_image from "../../assets/Hero_image.jpeg";
+
+const slides = [
+    {
+        src: Hero_image,
+        title: "A Beautiful Garden Starts Here!",
+    },
+    {
+        src: image1,
+        title: "With Years of Experience, We Keep Gardens Looking Their Best",
+    },
+    {
+        src: image2,
+        title: "Providing Quality Garden Services at Affordable Prices",
+    }
+];
+
+const SLIDE_DURATION = 4000;
 
 export default function Hero() {
-
-    const VIDEO_START_TIME = 5;
-
-    const slides = [
-        {
-            type: "video",
-            src: video1,
-            title: "A Beautiful Garden Starts Here!",
-            duration: null
-        },
-        {
-            type: "image",
-            src: image1,
-            title: "With Years of Experience, We Keep Gardens Looking Their Best",
-            duration: 4000
-        },
-        {
-            type: "image",
-            src: image2,
-            title: "Providing Quality Garden Services at Affordable Prices",
-            duration: 4000
-        }
-    ];
-
     const [current, setCurrent] = useState(0);
-    const videoRef = useRef(null);
-    const hasSeekeddRef = useRef(false); // pehli baar seek hua ya nahi
-    const secondPlayRef = useRef(false); // second play chal rahi hai ya nahi
 
-    const goNext = () => {
-        hasSeekeddRef.current = false;
-        secondPlayRef.current = false;
-        setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    };
-
-    // Image slides auto-advance
     useEffect(() => {
-        if (slides[current].duration === null) return;
-        const timeout = setTimeout(goNext, slides[current].duration);
+        const timeout = setTimeout(() => {
+            setCurrent((prev) => (prev + 1) % slides.length);
+        }, SLIDE_DURATION);
         return () => clearTimeout(timeout);
-    }, [current]);
-
-    // Jab video mount ho, sirf ek baar 5s par seek karo
-    useEffect(() => {
-        const video = videoRef.current;
-        if (!video) return;
-
-        const handleCanPlay = () => {
-            if (!hasSeekeddRef.current) {
-                hasSeekeddRef.current = true;
-                video.currentTime = VIDEO_START_TIME;
-            }
-        };
-
-        const handleSeeked = () => {
-            // Seek complete hone ke baad play karo
-            if (!secondPlayRef.current) {
-                video.play().catch(() => {});
-            }
-        };
-
-        const handleEnded = () => {
-            if (!secondPlayRef.current) {
-                // Pehli play khatam: 0 se dobara
-                secondPlayRef.current = true;
-                video.currentTime = 0;
-                video.play().catch(() => {});
-            } else {
-                // Doosri play khatam: next slide
-                goNext();
-            }
-        };
-
-        video.addEventListener("canplay", handleCanPlay);
-        video.addEventListener("seeked", handleSeeked);
-        video.addEventListener("ended", handleEnded);
-
-        // Agar already ready hai
-        if (video.readyState >= 3) {
-            handleCanPlay();
-        }
-
-        return () => {
-            video.removeEventListener("canplay", handleCanPlay);
-            video.removeEventListener("seeked", handleSeeked);
-            video.removeEventListener("ended", handleEnded);
-        };
     }, [current]);
 
     return (
         <section className="hero">
+
+            <div className="hero__bg">
+                <div
+                    className="hero__bg-image"
+                    style={{ backgroundImage: `url(${slides[current].src})` }}
+                />
+            </div>
 
             <div className="hero__content">
                 <div className="hero__text">
@@ -110,25 +54,6 @@ export default function Hero() {
                         </Link>
                     </div>
                 </div>
-            </div>
-
-            <div className="hero__bg">
-                {slides[current].type === "image" ? (
-                    <div
-                        className="hero__bg-image"
-                        style={{ backgroundImage: `url(${slides[current].src})` }}
-                    />
-                ) : (
-                    <video
-                        ref={videoRef}
-                        className="hero__bg-video"
-                        muted
-                        playsInline
-                        preload="auto"
-                    >
-                        <source src={slides[current].src} type="video/mp4" />
-                    </video>
-                )}
             </div>
 
             <div className="hero__dots">

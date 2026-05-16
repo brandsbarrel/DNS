@@ -159,18 +159,14 @@
     background: rgba(0, 0, 0, 0.7);
 }
 
-
-/* ═══════════════════════════════════════
-   TABLET — ≤ 1024px
-═══════════════════════════════════════ */
 @media (max-width: 1024px) {
     .hero {
         margin-top: 2%;
         height: auto;
         min-height: auto;
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: stretch;
-        padding-top: 100px; /* navbar height ke barabar */
+        padding-top: 100px;
         background: #415D2F;
     }
 
@@ -236,14 +232,10 @@
     }
 }
 
-
-/* ═══════════════════════════════════════
-   MOBILE — ≤ 768px
-═══════════════════════════════════════ */
 @media (max-width: 768px) {
     .hero {
         margin-top: 0;
-        padding-top: 80px; /* navbar 80px hai mobile pe */
+        padding-top: 80px;
         height: auto;
         min-height: auto;
         flex-direction: column;
@@ -274,6 +266,7 @@
 
     .hero__actions {
         margin-top: 4px;
+        display: none;
     }
 
     .hero__cta-btn {
@@ -311,9 +304,6 @@
     }
 }
 
-/* ═══════════════════════════════════════
-   SMALL MOBILE — ≤ 400px
-═══════════════════════════════════════ */
 @media (max-width: 400px) {
     .hero__title {
         font-size: 22px;
