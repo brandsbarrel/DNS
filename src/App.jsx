@@ -11,7 +11,6 @@ import MyBookingsDashboard from './Components/MyBookingsDashboard/MyBookingsDash
 import PaymentFailed from './Components/Paymentfailed/Paymentfailed';
 import PaymentSuccess from './Components/Paymentsuccess/Paymentsuccess';
 import TermsAndConditions from './Components/TermsAndConditions/TermsAndConditions';
-import ForgotPassword from './Components/ForgotPassword/ForgotPassword';
 import Services from './Pages/Services/Services';
 import ServiceDetail from './Components/ServiceDetail/ServiceDetail';
 
@@ -41,7 +40,6 @@ const App = () => {
               {/* <Route path='/payment-failed' element={<PaymentFailed />} /> */}
               {/* <Route path='/payment-success' element={<PaymentSuccess />} /> */}
               {/* <Route path='/terms-and-conditions' element={<TermsAndConditions />} /> */}
-              {/* <Route path='/forgot-password' element={<ForgotPassword />} /> */}
             </Route>
           </Routes>
         </Router>

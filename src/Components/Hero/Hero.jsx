@@ -1,5 +1,6 @@
 import "./Hero.css";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import image1 from "../../assets/4.jpeg";
 import image2 from "../../assets/6.jpeg";
@@ -7,13 +8,12 @@ import video1 from "../../assets/hero-vdo.mp4";
 
 export default function Hero() {
 
-    // Slides with image/video + title + duration
     const slides = [
         {
             type: "video",
             src: video1,
             title: "A Beautiful Garden Starts Here!",
-            duration: 12000 // 8 sec
+            duration: 12000
         },
         {
             type: "image",
@@ -31,39 +31,38 @@ export default function Hero() {
 
     const [current, setCurrent] = useState(0);
 
-    // Auto slide with custom timing
     useEffect(() => {
         const timeout = setTimeout(() => {
             setCurrent((prev) =>
                 prev === slides.length - 1 ? 0 : prev + 1
             );
         }, slides[current].duration);
-
         return () => clearTimeout(timeout);
     }, [current]);
 
     return (
         <section className="hero">
 
-            <div className="container hero__content">
+            {/* FIX: container class nahi — hero full width chahiye */}
+            <div className="hero__content">
                 <div className="hero__text">
-
                     <h1 className="hero__title">
                         {slides[current].title}
                     </h1>
-
+                    <div className="hero__actions">
+                        <Link to="/contact" className="hero__cta-btn">
+                            GET A QUOTE
+                        </Link>
+                    </div>
                 </div>
             </div>
 
             {/* Background Media */}
             <div className="hero__bg">
-
                 {slides[current].type === "image" ? (
                     <div
                         className="hero__bg-image"
-                        style={{
-                            backgroundImage: `url(${slides[current].src})`
-                        }}
+                        style={{ backgroundImage: `url(${slides[current].src})` }}
                     />
                 ) : (
                     <video
@@ -76,7 +75,6 @@ export default function Hero() {
                         <source src={slides[current].src} type="video/mp4" />
                     </video>
                 )}
-
             </div>
 
             {/* Dots */}
