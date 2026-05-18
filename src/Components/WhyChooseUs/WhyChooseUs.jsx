@@ -35,11 +35,6 @@ export default function WhyChooseUs() {
             <div className="whyChooseUs__container">
 
                 <header className="whyChooseUs__header">
-                    <div className="whyChooseUs__header-leaf">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#3a6e28">
-                            <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-8 8" />
-                        </svg>
-                    </div>
                     <div className="whyChooseUs__header-line">
                         <span className="whyChooseUs__line-bar" />
                         <h2 className="whyChooseUs__title">Why choose us?</h2>
