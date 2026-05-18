@@ -14,7 +14,7 @@
     --accent: #F59E0B;
 
     --white: #415D2Fff;
-    --off-white: #FAFAFC;
+    --off-white: #E7EAD9;
     --gray-50: #F8F7FF;
     --gray-100: #f1f0f8;
     --gray-200: #e2e0f0;
@@ -42,10 +42,22 @@ html {
     scroll-behavior: smooth;
 }
 
+html,
+body,
+#root {
+    background: #E7EAD9;
+}
+
+#root,
+.site-shell {
+    min-height: 100vh;
+    background: #E7EAD9;
+}
+
 body {
     font-family: var(--font-body);
     color: var(--text-dark);
-    background: var(--off-white);
+    background: #E7EAD9;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
 }
