@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./HeroSection.css";
-import heroImg from "../../assets/hero-vdo.mp4"; 
+import heroImg from "../../assets/hero-vdo.mp4";
 
 export default function HeroSlider() {
   const navigate = useNavigate();
@@ -8,45 +8,47 @@ export default function HeroSlider() {
   return (
     <section className="About_Hero">
 
-      {/* ── Top CTA ── */}
+      {/* MOBILE ONLY TOP TEXT */}
       <div className="About_Hero__top">
         <h1 className="About_Hero__heading">
-          Your Best Garden <br />Starts Here!
+          Your Best Garden <br />
+          Starts Here!
         </h1>
-        {/* <button className="About_Hero__cta" onClick={() => navigate("/contact")}>
-          GET A QUOTE
-        </button> */}
       </div>
 
-      {/* ── Media ── swap <img> for <video> if needed ── */}
+      {/* VIDEO SECTION */}
       <div className="About_Hero__media-wrap">
-        {/* <img
-          className="About_Hero__media"
-          src={heroImg}
-          alt="SNG Maintenance garden property"
-        /> */}
 
-        {/* 👇 Uncomment this and remove the <img> above to use a video instead */}
         <video
           className="About_Hero__media"
-          src={heroImg}       
-          poster={heroImg}     
+          src={heroImg}
+          poster=""
           autoPlay
           muted
           loop
           playsInline
         />
-       
+
+        {/* DESKTOP OVERLAY TEXT */}
+        <div className="About_Hero__overlay">
+          <h1 className="About_Hero__heading">
+            Your Best Garden
+            <br />
+            Starts Here!
+          </h1>
+        </div>
+
       </div>
 
-      {/* ── Bottom CTA ── */}
+      {/* BOTTOM BUTTON */}
       <div className="About_Hero__bottom">
-        <button className="About_Hero__cta" onClick={() => navigate("/contact")}>
-          GET A Free QUOTE
+        <button
+          className="About_Hero__cta"
+          onClick={() => navigate("/contact")}
+        >
+          GET A FREE QUOTE
         </button>
       </div>
-
-      
 
     </section>
   );

@@ -1,5 +1,7 @@
 import "./WelcomeText.css"
 import about_our_mission from "../../assets/Abour_our_mission.jpeg"
+import bf1 from "../../assets/bf1.jpeg"
+import bf2 from "../../assets/bf2.jpeg"
 const WelcomeText = () => {
     return (
         <>
@@ -24,6 +26,10 @@ const WelcomeText = () => {
             <br></br>
             <div className="About_ba_gallery">
                 <div className="About_welcome_header">Before & After Gallery</div>
+                <br />
+                <img className="About_mission_img" src={bf2} />
+                <br />
+                <img className="About_mission_img" src={bf1} />
 
             </div>
 
