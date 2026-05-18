@@ -1,8 +1,8 @@
 import React from 'react'
-import "./ScrollText.css"
+import "./WelcomeText.css"
 import { Link } from 'react-router-dom'
 
-const ScrollText = () => {
+const WelcomeText = () => {
     const handleClick = () => {
         window.scrollTo({
             top: 0,
@@ -34,4 +34,4 @@ const ScrollText = () => {
     )
 }
 
-export default ScrollText
+export default WelcomeText

@@ -6,10 +6,6 @@ import Layout from './Components/Layout/Layout'
 import Home from './Pages/Home/Home'
 import ContactUs from './Pages/ContactUs/ContactUs';
 import BookOnline from './Pages/BookOnline/BookOnline';
-import MyBooking from './Pages/MyBooking/MyBooking';
-import MyBookingsDashboard from './Components/MyBookingsDashboard/MyBookingsDashboard';
-import PaymentFailed from './Components/Paymentfailed/Paymentfailed';
-import PaymentSuccess from './Components/Paymentsuccess/Paymentsuccess';
 import TermsAndConditions from './Components/TermsAndConditions/TermsAndConditions';
 import Services from './Pages/Services/Services';
 import ServiceDetail from './Components/ServiceDetail/ServiceDetail';
@@ -34,12 +30,6 @@ const App = () => {
               <Route index element={<Home />} />
               <Route path='services/' element={<Services/>} />
               <Route path="/services/:slug" element={<ServiceDetail />} />
-              {/* <Route path='/my-booking' element={<MyBooking />} /> */}
-              {/* <Route path='/my-booking-dashboard' element={<MyBookingsDashboard />} /> */}
-              {/* <Route path='/book-online' element={<BookOnline />} /> */}
-              {/* <Route path='/payment-failed' element={<PaymentFailed />} /> */}
-              {/* <Route path='/payment-success' element={<PaymentSuccess />} /> */}
-              {/* <Route path='/terms-and-conditions' element={<TermsAndConditions />} /> */}
             </Route>
           </Routes>
         </Router>
