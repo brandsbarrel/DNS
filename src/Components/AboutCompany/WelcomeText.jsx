@@ -1,5 +1,5 @@
 import "./WelcomeText.css"
-
+import about_our_mission from "../../assets/Abour_our_mission.jpeg"
 const WelcomeText = () => {
     return (
         <>
@@ -14,6 +14,18 @@ const WelcomeText = () => {
                     Over the years, we have expanded our services to include irrigation systems, drip-line watering solutions, water blasting, excavation works, and general property maintenance. Our equipment and expertise allow us to complete projects efficiently, from installing essential service lines to constructing retaining walls, tiered gardens, and raised garden beds.
                     <br></br>
                     At SNG Maintenance Services, we take pride in providing dependable workmanship, attention to detail, and professional service tailored to each property’s needs.</p>
+                    <br></br>
+            <div className="About_our_mission">
+                <div className="About_welcome_header">Our Mission</div>
+                <p className="About_welcome_text">To create clean, beautiful, and well-maintained outdoor spaces that our clients are proud of</p>
+                <br></br>
+                <img className="About_mission_img" src={about_our_mission} />
+            </div>
+            <br></br>
+            <div className="About_ba_gallery">
+                <div className="About_welcome_header">Before & After Gallery</div>
+
+            </div>
 
             </div>
         </>
