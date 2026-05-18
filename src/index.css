@@ -7,7 +7,7 @@
 }
 
 :root {
-    --primary: #E7EAD9;
+    --primary: #415D2F;
     --primary-dark: #3b0f8a;
     --primary-light: #7C3AED;
 
@@ -45,13 +45,13 @@ html {
 html,
 body,
 #root {
-    background: #E7EAD9;
+    /* background: #E7EAD9; */
 }
 
 #root,
 .site-shell {
     min-height: 100vh;
-    background: #E7EAD9;
+    /* background: #E7EAD9; */
 }
 
 body {

@@ -28,9 +28,8 @@
     transition: 0.3s ease;
 }
 
-/* Light tile — dark green text so it reads on the pale green bg */
 .feature-tile.light {
-    background: #E7EAD9;
+    background: #DEE8CF;
     color: #2a3d1e;
 }
 
@@ -38,7 +37,6 @@
     color: #415D2F;
 }
 
-/* Dark tile — white text on deep green bg */
 .feature-tile.dark {
     background: #415D2F;
     color: #ffffff;
@@ -61,7 +59,6 @@
     font-size: 20px;
     font-weight: 600;
     line-height: 1.4;
-    /* color inherited from .light / .dark above */
 }
 
 @media (max-width: 1024px) {
