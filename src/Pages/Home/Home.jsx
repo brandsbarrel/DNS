@@ -1,6 +1,6 @@
 import React from 'react'
 import Hero from "../../Components/Hero/Hero"
-import WelcomeText from "../../Components/WelcomeText/WelcomeText"
+// import WelcomeText from "../../Components/WelcomeText/WelcomeText"
 import WhyChooseUs from "../../Components/WhyChooseUs/WhyChooseUs"
 import BannerCTA from "../../Components/BannerCTA/BannerCTA"
 import Stats from "../../Components/Stats/Stats"
@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <>
             <Hero />
-            <WelcomeText />
+            {/* <WelcomeText /> */}
             <ServiceCard/>
             <WhyChooseUs />
             <BannerCTA />
