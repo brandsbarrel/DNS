@@ -1,6 +1,6 @@
 .About_Hero {
   background: #e8edd8;
-  padding: 90px 0 32px;
+  padding: 90px 0 20px;
   font-family: 'Georgia', serif;
 }
 
@@ -16,14 +16,14 @@
 .About_Hero__heading {
   font-size: clamp(28px, 7vw, 52px);
   font-weight: 900;
-  color: #2a4a1e;
+  color: #111;
   line-height: 1.15;
   margin: 0;
   letter-spacing: -0.5px;
 }
 
 .About_Hero__cta {
-  background: #3a6e28;
+  background: #cc1111;
   color: #fff;
   font-family: 'Georgia', serif;
   font-size: 15px;
@@ -63,7 +63,7 @@
 }
 
 .About_Hero__bottom {
-  padding: 24px 24px 0;
+  padding: 0px 24px;
   display: flex;
   justify-content: center;
 }

@@ -11,7 +11,7 @@ export default function HeroSlider() {
       {/* ── Top CTA ── */}
       <div className="About_Hero__top">
         <h1 className="About_Hero__heading">
-          A Beautiful Garden<br />Starts Here!
+          Make Your Best Garden <br />Starts Here!
         </h1>
         {/* <button className="About_Hero__cta" onClick={() => navigate("/contact")}>
           GET A QUOTE
@@ -42,7 +42,7 @@ export default function HeroSlider() {
       {/* ── Bottom CTA ── */}
       <div className="About_Hero__bottom">
         <button className="About_Hero__cta" onClick={() => navigate("/contact")}>
-          GET A QUOTE
+          GET A Free QUOTE
         </button>
       </div>
 
