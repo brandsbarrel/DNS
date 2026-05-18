@@ -109,7 +109,7 @@ export default function ServiceCard() {
             </svg>
           </div>
           <h2 className="ServiceCard__heading">
-            Our company provides the following{" "}
+            SNG Maintenance provides the following{" "}
             <span className="ServiceCard__heading--red">services:</span>
           </h2>
           <p className="ServiceCard__subheading">Reliable. Professional. Always here for you.</p>
