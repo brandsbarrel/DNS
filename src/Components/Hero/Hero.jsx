@@ -88,18 +88,19 @@ export default function Hero() {
                 </div>
 
             </section>
-
-            {/* ── 2. IMAGE — slider ke baad, button se pehle ── */}
-            <div className="hero__middle-image">
-                <img src={Hero_image_s} alt="Service highlight" />
-            </div>
-
+            
             {/* ── 3. GET FREE QUOTE BUTTON — sabse neeche ── */}
             <div className="hero__btn-wrapper">
                 <Link to="/contact" className="hero__btn hero__btn--full">
                     GET A FREE QUOTE ›
                 </Link>
             </div>
+
+            {/* ── 2. IMAGE — slider ke baad, button se pehle ── */}
+            <div className="hero__middle-image">
+                <img src={Hero_image_s} alt="Service highlight" />
+            </div>
+
         </>
     );
 }

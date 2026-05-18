@@ -128,7 +128,6 @@ export default function ServiceCard() {
                 <div className="ServiceCard__icon">
                   {service.icon}
                 </div>
-                <div className="ServiceCard__icon-base" />
               </div>
 
               {/* Right: content */}
