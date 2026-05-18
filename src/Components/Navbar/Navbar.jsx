@@ -45,7 +45,7 @@ export default function Navbar() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/" onClick={() => { closeMenu(), handleClick(), setUser("About company") }}>
+                        <Link to="/about-company" onClick={() => { closeMenu(), handleClick(), setUser("About company") }}>
                             About company
                         </Link>
                     </li>

@@ -9,6 +9,7 @@ import BookOnline from './Pages/BookOnline/BookOnline';
 import TermsAndConditions from './Components/TermsAndConditions/TermsAndConditions';
 import Services from './Pages/Services/Services';
 import ServiceDetail from './Components/ServiceDetail/ServiceDetail';
+import AboutUs from './Pages/AboutUs/AboutUs';
 
 const App = () => {
   useEffect(() => {
@@ -30,6 +31,7 @@ const App = () => {
               <Route index element={<Home />} />
               <Route path='services/' element={<Services/>} />
               <Route path="/services/:slug" element={<ServiceDetail />} />
+              <Route path ="about-company/" element={<AboutUs/>}/>
             </Route>
           </Routes>
         </Router>
