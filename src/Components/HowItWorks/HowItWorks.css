@@ -87,7 +87,7 @@ transform:translateX(-50%);
 width:140px;
 height:140px;
 
-background:white;
+background:#415D2F;
 border-radius:50%;
 
 display:flex;
@@ -165,7 +165,7 @@ gap:25px;
 }
 
 .areaTag{
-background:white;
+background: #415D2F;
 padding:16px 18px;
 
 display:flex;
@@ -173,6 +173,8 @@ align-items:center;
 justify-content:flex-start;
 
 gap:12px;
+
+color: #fff;
 
 border-radius:14px;
 box-shadow:0 4px 10px rgba(0,0,0,.08);
@@ -184,7 +186,7 @@ font-weight:700;
 }
 
 .areaTag svg{
-color:black;
+color: #d80000;
 width:18px;
 min-width:18px; /* keeps icon fixed */
 flex-shrink:0;
@@ -193,6 +195,7 @@ flex-shrink:0;
 .vertical{
 height:26px;
 width:1px;
+color: #d80000;
 background:#d80000;
 flex-shrink:0;
 }
