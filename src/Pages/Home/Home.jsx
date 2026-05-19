@@ -6,6 +6,7 @@ import BannerCTA from "../../Components/BannerCTA/BannerCTA"
 import Stats from "../../Components/Stats/Stats"
 import FindUs from "../../Components/FindUs/FindUs"
 import ServiceCard from '../../Components/ServiceCard/ServiceCard'
+import HowItWorks from '../../Components/HowItWorks/HowItWorks'
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
             <Hero />
             {/* <WelcomeText /> */}
             <ServiceCard/>
+            <HowItWorks/>
             <WhyChooseUs />
             <BannerCTA />
             <Stats />
