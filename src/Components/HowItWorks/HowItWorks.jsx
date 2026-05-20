@@ -6,35 +6,37 @@ import {
   ThumbsUp,
   MapPin
 } from "lucide-react";
+import how_img from "../../assets/how_img.jpeg"
+import how_it_works from '../../assets/how_it_works.jpeg'
 
 export default function HowItWorks() {
 
-  const steps = [
-    {
-      no: "1",
-      icon: <FileText />,
-      title: "Request a Quote",
-      desc: "Send us a message or call us for a free quote."
-    },
-    {
-      no: "2",
-      icon: <CalendarDays />,
-      title: "We Inspect Your Property",
-      desc: "We visit your property or discuss the scope of work."
-    },
-    {
-      no: "3",
-      icon: <DollarSign />,
-      title: "Receive a Fixed Price",
-      desc: "You'll receive a clear and transparent quote."
-    },
-    {
-      no: "4",
-      icon: <ThumbsUp />,
-      title: "Enjoy a Maintained Property",
-      desc: "We get the job done and you enjoy the results."
-    }
-  ];
+  // const steps = [
+  //   {
+  //     no: "1",
+  //     icon: <FileText />,
+  //     title: "Request a Quote",
+  //     desc: "Send us a message or call us for a free quote."
+  //   },
+  //   {
+  //     no: "2",
+  //     icon: <CalendarDays />,
+  //     title: "We Inspect Your Property",
+  //     desc: "We visit your property or discuss the scope of work."
+  //   },
+  //   {
+  //     no: "3",
+  //     icon: <DollarSign />,
+  //     title: "Receive a Fixed Price",
+  //     desc: "You'll receive a clear and transparent quote."
+  //   },
+  //   {
+  //     no: "4",
+  //     icon: <ThumbsUp />,
+  //     title: "Enjoy a Maintained Property",
+  //     desc: "We get the job done and you enjoy the results."
+  //   }
+  // ];
 
   const areas = [
     "Ryde",
@@ -49,12 +51,13 @@ export default function HowItWorks() {
   return (
     <>
     <section className="works_steps1">
+      <img src={how_it_works}/>
 
-      <div className="container">
+      {/* <div className="container"> */}
 
         {/* Heading */}
 
-        <div className="headingWrap">
+        {/* <div className="headingWrap">
 
           <span className="headingLine"></span>
 
@@ -68,12 +71,12 @@ export default function HowItWorks() {
 
         <p className="subheading">
           Simple process, great results.
-        </p>
+        </p> */}
 
 
         {/* Steps */}
 
-        <div className="stepsGrid">
+        {/* <div className="stepsGrid">
 
           {steps.map((step,index)=>(
 
@@ -115,12 +118,14 @@ export default function HowItWorks() {
 
             </div>
 
-          ))}
+          ))} */}
 
-        </div>
-        </div>
+        {/* </div> */}
+        {/* </div> */}
         </section>
-
+          <section className="how-img">
+            <img src={how_img}/>
+          </section>
         <section className="works_steps2">
 
         {/* Areas */}
