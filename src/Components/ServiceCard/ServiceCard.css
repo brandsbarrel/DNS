@@ -44,7 +44,7 @@
   margin: 0 0 12px;
 }
 
-.ServiceCard__heading--red{
+.ServiceCard__heading--red {
   color: #cc1111;
 }
 
@@ -74,10 +74,10 @@
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.25s ease;
-  min-height: 180px;
+  min-height: 140px;
+  cursor: pointer;
 }
 
-/* ✅ YEH MISSING THA — cards show karo */
 .ServiceCard.show .ServiceCard__card {
   opacity: 1;
   transform: translateY(0);
@@ -87,32 +87,27 @@
   box-shadow: 0 8px 32px rgba(0,0,0,0.13);
 }
 
-/* ── Left icon block ── */
+/* ── Left icon block — smaller square ── */
 .ServiceCard__icon-wrap {
   flex-shrink: 0;
-  width: 180px;
-  min-height: 180px;
+  width: 110px;         /* reduced from 180px */
+  min-height: 100%;
   background: #c8d9a8;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: center;   /* vertically centered */
   justify-content: center;
-  padding-top: 16px;
   position: relative;
   overflow: hidden;
-  z-index: 1;
   border-radius: 16px 0 0 16px;
 }
 
 .ServiceCard__icon {
-  width: 130px;
-  height: 130px;
+  width: 80px;           /* reduced from 130px */
+  height: 80px;
   border-radius: 50%;
   overflow: hidden;
-  border: 5px solid #fff;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-  z-index: 2;
-  position: relative;
+  border: 4px solid #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
   background: #fff;
   flex-shrink: 0;
 }
@@ -126,22 +121,10 @@
   border-radius: 50%;
 }
 
-/* Green mound */
-.ServiceCard__icon-base {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 65px;
-  background: #3a6e28;
-  clip-path: ellipse(70% 100% at 50% 100%);
-  z-index: 1;
-}
-
 /* ── Right content block ── */
 .ServiceCard__body {
   flex: 1;
-  padding: 24px 80px 24px 28px;
+  padding: 22px 24px 22px 24px;
   position: relative;
   background: #fff;
   border-radius: 0 16px 16px 0;
@@ -160,27 +143,20 @@
   opacity: 0.6;
 }
 
+/* Service name — red */
 .ServiceCard__name {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 800;
-  color: #111;
+  color: #cc1111;        /* changed to red */
   margin: 0 0 8px;
   line-height: 1.2;
-}
-
-.ServiceCard__red-line {
-  width: 36px;
-  height: 3px;
-  background: #cc1111;
-  border-radius: 2px;
-  margin-bottom: 10px;
 }
 
 .ServiceCard__desc {
   font-size: 14px;
   color: #444;
   line-height: 1.6;
-  margin: 0 0 14px;
+  margin: 0 0 12px;
   max-width: 400px;
 }
 
@@ -202,40 +178,13 @@
 }
 
 .ServiceCard__check {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
   color: #111;
 }
 
-/* ── Arrow button ── */
-.ServiceCard__arrow-btn {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  padding:5px;
-  background: #111;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
-  z-index: 3;
-}
-
-.ServiceCard__arrow-btn svg {
-  width: 22px;
-  height: 22px;
-}
-
-.ServiceCard__arrow-btn:hover {
-  background: #cc1111;
-  transform: scale(1.08);
-}
+/* ── Mobile ── */
 @media (max-width: 600px) {
   .ServiceCard {
     padding: 40px 0 60px;
@@ -246,45 +195,29 @@
     align-items: stretch;
     overflow: hidden;
     border-radius: 16px;
+    min-height: 120px;
   }
 
   .ServiceCard__icon-wrap {
-    width: 130px;
+    width: 90px;
     flex-shrink: 0;
-    min-height: 100%;
-    overflow: hidden;
     border-radius: 16px 0 0 16px;
-    justify-content: center;
-    padding-top: 12px;
   }
 
   .ServiceCard__icon {
-    width: 110px;
-    height: 110px;
+    width: 66px;
+    height: 66px;
     border: 3px solid #fff;
-    margin-bottom: 0;
-  }
-
-  .ServiceCard__icon-base {
-    height: 75px;
   }
 
   .ServiceCard__body {
     flex: 1;
-    padding: 14px 14px 64px 14px;
-    overflow: hidden;
-    position: relative;
+    padding: 14px 14px 14px 14px;
   }
 
   .ServiceCard__name {
     font-size: 15px;
-    font-weight: 800;
     margin-bottom: 4px;
-  }
-
-  .ServiceCard__red-line {
-    width: 28px;
-    margin-bottom: 8px;
   }
 
   .ServiceCard__desc {
@@ -299,26 +232,11 @@
   }
 
   .ServiceCard__check {
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
+    width: 15px;
+    height: 15px;
   }
 
   .ServiceCard__dots-grid {
     display: none;
-  }
-
-.ServiceCard__arrow-btn {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    width: 30px;
-    height: 30px;
-    z-index: 2;
-  }
-
-  .ServiceCard__arrow-btn svg {
-    width: 30px;
-    height: 30px;
   }
 }

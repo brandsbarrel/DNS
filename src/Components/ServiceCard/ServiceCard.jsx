@@ -122,8 +122,9 @@ export default function ServiceCard() {
               className="ServiceCard__card"
               key={service.name}
               style={{ transitionDelay: `${i * 0.07}s` }}
+              onClick={() => navigate(`/services/${service.slug}`)}
             >
-              {/* Left: circular icon */}
+              {/* Left: circular icon in small square block */}
               <div className="ServiceCard__icon-wrap">
                 <div className="ServiceCard__icon">
                   {service.icon}
@@ -146,17 +147,6 @@ export default function ServiceCard() {
                   ))}
                 </ul>
               </div>
-
-              {/* Arrow button */}
-              <button
-                className="ServiceCard__arrow-btn"
-                onClick={() => navigate(`/services/${service.slug}`)}
-                aria-label={`View ${service.name} details`}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </button>
             </div>
           ))}
         </div>
