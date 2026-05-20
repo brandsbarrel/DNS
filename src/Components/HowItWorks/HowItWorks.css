@@ -1,8 +1,7 @@
-/* .works_steps1 {
-  padding: 45px 20px;
-  background: #f5f5f0;
+.works_steps1 {
+  background: #fbfaf8;
   overflow: hidden;
-} */
+}
 
 .works_steps2 {
   padding: 45px 20px;
@@ -51,6 +50,43 @@
   color: #555;
 }
 
+/* button */
+
+.How_quote_btn {
+  display: block;
+  width: 80%;
+  margin: 20px auto 20px;
+  background: #cc1111;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  padding: 16px;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.How_quote_btn:hover {
+  background: #a80000;
+  transform: translateY(-1px);
+}
+
+/* how-img */
+
+.how-img img {
+  width: 100%;
+  display: block;
+}
+
+.how_it_works_img {
+  width: 100%;
+  display: block;
+}
+
 /* steps */
 
 .stepsGrid {
@@ -83,17 +119,13 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-
   width: 140px;
   height: 140px;
-
   background: #415D2F;
   border-radius: 50%;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -105,21 +137,16 @@
 
 .stepNo {
   position: absolute;
-
   left: -5px;
   top: 0;
-
   width: 50px;
   height: 50px;
-
   background: black;
   border-radius: 50%;
   color: white;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   font-size: 25px;
   font-weight: 700;
   z-index: 5;
@@ -164,20 +191,14 @@
 .areaTag {
   background: #415D2F;
   padding: 16px 18px;
-
   display: flex;
   align-items: center;
   justify-content: flex-start;
-
   gap: 12px;
-
   color: #fff;
-
   border-radius: 14px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-
   border-bottom: 3px solid #d80000;
-
   font-size: 22px;
   font-weight: 700;
 }
@@ -192,12 +213,11 @@
 .vertical {
   height: 26px;
   width: 1px;
-  color: #d80000;
   background: #d80000;
   flex-shrink: 0;
 }
 
-/* ── large desktop (1100–1300px): shrink heading & cards slightly ── */
+/* large desktop */
 
 @media (max-width: 1200px) {
   .headingWrap h2 {
@@ -229,7 +249,7 @@
   }
 }
 
-/* ── tablet landscape (993–1100px): still 4 cols but tighter ── */
+/* tablet landscape */
 
 @media (max-width: 1100px) {
   .stepsGrid {
@@ -267,7 +287,7 @@
   }
 }
 
-/* ── tablet portrait (601–992px) ── */
+/* tablet portrait */
 
 @media (max-width: 992px) {
   .stepsGrid {
@@ -284,7 +304,6 @@
     font-size: 20px;
   }
 
-  /* restore comfortable card sizes for 2-col layout */
   .circleArea {
     width: 155px;
     height: 155px;
@@ -329,7 +348,7 @@
   }
 }
 
-/* ── mobile (≤600px) — DO NOT CHANGE ── */
+/* mobile — DO NOT CHANGE */
 
 @media (max-width: 600px) {
   .works {
@@ -391,8 +410,6 @@
     line-height: 1.5;
   }
 
-  /* FIXED AREA TAGS */
-
   .areaGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -402,11 +419,8 @@
   .areaTag {
     width: 100%;
     padding: 12px 10px;
-
     font-size: 14px;
-
     justify-content: flex-start;
-
     gap: 8px;
     min-width: 0;
   }
