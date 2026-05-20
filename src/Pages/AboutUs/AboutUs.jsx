@@ -1,11 +1,16 @@
 import HeroSection from "../../Components/AboutCompany/HeroSection"
 import WelcomeText from "../../Components/AboutCompany/WelcomeText";
-const AboutUs = ()=>{
+import HowItWorks from "../../Components/HowItWorks/HowItWorks";
+import WhyChooseUs from "../../Components/WhyChooseUs/WhyChooseUs";
+const AboutUs = () => {
     return (
-    <>
-    <HeroSection/>
-    <WelcomeText/>
-    </>
+        <>
+            <HeroSection />
+            <WelcomeText />
+            <WhyChooseUs />
+            <HowItWorks />
+            <WhyChooseUs />
+        </>
     )
 }
 
