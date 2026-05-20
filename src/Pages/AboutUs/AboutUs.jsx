@@ -1,7 +1,8 @@
-import HeroSection from "../../Components/AboutCompany/HeroSection"
+import HeroSection from "../../Components/AboutCompany/HeroSection";
 import WelcomeText from "../../Components/AboutCompany/WelcomeText";
 import HowItWorks from "../../Components/HowItWorks/HowItWorks";
 import WhyChooseUs from "../../Components/WhyChooseUs/WhyChooseUs";
+
 const AboutUs = () => {
     return (
         <>
@@ -9,9 +10,9 @@ const AboutUs = () => {
             <WelcomeText />
             <WhyChooseUs />
             <HowItWorks />
-            <WhyChooseUs />
+            <WhyChooseUs/>
         </>
-    )
-}
+    );
+};
 
 export default AboutUs;
