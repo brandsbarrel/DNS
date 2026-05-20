@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import image1 from "../../assets/servicies1.jpeg";
 import image2 from "../../assets/services2.jpeg";
 import image3 from "../../assets/service3.jpeg";
-import InfoSection from "../../Components/ServiceCard/ServiceCard";
+import ServiceCard2 from "../../Components/ServiceCard2/ServiceCard2";
 
 export default function Services() {
 
@@ -102,7 +102,7 @@ export default function Services() {
                         />
                     ))}
                 </div> */}
-                <InfoSection />
+                <ServiceCard2 />
             </section>
         </>
     );

@@ -1,0 +1,193 @@
+/* ─────────────────────────────────────────
+   ServiceCard2  –  Icon → Name → Image → Button
+   ───────────────────────────────────────── */
+
+/* Section */
+.sc2-section {
+  background-color: #e8f0e0;
+  padding: 60px 16px 80px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.sc2-section.sc2-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Container */
+.sc2-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.sc2-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.sc2-header-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background-color: #4a7c3f;
+  border-radius: 50%;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.sc2-heading {
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  font-weight: 700;
+  color: #1a2e14;
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.sc2-heading--red {
+  color: #d32f2f;
+}
+
+.sc2-subheading {
+  font-size: 1rem;
+  color: #4a7c3f;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+/* ── Grid ── */
+.sc2-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 48px 24px;
+}
+
+/* ── Card ── */
+.sc2-card {
+  background: #d4e6c3;
+  border-radius: 18px;
+  padding: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  overflow: visible;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.5s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.sc2-section.sc2-show .sc2-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sc2-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+
+/* ── Icon: floats above card top ── */
+.sc2-icon-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* Pull icon upward so it overlaps the card top */
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.sc2-icon-circle {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid #c5ddb0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.sc2-icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ── Service Name ── */
+.sc2-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1a2e14;
+  text-align: center;
+  margin: 0 16px 14px;
+  letter-spacing: 0.01em;
+}
+
+/* ── Service Image ── */
+.sc2-image-wrap {
+  width: calc(100% - 24px);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 0 12px 18px;
+  flex: 1;
+}
+
+.sc2-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* ── More Info Button ── */
+.sc2-more-btn {
+  width: calc(100% - 24px);
+  padding: 14px 20px;
+  background: #4caf50;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: background 0.2s ease, transform 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.sc2-more-btn:hover {
+  background: #388e3c;
+  transform: scale(1.02);
+}
+
+.sc2-more-btn:active {
+  transform: scale(0.98);
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .sc2-grid {
+    grid-template-columns: 1fr;
+    gap: 52px 0;
+  }
+
+  .sc2-image {
+    height: 300px;
+  }
+}
