@@ -39,7 +39,7 @@ export default function HowItWorks() {
       </section>
       <StatsSection/>
       <section className="home_what_our_cus_say" >
-      <img src={what_our_cus_say} />
+      <img className="how_it_works_img" src={what_our_cus_say} />
       <button className="How_quote_btn how__btn--full">Read More Testimonials</button>
       </section>
       <section className="works_steps2">

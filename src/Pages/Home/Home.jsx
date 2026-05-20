@@ -17,9 +17,6 @@ const Home = () => {
             <ServiceCard />
             <WhyChooseUs />
             <HowItWorks />
-            <BannerCTA />
-            <Stats />
-            <FindUs />
         </>
     )
 }
