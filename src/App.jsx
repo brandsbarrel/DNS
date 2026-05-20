@@ -10,6 +10,7 @@ import TermsAndConditions from './Components/TermsAndConditions/TermsAndConditio
 import Services from './Pages/Services/Services';
 import ServiceDetail from './Components/ServiceDetail/ServiceDetail';
 import AboutUs from './Pages/AboutUs/AboutUs';
+import SuburbDetail from './Components/SuburbDetail/SuburbDetail';
 
 const App = () => {
   useEffect(() => {
@@ -29,9 +30,10 @@ const App = () => {
           <Routes>
             <Route path='/' element={<Layout />}>
               <Route index element={<Home />} />
-              <Route path='services/' element={<Services/>} />
+              <Route path='services/' element={<Services />} />
               <Route path="/services/:slug" element={<ServiceDetail />} />
-              <Route path ="about-company/" element={<AboutUs/>}/>
+              <Route path="/about-company" element={<AboutUs />} />
+              <Route path='/suburb-details' element={<SuburbDetail />} />
             </Route>
           </Routes>
         </Router>

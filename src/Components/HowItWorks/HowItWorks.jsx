@@ -2,6 +2,7 @@ import "./HowItWorks.css";
 import { MapPin } from "lucide-react";
 import how_img from "../../assets/how_img.jpeg";
 import how_it_works from "../../assets/how_it_works.jpeg";
+import { useNavigate } from "react-router-dom";
 
 const areas = [
   "Ryde",
@@ -13,7 +14,17 @@ const areas = [
   "Northern Suburbs",
 ];
 
+
+const handleClick = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  })
+};
+
 export default function HowItWorks() {
+  const navigate = useNavigate();
+
   return (
     <>
       <section className="works_steps1">
@@ -39,7 +50,7 @@ export default function HowItWorks() {
 
           <div className="areaGrid">
             {areas.map((area, index) => (
-              <div className="areaTag" key={index}>
+              <div className="areaTag" onClick={() => { navigate("/suburb-details"), handleClick() }} key={index}>
                 <MapPin size={20} />
                 <span className="vertical" />
                 {area}
