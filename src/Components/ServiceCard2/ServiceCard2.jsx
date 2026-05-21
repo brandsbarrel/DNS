@@ -12,16 +12,18 @@ import barkBlowing from "../../assets/bark-blowing.jpeg";
 import spary_t from "../../assets/sprat-treatment.jpeg";
 import { UserContext } from "../../context/UserContext";
 
-import blowing_Second from "../../assets/blowing_Second.jpeg"
-import Fartilising_Second from "../../assets/Fartilising_Second.jpeg"
-import irrigation_Second from "../../assets/irrigation_Second.jpeg"
-import mowing_Second from "../../assets/mowing_Second.jpeg"
-import pressure_cleaning1 from "../../assets/pressure_cleaning1.jpeg"
-import Property_Maintenance_Second from "../../assets/Property_Maintenance_Second.jpeg"
-import Soft_Fall_Landscaping from "../../assets/Soft_Fall_Landscaping.jpeg"
-import spray_treatments_second from "../../assets/spray_treatments_second.jpeg"
-import strata_garden_maintenance from "../../assets/strata_garden_maintenance.jpeg"
+import blowing_Second from "../../assets/blowing_Second.jpeg";
+import Fartilising_Second from "../../assets/Fartilising_Second.jpeg";
+import irrigation_Second from "../../assets/irrigation_Second.jpeg";
+import mowing_Second from "../../assets/mowing_Second.jpeg";
+import pressure_cleaning1 from "../../assets/pressure_cleaning1.jpeg";
+import Property_Maintenance_Second from "../../assets/Property_Maintenance_Second.jpeg";
+import Soft_Fall_Landscaping from "../../assets/Soft_Fall_Landscaping.jpeg";
+import spray_treatments_second from "../../assets/spray_treatments_second.jpeg";
+import strata_garden_maintenance from "../../assets/strata_garden_maintenance.jpeg";
 
+// ── Banner image ──
+import serviceBanner from "../../assets/ServiceBanner.jpeg";
 
 const services = [
     {
@@ -118,62 +120,76 @@ export default function ServiceCard2() {
     }, []);
 
     return (
-        <section ref={ref} className={`sc2-section ${visible ? "sc2-show" : ""}`}>
-            <div className="sc2-container">
-
-                {/* ── Heading ── */}
-                <div className="sc2-header">
-                    <div className="sc2-header-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-                        </svg>
-                    </div>
-                    <h2 className="sc2-heading">
-                        SNG Maintenance provides the following{" "}
-                        <span className="sc2-heading--red">services:</span>
-                    </h2>
-                    <p className="sc2-subheading">Reliable. Professional. Always here for you.</p>
-                </div>
-
-                {/* ── Cards ── */}
-                <div className="sc2-grid">
-                    {services.map((service, i) => (
-                        <div
-                            className="sc2-card"
-                            key={service.name}
-                            style={{ transitionDelay: `${i * 0.07}s` }}
-                        >
-                            {/* TOP: Small circular icon — floats above card */}
-                            <div className="sc2-icon-wrapper">
-                                <div className="sc2-icon-circle">
-                                    {service.icon}
-                                </div>
-                            </div>
-
-                            {/* Service Name */}
-                            <h3 className="sc2-name">{service.name}</h3>
-
-                            {/* Service Image */}
-                            <div className="sc2-image-wrap">
-                                <img
-                                    src={service.image}
-                                    alt={service.name}
-                                    className="sc2-image"
-                                />
-                            </div>
-
-                            {/* More Info Button */}
-                            <button
-                                className="sc2-more-btn"
-                                onClick={() => navigate(`/services/${service.slug}`)}
-                                aria-label={`More info about ${service.name}`}
-                            >
-                                More Info &nbsp;→
-                            </button>
-                        </div>
-                    ))}
-                </div>
+        <>
+            {/* ── Service Banner (Top) ── */}
+            <div className="sc2-banner-wrap">
+                <img
+                    src={serviceBanner}
+                    alt="SNG Maintenance Banner"
+                    className="sc2-banner-img"
+                />
             </div>
-        </section>
+
+            <section ref={ref} className={`sc2-section ${visible ? "sc2-show" : ""}`}>
+                <div className="sc2-container">
+
+                    {/* ── Heading (screenshot style) ── */}
+                    <div className="sc2-header">
+                        <div className="sc2-header-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                            </svg>
+                        </div>
+                        <h2 className="sc2-heading">
+                            SNG MAINTENANCE<br />
+                            PROVIDES <span className="sc2-heading--red">SERVICES</span>
+                        </h2>
+                        <div className="sc2-heading-line"></div>
+                        <p className="sc2-subheading">
+                            We offer a wide range of maintenance solutions to keep your property looking its best all year round.
+                        </p>
+                    </div>
+
+                    {/* ── Cards ── */}
+                    <div className="sc2-grid">
+                        {services.map((service, i) => (
+                            <div
+                                className="sc2-card"
+                                key={service.name}
+                                style={{ transitionDelay: `${i * 0.07}s` }}
+                            >
+                                {/* TOP: Small circular icon */}
+                                <div className="sc2-icon-wrapper">
+                                    <div className="sc2-icon-circle">
+                                        {service.icon}
+                                    </div>
+                                </div>
+
+                                {/* Service Name */}
+                                <h3 className="sc2-name">{service.name}</h3>
+
+                                {/* Service Image */}
+                                <div className="sc2-image-wrap">
+                                    <img
+                                        src={service.image}
+                                        alt={service.name}
+                                        className="sc2-image"
+                                    />
+                                </div>
+
+                                {/* More Info Button */}
+                                <button
+                                    className="sc2-more-btn"
+                                    onClick={() => navigate(`/services/${service.slug}`)}
+                                    aria-label={`More info about ${service.name}`}
+                                >
+                                    More Info &nbsp;→
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        </>
     );
 }
