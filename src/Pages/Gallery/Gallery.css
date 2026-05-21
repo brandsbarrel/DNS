@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f0ede8;
+}
+
+.sng-page {
+  background: #f0ede8;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* NAV */
+.sng-nav {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 70px;
+  border-bottom: 1px solid #e5e2dd;
+}
+
+.sng-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+.sng-logo-top {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: #111;
+}
+
+.sng-logo-top span {
+  color: #d32f2f;
+}
+
+.sng-logo-sub {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #333;
+  margin-top: 1px;
+  border-top: 1.5px solid #111;
+  padding-top: 2px;
+  width: 100%;
+  text-align: center;
+}
+
+.sng-hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.sng-hamburger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #222;
+  border-radius: 1px;
+}
+
+/* CONTENT */
+.sng-content {
+  padding: 40px 28px 60px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.sng-card {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.sng-image {
+  width: 300px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.sng-gallery-title {
+  font-size: 35px;
+  font-weight: 600;
+  color: #d32f2f;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.sng-title-underline {
+  width: 56px;
+  height: 3px;
+  background: #d32f2f;
+  margin-top: 10px;
+  margin-bottom: 18px;
+}
+
+.sng-subtitle {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.55;
+  margin-bottom: 36px;
+}
+
+/* PROJECT CARD */
+.sng-project {
+  margin-bottom: 36px;
+}
+
+.sng-project-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #111;
+  text-align: center;
+  line-height: 1.35;
+  margin-bottom: 14px;
+  letter-spacing: 0.01em;
+}
+
+.sng-card {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+}
+
+.sng-card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 280px;
+}

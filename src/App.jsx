@@ -11,6 +11,7 @@ import Services from './Pages/Services/Services';
 import ServiceDetail from './Components/ServiceDetail/ServiceDetail';
 import AboutUs from './Pages/AboutUs/AboutUs';
 import SuburbDetail from './Components/SuburbDetail/SuburbDetail';
+import Gallery from '../src/Pages/Gallery/Gallery'
 
 const App = () => {
   useEffect(() => {
@@ -34,7 +35,7 @@ const App = () => {
               <Route path="/services/:slug" element={<ServiceDetail />} />
               <Route path="/about-company" element={<AboutUs />} />
               <Route path='/suburb-details' element={<SuburbDetail />} />
-              <Route path= '/gallery' element={<AboutUs/>} />
+              <Route path='/gallery' element={<Gallery/>} />
             </Route>
           </Routes>
         </Router>
