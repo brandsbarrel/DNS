@@ -34,6 +34,7 @@ const App = () => {
               <Route path="/services/:slug" element={<ServiceDetail />} />
               <Route path="/about-company" element={<AboutUs />} />
               <Route path='/suburb-details' element={<SuburbDetail />} />
+              <Route path= '/gallery' element={<AboutUs/>} />
             </Route>
           </Routes>
         </Router>

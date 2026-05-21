@@ -183,7 +183,7 @@ export default function ServiceCard2() {
                                     onClick={() => navigate(`/services/${service.slug}`)}
                                     aria-label={`More info about ${service.name}`}
                                 >
-                                    More Info &nbsp;→
+                                    More Info
                                 </button>
                             </div>
                         ))}
