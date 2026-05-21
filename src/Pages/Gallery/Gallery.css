@@ -1,147 +1,165 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body {
-  background: #f0ede8;
+body{
+  background:#f0ede8;
 }
 
-.sng-page {
-  background: #f0ede8;
-  min-height: 100vh;
-  font-family: 'Montserrat', sans-serif;
+.sng-page{
+  min-height:100vh;
+  background:#f0ede8;
+  font-family:'Montserrat',sans-serif;
 }
 
-/* NAV */
-.sng-nav {
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 24px;
-  height: 70px;
-  border-bottom: 1px solid #e5e2dd;
+/* NAVBAR */
+
+.sng-nav{
+  height:70px;
+  background:#fff;
+  border-bottom:1px solid #e6e2dc;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:0 24px;
 }
 
-.sng-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  line-height: 1;
+.sng-logo{
+  display:flex;
+  flex-direction:column;
+  line-height:1;
 }
 
-.sng-logo-top {
-  font-size: 26px;
-  font-weight: 900;
-  letter-spacing: 0.04em;
-  color: #111;
+.sng-logo-top{
+  font-size:28px;
+  font-weight:900;
+  color:#111;
 }
 
-.sng-logo-top span {
-  color: #d32f2f;
+.sng-logo-top span{
+  color:#d62828;
 }
 
-.sng-logo-sub {
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  color: #333;
-  margin-top: 1px;
-  border-top: 1.5px solid #111;
-  padding-top: 2px;
-  width: 100%;
-  text-align: center;
+.sng-logo-sub{
+  font-size:8px;
+  margin-top:2px;
+  letter-spacing:3px;
+  border-top:1px solid #111;
+  padding-top:3px;
+  text-align:center;
+  font-weight:700;
 }
 
-.sng-hamburger {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 6px;
+.sng-hamburger{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
 }
 
-.sng-hamburger span {
-  display: block;
-  width: 26px;
-  height: 2px;
-  background: #222;
-  border-radius: 1px;
+.sng-hamburger span{
+  width:26px;
+  height:2px;
+  background:#111;
 }
 
 /* CONTENT */
-.sng-content {
-  padding: 40px 28px 60px;
-  max-width: 600px;
-  margin: 0 auto;
+
+.sng-content{
+  max-width:1100px;
+  margin:auto;
+  padding:45px 25px 70px;
 }
 
-.sng-card {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
+.sng-gallery-title{
+  font-size:38px;
+  color:#d62828;
+  font-weight:800;
 }
 
-.sng-image {
-  width: 300px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
+.sng-title-underline{
+  width:60px;
+  height:4px;
+  background:#d62828;
+  margin-top:10px;
+  margin-bottom:18px;
 }
 
-.sng-gallery-title {
-  font-size: 35px;
-  font-weight: 600;
-  color: #d32f2f;
-  letter-spacing: -0.01em;
-  line-height: 1;
-  text-transform: uppercase;
+.sng-subtitle{
+  font-size:16px;
+  color:#444;
+  line-height:1.6;
+  margin-bottom:45px;
 }
 
-.sng-title-underline {
-  width: 56px;
-  height: 3px;
-  background: #d32f2f;
-  margin-top: 10px;
-  margin-bottom: 18px;
+/* PROJECT */
+
+.sng-project{
+  margin-bottom:50px;
 }
 
-.sng-subtitle {
-  font-size: 15px;
-  font-weight: 500;
-  color: #333;
-  line-height: 1.55;
-  margin-bottom: 36px;
+.sng-project-title{
+  text-align:center;
+  margin-bottom:18px;
+  font-size:22px;
+  font-weight:800;
+  line-height:1.4;
 }
 
-/* PROJECT CARD */
-.sng-project {
-  margin-bottom: 36px;
+/* IMAGE CONTAINER */
+
+.sng-card{
+  display:flex;
+  gap:15px;
+  overflow:visible;
 }
 
-.sng-project-title {
-  font-size: 20px;
-  font-weight: 800;
-  color: #111;
-  text-align: center;
-  line-height: 1.35;
-  margin-bottom: 14px;
-  letter-spacing: 0.01em;
+/* IMAGE */
+
+.sng-image{
+  width:50%;
+  height:320px;
+
+  object-fit:cover;
+  display:block;
+
+  border-radius:20px;
+
+  box-shadow:
+  0 4px 24px rgba(0,0,0,.12);
 }
 
-.sng-card {
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+/* MOBILE */
+
+@media(max-width:768px){
+
+.sng-content{
+padding:35px 18px 50px;
 }
 
-.sng-card img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-  height: 280px;
+.sng-gallery-title{
+font-size:32px;
+}
+
+.sng-project-title{
+font-size:18px;
+}
+
+.sng-card{
+gap:10px;
+}
+
+/* keep two images side by side on phone */
+.sng-image{
+width:50%;
+height:170px;
+border-radius:16px;
+}
+
 }
