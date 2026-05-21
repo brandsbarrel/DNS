@@ -2,9 +2,12 @@ import "./HowItWorks.css";
 import { MapPin } from "lucide-react";
 import how_img from "../../assets/how_img.jpeg";
 import how_it_works from "../../assets/how_it_works.jpeg";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import StatsSection from "../StatsSection/StatsSection";
-import what_our_cus_say  from "../../assets/what_our_cus_say.jpeg"
+import what_our_cus_say_home  from "../../assets/what_our_cus_say.jpeg"
+import what_our_cus_say_about  from "../../assets/what_our_cus_say_about.jpeg"
+
+
 
 const areas = [
   "Ryde",
@@ -26,6 +29,7 @@ const handleClick = () => {
 
 export default function HowItWorks() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <>
@@ -35,11 +39,13 @@ export default function HowItWorks() {
       </section>
 
       <section className="how-img">
+        
         <img src={how_img} alt="Our work" />
       </section>
       <StatsSection/>
       <section className="home_what_our_cus_say" >
-      <img className="how_it_works_img" src={what_our_cus_say} />
+      {location.pathname==="/" && <img className="how_it_works_img" src={what_our_cus_say_home} />}
+      {location.pathname==="/about-company" && <img className="how_it_works_img" src={what_our_cus_say_about} />}
       <button className="How_quote_btn how__btn--full">Read More Testimonials</button>
       </section>
       <section className="works_steps2">

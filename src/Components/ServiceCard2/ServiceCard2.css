@@ -164,7 +164,7 @@
   width: calc(100% - 24px);
   border-radius: 12px;
   overflow: hidden;
-  margin: 0 12px 18px;
+  margin: 0 12px 0px;
   flex: 1;
 }
 
@@ -178,14 +178,14 @@
 
 /* ── More Info Button ── */
 .sc2-more-btn {
-  width: calc(100% - 24px);
-  padding: 14px 20px;
-  background: #4caf50;
+  width: 40%;
+  padding: 14px 10px;
+  background: #cc1111;
   color: #fff;
   font-size: 1rem;
   font-weight: 700;
   border: none;
-  border-radius: 10px;
+  border-radius: 25px;
   cursor: pointer;
   letter-spacing: 0.03em;
   transition: background 0.2s ease, transform 0.15s ease;
@@ -196,7 +196,7 @@
 }
 
 .sc2-more-btn:hover {
-  background: #388e3c;
+  background: #8f0c0c;
   transform: scale(1.02);
 }
 
