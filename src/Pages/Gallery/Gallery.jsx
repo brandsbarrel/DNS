@@ -16,21 +16,21 @@ export default function Gallery() {
       site: "Balmainshores Site:",
       location:
         "Corner of Victoria Road and\nTerry Street Rozelle",
-      image: [bg1, bg2],
+      image: [bg1],
     },
 
     {
       id: 2,
       site: "Topiary trees is an art:",
       location: "",
-      image: [ta1, ta2],
+      image: [ta2, ta1],
     },
 
     {
       id: 3,
       site: "Mowing:",
       location: "",
-      image: [mg1, mg2],
+      image: [mg2, mg1],
     },
   ];
 

@@ -120,19 +120,23 @@ body{
   overflow:visible;
 }
 
-/* IMAGE */
+/* DEFAULT: two images side by side */
 
 .sng-image{
   width:50%;
   height:320px;
-
   object-fit:cover;
   display:block;
-
   border-radius:20px;
 
   box-shadow:
   0 4px 24px rgba(0,0,0,.12);
+}
+
+/* if only one image exists */
+
+.sng-image:only-child{
+  width:100%;
 }
 
 /* MOBILE */
@@ -140,26 +144,31 @@ body{
 @media(max-width:768px){
 
 .sng-content{
-padding:35px 18px 50px;
+  padding:35px 18px 50px;
 }
 
 .sng-gallery-title{
-font-size:32px;
+  font-size:32px;
 }
 
 .sng-project-title{
-font-size:18px;
+  font-size:18px;
 }
 
 .sng-card{
-gap:10px;
+  gap:10px;
 }
 
-/* keep two images side by side on phone */
 .sng-image{
-width:50%;
-height:170px;
-border-radius:16px;
+  width:50%;
+  height:170px;
+  border-radius:16px;
+}
+
+/* single image on mobile too */
+
+.sng-image:only-child{
+  width:100%;
 }
 
 }
