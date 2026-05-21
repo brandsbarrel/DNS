@@ -10,7 +10,6 @@ const AboutUs = () => {
             <WelcomeText />
             <WhyChooseUs />
             <HowItWorks />
-            <WhyChooseUs/>
         </>
     );
 };
