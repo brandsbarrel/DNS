@@ -3,6 +3,8 @@ import { MapPin } from "lucide-react";
 import how_img from "../../assets/how_img.jpeg";
 import how_it_works from "../../assets/how_it_works.jpeg";
 import { useNavigate } from "react-router-dom";
+import StatsSection from "../StatsSection/StatsSection";
+import what_our_cus_say  from "../../assets/what_our_cus_say.jpeg"
 
 const areas = [
   "Ryde",
@@ -35,7 +37,11 @@ export default function HowItWorks() {
       <section className="how-img">
         <img src={how_img} alt="Our work" />
       </section>
-
+      <StatsSection/>
+      <section className="home_what_our_cus_say" >
+      <img className="how_it_works_img" src={what_our_cus_say} />
+      <button className="How_quote_btn how__btn--full">Read More Testimonials</button>
+      </section>
       <section className="works_steps2">
         <div className="areas_back">
           <div className="headingWrap">

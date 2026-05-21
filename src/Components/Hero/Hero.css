@@ -12,7 +12,10 @@
     overflow: hidden;
     z-index: 0;
 }
-
+.hero{
+    padding-top: 80px !important;
+    margin-top:0 !important;
+}
 .hero + * {
     margin-top: 100vh;
 }
@@ -44,6 +47,7 @@
 }
 
 .hero__mobile-layout {
+    border-top: 10px solid #415d2f;
     display: none !important;
 }
 
