@@ -179,11 +179,11 @@
 /* ── More Info Button ── */
 .sc2-more-btn {
   width: 40%;
-  padding: 14px 10px;
+  padding: 9px 6px;
   background: #cc1111;
   color: #fff;
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: 500;
   border: none;
   border-radius: 25px;
   cursor: pointer;
