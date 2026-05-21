@@ -135,8 +135,8 @@ export default function ServiceCard2() {
 
                     {/* ── Heading (screenshot style) ── */}
                     <div className="sc2-header">
-                        <div className="sc2-header-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                        <div className="ServiceCard__header-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
                             </svg>
                         </div>
