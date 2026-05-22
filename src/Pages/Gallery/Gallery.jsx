@@ -20,6 +20,15 @@ import bc5 from "../../assets/BC5.jpeg";
 import bc6 from "../../assets/BC6.jpeg";
 import bc7 from "../../assets/BC7.jpeg";
 import bc8 from "../../assets/BC8.jpeg";
+import bc9 from "../../assets/BC9.jpeg";
+
+import us1 from "../../assets/US1.jpeg";
+import us2 from "../../assets/US2.jpeg";
+import us3 from "../../assets/US3.jpeg";
+import us4 from "../../assets/US4.jpeg";
+import us5 from "../../assets/US5.jpeg";
+import us6 from "../../assets/US6.jpeg";
+import us7 from "../../assets/US7.jpeg";
 
 export default function Gallery() {
   const projects = [
@@ -65,9 +74,31 @@ export default function Gallery() {
       location: "Foreshore water front area",
       image: [],
       imageSingle: bc,
-      imagePairs: [[bc2, bc3], [bc4, bc5], [bc6, bc7], [bc8]],
+      imagePairs: [[bc2, bc3]],
       showLabel: true,
       align: "center",
+    },
+
+    {
+      id: 6,
+      site: "Balmain Cove site",
+      location: "",
+      image: [],
+      imageSingle: null,
+      imagePairs: [[bc9, bc4], [bc5, bc6], [bc7, bc8]],
+      showLabel: false,
+      align: "left",
+    },
+
+    {
+      id: 7,
+      site: "Union site",
+      location: "",
+      image: [],
+      imageSingle: null,
+      imagePairs: [[us1, us2], [us3, us4], [us5, us6], [us7]],
+      showLabel: false,
+      align: "left",
     },
   ];
 
@@ -156,15 +187,17 @@ export default function Gallery() {
               )}
             </div>
 
-            {project.imageSingle && (
+            {project.imagePairs && (
               <>
-                <div className="sng-card" style={{ marginBottom: "15px" }}>
-                  <img
-                    src={project.imageSingle}
-                    alt={project.site}
-                    className="sng-image"
-                  />
-                </div>
+                {project.imageSingle && (
+                  <div className="sng-card" style={{ marginBottom: "15px" }}>
+                    <img
+                      src={project.imageSingle}
+                      alt={project.site}
+                      className="sng-image"
+                    />
+                  </div>
+                )}
 
                 {project.imagePairs.map((pair, pairIndex) => (
                   <div
