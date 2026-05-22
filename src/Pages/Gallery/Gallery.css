@@ -106,7 +106,7 @@ body{
 
 /* LEFT-ALIGNED, reduced bottom gap */
 .sng-project-title{
-  text-align:left;
+  text-align:center;
   margin-bottom:8px;
   font-size:22px;
   font-weight:800;

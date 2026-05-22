@@ -14,9 +14,10 @@ export default function Gallery() {
     {
       id: 1,
       site: "Balmainshores Site:",
-      location:
-        "Corner of Victoria Road and\nTerry Street Rozelle",
+      location: "Corner of Victoria Road and\nTerry Street Rozelle",
       image: [bg1],
+      showLabel: true,
+      align: "center",
     },
 
     {
@@ -24,6 +25,8 @@ export default function Gallery() {
       site: "Topiary trees is an art:",
       location: "",
       image: [ta2, ta1],
+      showLabel: false,
+      align: "left",
     },
 
     {
@@ -31,6 +34,8 @@ export default function Gallery() {
       site: "Mowing:",
       location: "",
       image: [mg2, mg1],
+      showLabel: false,
+      align: "left",
     },
   ];
 
@@ -76,9 +81,13 @@ export default function Gallery() {
             className="sng-project"
             key={project.id}
           >
-            <div className="sng-project-title">
-
-              <span className="sng-project-label">Project:</span>
+            <div
+              className="sng-project-title"
+              style={{ textAlign: project.align }}
+            >
+              {project.showLabel && (
+                <span className="sng-project-label">Project: </span>
+              )}
 
               {project.site}
 
