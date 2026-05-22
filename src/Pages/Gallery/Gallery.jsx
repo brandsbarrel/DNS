@@ -66,7 +66,7 @@ export default function Gallery() {
       image: [],
       imageSingle: bc,
       imagePairs: [[bc2, bc3], [bc4, bc5], [bc6, bc7], [bc8]],
-      showLabel: false,
+      showLabel: true,
       align: "center",
     },
   ];
@@ -135,8 +135,8 @@ export default function Gallery() {
 
                         {i !==
                           project.location.split("\n").length - 1 && (
-                            <br />
-                          )}
+                          <br />
+                        )}
                       </span>
                     ))}
                 </>
