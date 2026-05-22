@@ -9,6 +9,9 @@ import ta2 from "../../assets/ta2.jpeg";
 import mg1 from "../../assets/mg1.jpeg";
 import mg2 from "../../assets/mg2.jpeg";
 
+import ga1 from "../../assets/GA1.jpeg";
+import ga2 from "../../assets/GA2.jpeg";
+
 export default function Gallery() {
   const projects = [
     {
@@ -34,6 +37,15 @@ export default function Gallery() {
       site: "Mowing:",
       location: "",
       image: [mg2, mg1],
+      showLabel: false,
+      align: "left",
+    },
+
+    {
+      id: 4,
+      site: "Granular and liquid fertilising:",
+      location: "",
+      image: [ga1, ga2],
       showLabel: false,
       align: "left",
     },
