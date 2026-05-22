@@ -78,6 +78,8 @@ export default function Gallery() {
           >
             <div className="sng-project-title">
 
+              <span className="sng-project-label">Project:</span>
+
               {project.site}
 
               {project.location && (
