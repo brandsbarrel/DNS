@@ -51,6 +51,29 @@ import bi2 from "../../assets/BI2.jpeg";
 import bt1 from "../../assets/BT1.jpeg";
 import bt2 from "../../assets/BT2.jpeg";
 
+import av1 from "../../assets/AV1.jpeg";
+import av2 from "../../assets/AV2.jpeg";
+import av3 from "../../assets/AV3.jpeg";
+import av4 from "../../assets/AV4.jpeg";
+import av5 from "../../assets/AV5.jpeg";
+
+import as1 from "../../assets/AS1.jpeg";
+import as2 from "../../assets/AS2.jpeg";
+import as3 from "../../assets/AS3.jpeg";
+import as4 from "../../assets/AS4.jpeg";
+
+import mm1 from "../../assets/MM1.jpeg";
+
+import mgs1 from "../../assets/MGS1.jpeg";
+import mgs2 from "../../assets/MGS2.jpeg";
+import mgs3 from "../../assets/MGS3.jpeg";
+import mgs4 from "../../assets/MGS4.jpeg";
+import mgs5 from "../../assets/MGS5.jpeg";
+import mgs6 from "../../assets/MGS6.jpeg";
+
+import mi1 from "../../assets/MI1.jpeg";
+import mi2 from "../../assets/MI2.jpeg";
+
 export default function Gallery() {
   const projects = [
     {
@@ -173,6 +196,61 @@ export default function Gallery() {
       image: [],
       imageSingle: null,
       imagePairs: [[bt1, bt2]],
+      showLabel: false,
+      align: "left",
+    },
+
+    {
+      id: 13,
+      site: "Avista site",
+      location: "",
+      image: [],
+      imageSingle: null,
+      imagePairs: [[av1, av2], [av3, av4], [av5]],
+      showLabel: false,
+      align: "left",
+    },
+
+    {
+      id: 14,
+      site: "Avista site: Application of mulch to garden areas",
+      location: "",
+      image: [],
+      imageSingle: null,
+      imagePairs: [[as1, as2], [as3, as4]],
+      showLabel: false,
+      align: "left",
+    },
+
+    {
+      id: 15,
+      site: "Marsfield Gardens Site: Mowing Epping Road",
+      location: "",
+      image: [],
+      imageSingle: mm1,
+      imagePairs: [],
+      showLabel: true,
+      align: "center",
+    },
+
+    {
+      id: 16,
+      site: "Marsfield Gardens Site",
+      location: "",
+      image: [],
+      imageSingle: null,
+      imagePairs: [[mgs1, mgs2], [mgs3, mgs4], [mgs5, mgs6]],
+      showLabel: false,
+      align: "left",
+    },
+
+    {
+      id: 17,
+      site: "Marsfield Gardens Site Irrigation repairs",
+      location: "",
+      image: [],
+      imageSingle: null,
+      imagePairs: [[mi1, mi2]],
       showLabel: false,
       align: "left",
     },
