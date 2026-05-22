@@ -12,6 +12,7 @@ import ServiceDetail from './Components/ServiceDetail/ServiceDetail';
 import AboutUs from './Pages/AboutUs/AboutUs';
 import SuburbDetail from './Components/SuburbDetail/SuburbDetail';
 import Gallery from '../src/Pages/Gallery/Gallery'
+import Testimonials from './Pages/Testimonials/Testimonials';
 
 const App = () => {
   useEffect(() => {
@@ -36,6 +37,7 @@ const App = () => {
               <Route path="/about-company" element={<AboutUs />} />
               <Route path='/suburb-details' element={<SuburbDetail />} />
               <Route path='/gallery' element={<Gallery/>} />
+              <Route path='/testimonials' element={<Testimonials/>}/>
             </Route>
           </Routes>
         </Router>
