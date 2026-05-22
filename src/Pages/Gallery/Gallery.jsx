@@ -12,6 +12,15 @@ import mg2 from "../../assets/mg2.jpeg";
 import ga1 from "../../assets/GA1.jpeg";
 import ga2 from "../../assets/GA2.jpeg";
 
+import bc from "../../assets/BC.jpeg";
+import bc2 from "../../assets/BC2.jpeg";
+import bc3 from "../../assets/BC3.jpeg";
+import bc4 from "../../assets/BC4.jpeg";
+import bc5 from "../../assets/BC5.jpeg";
+import bc6 from "../../assets/BC6.jpeg";
+import bc7 from "../../assets/BC7.jpeg";
+import bc8 from "../../assets/BC8.jpeg";
+
 export default function Gallery() {
   const projects = [
     {
@@ -48,6 +57,17 @@ export default function Gallery() {
       image: [ga1, ga2],
       showLabel: false,
       align: "left",
+    },
+
+    {
+      id: 5,
+      site: "Balmain Cove:",
+      location: "Foreshore water front area",
+      image: [],
+      imageSingle: bc,
+      imagePairs: [[bc2, bc3], [bc4, bc5], [bc6, bc7], [bc8]],
+      showLabel: false,
+      align: "center",
     },
   ];
 
@@ -115,8 +135,8 @@ export default function Gallery() {
 
                         {i !==
                           project.location.split("\n").length - 1 && (
-                          <br />
-                        )}
+                            <br />
+                          )}
                       </span>
                     ))}
                 </>
@@ -135,6 +155,35 @@ export default function Gallery() {
                 )
               )}
             </div>
+
+            {project.imageSingle && (
+              <>
+                <div className="sng-card" style={{ marginBottom: "15px" }}>
+                  <img
+                    src={project.imageSingle}
+                    alt={project.site}
+                    className="sng-image"
+                  />
+                </div>
+
+                {project.imagePairs.map((pair, pairIndex) => (
+                  <div
+                    className="sng-card"
+                    key={pairIndex}
+                    style={{ marginBottom: "15px" }}
+                  >
+                    {pair.map((img, index) => (
+                      <img
+                        key={index}
+                        src={img}
+                        alt={project.site}
+                        className="sng-image"
+                      />
+                    ))}
+                  </div>
+                ))}
+              </>
+            )}
           </div>
         ))}
       </div>
