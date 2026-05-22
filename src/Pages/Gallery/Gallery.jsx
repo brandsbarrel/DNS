@@ -30,6 +30,27 @@ import us5 from "../../assets/US5.jpeg";
 import us6 from "../../assets/US6.jpeg";
 import us7 from "../../assets/US7.jpeg";
 
+import ua1 from "../../assets/UA1.jpeg";
+import ua2 from "../../assets/UA2.jpeg";
+import ua3 from "../../assets/UA3.jpeg";
+import ua4 from "../../assets/UA4.jpeg";
+import ua5 from "../../assets/UA5.jpeg";
+
+import ui1 from "../../assets/UI1.jpeg";
+import ui2 from "../../assets/UI2.jpeg";
+import ui3 from "../../assets/UI3.jpeg";
+import ui4 from "../../assets/UI4.jpeg";
+
+import bsf1 from "../../assets/BSF1.jpeg";
+import bsf2 from "../../assets/BSF2.jpeg";
+import bsf3 from "../../assets/BSF3.jpeg";
+
+import bi1 from "../../assets/BI1.jpeg";
+import bi2 from "../../assets/BI2.jpeg";
+
+import bt1 from "../../assets/BT1.jpeg";
+import bt2 from "../../assets/BT2.jpeg";
+
 export default function Gallery() {
   const projects = [
     {
@@ -97,6 +118,61 @@ export default function Gallery() {
       image: [],
       imageSingle: null,
       imagePairs: [[us1, us2], [us3, us4], [us5, us6], [us7]],
+      showLabel: false,
+      align: "left",
+    },
+
+    {
+      id: 8,
+      site: "Union site: Application of soft fall mulch and application of mulch to garden beds",
+      location: "",
+      image: [],
+      imageSingle: null,
+      imagePairs: [[ua1, ua2], [ua3, ua4], [ua5]],
+      showLabel: false,
+      align: "left",
+    },
+
+    {
+      id: 9,
+      site: "Union site: Irrigation repairs",
+      location: "",
+      image: [],
+      imageSingle: null,
+      imagePairs: [[ui1, ui2], [ui3, ui4]],
+      showLabel: false,
+      align: "left",
+    },
+
+    {
+      id: 10,
+      site: "Balmainshores site: Stage 3 Foreshore water front area",
+      location: "",
+      image: [],
+      imageSingle: null,
+      imagePairs: [[bsf1, bsf2], [bsf3]],
+      showLabel: false,
+      align: "left",
+    },
+
+    {
+      id: 11,
+      site: "Balmainshores site: Stage 3 - irrigation repairs",
+      location: "",
+      image: [],
+      imageSingle: null,
+      imagePairs: [[bi1, bi2]],
+      showLabel: false,
+      align: "left",
+    },
+
+    {
+      id: 12,
+      site: "Balmainshores site: Stage 3 Turf Restoration",
+      location: "",
+      image: [],
+      imageSingle: null,
+      imagePairs: [[bt1, bt2]],
       showLabel: false,
       align: "left",
     },
