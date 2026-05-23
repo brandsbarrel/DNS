@@ -1,172 +1,194 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { submitContactForm, resetContactState } from "../../store/slices/contactSlice";
 import "./ContactUs.css";
-import hero from "../../assets/6.jpeg";
-import { FaPhoneAlt, FaEnvelope, FaBuilding } from "react-icons/fa";
-import { Helmet } from "react-helmet-async";
-
-function validate({ name, email, phone, message }) {
-    if (!name.trim()) return "Name is required.";
-    if (!email.trim()) return "Email is required.";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-        return "Enter a valid email address.";
-    if (!phone.trim()) return "Phone number is required.";
-    if (!message.trim()) return "Message cannot be empty.";
-    return "";
-}
 
 export default function ContactUs() {
-    const dispatch = useDispatch();
 
-    const { loading, successMsg, errorMsg } = useSelector((state) => state.contact);
-
-    const [form, setForm] = useState({
+    const [formData, setFormData] = useState({
         name: "",
         email: "",
         phone: "",
         message: "",
     });
-    const [localError, setLocalError] = useState("");
 
-    function handleChange(e) {
-        const { name, value } = e.target;
-        setForm((prev) => ({ ...prev, [name]: value }));
-        setLocalError("");
-        if (successMsg || errorMsg) {
-            dispatch(resetContactState());
-        }
-    }
+    const [status, setStatus] = useState(null); // null | "loading" | "success" | "error"
 
-    async function handleSubmit(e) {
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setStatus("loading");
 
-        const err = validate(form);
-        if (err) { setLocalError(err); return; }
+        try {
+            // ─── API CONNECT HERE ───────────────────────────
+            // Replace the URL and body with your API details
+            const response = await fetch("https://your-api-endpoint.com/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+            // ────────────────────────────────────────────────
 
-        const result = await dispatch(submitContactForm(form));
-
-        if (submitContactForm.fulfilled.match(result)) {
-            setForm({ name: "", email: "", phone: "", message: "" });
-            setLocalError("");
+            if (response.ok) {
+                setStatus("success");
+                setFormData({ name: "", email: "", phone: "", message: "" });
+            } else {
+                setStatus("error");
+            }
+        } catch (error) {
+            console.error("Form submission error:", error);
+            setStatus("error");
         }
-    }
+    };
 
     return (
-        <section className="contact-page">
+        <div className="contact-page">
 
-            <Helmet><title>Contact us</title></Helmet>
+            {/* NAV */}
+            <nav className="sng-nav">
+                <div className="sng-logo">
+                    <div className="sng-logo-top">SN<span>G</span></div>
+                    <div className="sng-logo-sub">— MAINTENANCE —</div>
+                </div>
+            </nav>
 
-            <div
-                className="contact-hero"
-                style={{ backgroundImage: `url(${hero})` }}
-            >
-                <div className="contact-hero-overlay">
-                    <h1>Contact us</h1>
-                    <p>
-                        Connect with us for more information about our
-                        Caravan / Boat / Bus storage
+            {/* HEADING */}
+            <div className="contact-heading">
+                <h1>Contact <span>Us</span></h1>
+                <div className="contact-underline" />
+                <p className="contact-subtitle">
+                    Get in touch with us — we'd love to hear from you.
+                </p>
+            </div>
+
+            {/* CONTACT CARDS */}
+            <div className="contact-cards">
+
+                {/* ADDRESS */}
+                <div className="contact-card">
+                    <div className="contact-icon-wrap">
+                        <div className="contact-icon-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="32" height="32">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h2 className="contact-card-title">Address</h2>
+                    <p className="contact-card-text">
+                        U33-94/116 Culloden Road<br />
+                        Marsfield NSW 2122 Australia
                     </p>
                 </div>
-                <img src={hero} alt="hero" className="mobile-hero-img" />
-            </div>
 
-            <div className="contact-intro">
-                <div className="contact-cards">
-
-                    <div className="contact-card">
-                        <div className="card-icon"><FaPhoneAlt /></div>
-                        <h4>Call Us Directly</h4>
-                        <span><a href="tel:0412260525">0412 260 525 - Jimmy</a></span>
-                        <span><a href="tel:0402438063">0402 438 063 - Sean</a></span>
+                {/* EMAIL */}
+                <div className="contact-card">
+                    <div className="contact-icon-wrap">
+                        <div className="contact-icon-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="32" height="32">
+                                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </div>
                     </div>
-
-                    <div className="contact-card">
-                        <div className="card-icon"><FaEnvelope /></div>
-                        <h4>Email Support</h4>
-                        <span>
-                            <a href="mailto:info@caravanstorage.com.au">
-                                info@caravanstorage.com.au
-                            </a>
-                        </span>
-                    </div>
-
-                    <div className="contact-card">
-                        <div className="card-icon"><FaBuilding /></div>
-                        <h4>Visit Our</h4>
-                        <h4>location in real life</h4>
-                        <span>77 Lakes Rd, Tuggerah, NSW 2259</span>
-                    </div>
-
+                    <h2 className="contact-card-title">Email Us</h2>
+                    <p className="contact-card-text">
+                        <a href="mailto:info@dnsmaintenance.com.au" className="contact-link">
+                            info@dnsmaintenance.com.au
+                        </a>
+                    </p>
                 </div>
+
+                {/* PHONE */}
+                <div className="contact-card">
+                    <div className="contact-icon-wrap">
+                        <div className="contact-icon-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="32" height="32">
+                                <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h2 className="contact-card-title">Call Us</h2>
+                    <p className="contact-card-text">
+                        <a href="tel:+61200000000" className="contact-link">
+                            +61 2 0000 0000
+                        </a>
+                    </p>
+                </div>
+
             </div>
 
+            {/* CONTACT FORM */}
             <div className="contact-form-section">
-                <h3>Let's Get In Touch</h3>
+                <h2 className="contact-form-title">Send Us a <span>Message</span></h2>
+                <div className="contact-form-underline" />
 
                 <form className="contact-form" onSubmit={handleSubmit} noValidate>
 
                     <div className="form-row">
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Name"
-                            value={form.name}
-                            onChange={handleChange}
-                            disabled={loading}
-                        />
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="Your Mail"
-                            value={form.email}
-                            onChange={handleChange}
-                            disabled={loading}
-                        />
+                        <div className="form-group">
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Your Mail"
+                                value={formData.email}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
                     </div>
 
-                    <div className="form-row">
+                    <div className="form-group">
                         <input
-                            type="text"
+                            type="tel"
                             name="phone"
                             placeholder="Phone"
-                            value={form.phone}
+                            value={formData.phone}
                             onChange={handleChange}
-                            disabled={loading}
                         />
                     </div>
 
-                    <textarea
-                        name="message"
-                        placeholder="Enter your message here..."
-                        value={form.message}
-                        onChange={handleChange}
-                        disabled={loading}
-                    />
+                    <div className="form-group">
+                        <textarea
+                            name="message"
+                            rows="5"
+                            placeholder="Enter your message here..."
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
 
-                    {localError && (
-                        <p className="form-error">{localError}</p>
+                    {/* STATUS MESSAGES */}
+                    {status === "success" && (
+                        <p className="form-status success">✓ Message sent successfully!</p>
+                    )}
+                    {status === "error" && (
+                        <p className="form-status error">✗ Something went wrong. Please try again.</p>
                     )}
 
-                    {errorMsg && !localError && (
-                        <p className="form-error">{errorMsg}</p>
-                    )}
-
-                    {successMsg && (
-                        <p className="form-success">✓ {successMsg}</p>
-                    )}
-
-                    <button type="submit" disabled={loading}>
-                        {loading ? (
-                            <><span className="btn-spinner" /> Sending…</>
-                        ) : (
-                            "Send Request"
-                        )}
+                    <button
+                        className="contact-submit-btn"
+                        type="submit"
+                        disabled={status === "loading"}
+                    >
+                        {status === "loading" ? "Sending..." : "Send Message →"}
                     </button>
 
                 </form>
             </div>
 
-        </section>
+        </div>
     );
 }

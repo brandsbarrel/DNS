@@ -26,12 +26,7 @@ export default function Testimonials() {
                         — MAINTENANCE —
                     </div>
                 </div>
-
-                <div className="sng-hamburger">
-                    <span />
-                    <span />
-                    <span />
-                </div>
+                {/* 3 lines (hamburger) removed */}
             </nav>
 
             {/* CONTENT */}
@@ -44,9 +39,10 @@ export default function Testimonials() {
                     className="testi-hero"
                 />
 
-                {/* HEADING */}
+                {/* HEADING - 2 lines */}
                 <div className="testi-heading">
-                    <h1>Trusted by Clients, <span>Proven by Results</span></h1>
+                    <h1>Trusted by Clients,</h1>
+                    <h1><span>Proven by Results</span></h1>
                 </div>
 
                 <div className="testi-underline" />
@@ -56,7 +52,7 @@ export default function Testimonials() {
                     them have to say about working with SNG Maintenance.
                 </p>
 
-                {/* TESTIMONIAL IMAGES ONE BY ONE */}
+                {/* TESTIMONIAL IMAGES */}
                 {testimonials.map((img, index) => (
                     <div className="testi-item" key={index}>
                         <img
@@ -67,7 +63,7 @@ export default function Testimonials() {
                     </div>
                 ))}
 
-                {/* CTA BANNER - image with button overlay */}
+                {/* CTA BANNER */}
                 <div className="testi-cta">
                     <img
                         src={testi5}

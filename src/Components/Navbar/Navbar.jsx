@@ -112,7 +112,7 @@ export default function Navbar() {
 
                     <li>
                         <Link
-                            to="/"
+                            to="/contact-us"
                             onClick={() => {
                                 closeMenu();
                                 handleClick();
