@@ -10,13 +10,7 @@ import what_our_cus_say_about  from "../../assets/what_our_cus_say_about.jpeg"
 
 
 const areas = [
-  "Ryde",
-  "Meadowbank",
-  "Gladesville",
-  "Parramatta",
-  "Inner West",
-  "Hills District",
-  "Northern Suburbs",
+  "Eastern suburbs", "western suburbs", "northern beaches", "north west"
 ];
 
 

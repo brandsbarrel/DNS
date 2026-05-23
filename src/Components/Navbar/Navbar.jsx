@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import Logo from "../../assets/SNG_red.png"
+import Logo from "../../assets/SNG_red.png";
 import { UserContext } from "../../context/UserContext";
 
 export default function Navbar() {
@@ -13,7 +13,7 @@ export default function Navbar() {
         window.scrollTo({
             top: 0,
             behavior: "smooth"
-        })
+        });
     };
 
     const closeMenu = () => setMenuOpen(false);
@@ -24,6 +24,7 @@ export default function Navbar() {
         };
 
         window.addEventListener("scroll", handleScroll);
+
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
@@ -33,46 +34,104 @@ export default function Navbar() {
 
     return (
         <header className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
+
+            {/* Bottom Line */}
+            {!scrolled && <div className="navbar__bottomLine"></div>}
+
             <nav className="container navbar__inner">
+
                 <Link to="/" className="navbar__logo">
                     <img alt="SNG Logo" src={Logo} />
                 </Link>
 
                 <ul className={`navbar__links ${menuOpen ? "open" : ""}`}>
                     <li>
-                        <Link to="/" onClick={() => { closeMenu(), handleClick(), setUser("Home") }}>
+                        <Link
+                            to="/"
+                            onClick={() => {
+                                closeMenu();
+                                handleClick();
+                                setUser("Home");
+                            }}
+                        >
                             Home
                         </Link>
                     </li>
+
                     <li>
-                        <Link to="/about-company" onClick={() => { closeMenu(), handleClick(), setUser("About company") }}>
+                        <Link
+                            to="/about-company"
+                            onClick={() => {
+                                closeMenu();
+                                handleClick();
+                                setUser("About company");
+                            }}
+                        >
                             About company
                         </Link>
                     </li>
+
                     <li>
-                        <Link to="/services" onClick={() => { closeMenu(), handleClick(), setUser("Services") }}
+                        <Link
+                            to="/services"
+                            onClick={() => {
+                                closeMenu();
+                                handleClick();
+                                setUser("Services");
+                            }}
                         >
                             Services
                         </Link>
                     </li>
+
                     <li>
-                        <Link to="/gallery" onClick={() => { closeMenu(), handleClick(), setUser("Gallery") }}>
+                        <Link
+                            to="/gallery"
+                            onClick={() => {
+                                closeMenu();
+                                handleClick();
+                                setUser("Gallery");
+                            }}
+                        >
                             Gallery
                         </Link>
                     </li>
+
                     <li>
-                        <Link to="/testimonials" onClick={() => { closeMenu(), handleClick(), setUser("Testimonials") }}>
+                        <Link
+                            to="/testimonials"
+                            onClick={() => {
+                                closeMenu();
+                                handleClick();
+                                setUser("Testimonials");
+                            }}
+                        >
                             Testimonials
                         </Link>
                     </li>
+
                     <li>
-                        <Link to="/" onClick={() => { closeMenu(), handleClick(), setUser("Contact us") }}>
+                        <Link
+                            to="/"
+                            onClick={() => {
+                                closeMenu();
+                                handleClick();
+                                setUser("Contact us");
+                            }}
+                        >
                             Contact us
                         </Link>
                     </li>
                 </ul>
 
-                <Link to="/" onClick={() => { handleClick(), setUser("Check Availability") }} className="btn-primary navbar__cta">
+                <Link
+                    to="/"
+                    onClick={() => {
+                        handleClick();
+                        setUser("Check Availability");
+                    }}
+                    className="btn-primary navbar__cta"
+                >
                     Check Availability
                 </Link>
 
