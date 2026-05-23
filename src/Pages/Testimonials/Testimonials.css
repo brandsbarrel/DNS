@@ -2,7 +2,7 @@
 
 .testi-page{
   min-height:100vh;
-  background:#f0ede8;
+  background:#E7EAD9;
   font-family:'Montserrat',sans-serif;
 }
 
@@ -10,6 +10,8 @@
 
 .testi-content{
   max-width:1100px;
+  background: #E7EAD9;
+  margin-bottom: 25px;
 }
 
 /* HERO IMAGE */
@@ -90,11 +92,19 @@
   overflow:hidden;
 }
 
-.testi-cta-img{
+.testi-cta-img2{
   width:100%;
   display:block;
   /* border-radius:20px; */
 }
+
+.testi-cta-img1{
+  width:100%;
+  display:block;
+  margin-bottom: 30px;
+  /* border-radius:20px; */
+}
+
 
 .testi-cta-btn{
   position:absolute;

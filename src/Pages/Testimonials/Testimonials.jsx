@@ -7,6 +7,7 @@ import testi4 from "../../assets/Testi4.jpeg";
 import testi5 from "../../assets/Testi5.jpeg";
 import WhyChooseUs from "../../Components/WhyChooseUs/WhyChooseUs";
 import how_it_works from "../../assets/how_it_works.jpeg";
+import testi6 from "../../assets/Testi6.jpeg"
 
 export default function Testimonials() {
 
@@ -71,11 +72,16 @@ export default function Testimonials() {
                     <img
                         src={testi5}
                         alt="CTA"
-                        className="testi-cta-img"
+                        className="testi-cta-img1"
                     />
                     <a href="/contact" className="testi-cta-btn">
                         Get a Free Quote →
                     </a>
+                    <img
+                        src={testi6}
+                        alt="CTA"
+                        className="testi-cta-img2"
+                    />
                 </div>
 
             </div>
