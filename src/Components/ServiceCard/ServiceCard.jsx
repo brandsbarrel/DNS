@@ -1,15 +1,16 @@
 import { useEffect, useRef, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ServiceCard.css";
-import prm from "../../assets/prm.jpeg"
-import mowing from "../../assets/mowing.jpeg"
-import sfl from "../../assets/sfl.jpeg"
-import sgm from "../../assets/sgm.jpeg"
-import pressure_cleaning from "../../assets/pressure-cleaning.jpeg"
-import fertilising from "../../assets/fertilising.jpeg"
-import irrigation from "../../assets/irrigation.jpeg"
-import barkBlowing from "../../assets/bark-blowing.jpeg"
-import spary_t from "../../assets/sprat-treatment.jpeg"
+import prm from "../../assets/prm.jpeg";
+import mowing from "../../assets/mowing.jpeg";
+import sfl from "../../assets/sfl.jpeg";
+import sgm from "../../assets/sgm.jpeg";
+import pressure_cleaning from "../../assets/pressure-cleaning.jpeg";
+import fertilising from "../../assets/fertilising.jpeg";
+import irrigation from "../../assets/irrigation.jpeg";
+import barkBlowing from "../../assets/bark-blowing.jpeg";
+import spary_t from "../../assets/sprat-treatment.jpeg";
+import Hero_image_s from "../../assets/Hero_image_s.jpeg";
 import { UserContext } from "../../context/UserContext";
 
 const services = [
@@ -78,6 +79,23 @@ const services = [
   },
 ];
 
+/* Green filled checkmark — matches image exactly */
+function GreenCheck() {
+  return (
+    <svg
+      className="ServiceCard__check"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10
+               10-4.48 10-10S17.52 2 12 2zm-2 14.5
+               l-4.5-4.5 1.41-1.41L10 13.67l7.09-7.09
+               1.41 1.41L10 16.5z" />
+    </svg>
+  );
+}
+
 export default function ServiceCard() {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -105,7 +123,7 @@ export default function ServiceCard() {
         <div className="ServiceCard__header">
           <div className="ServiceCard__header-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
             </svg>
           </div>
           <h2 className="ServiceCard__heading">
@@ -124,7 +142,7 @@ export default function ServiceCard() {
               style={{ transitionDelay: `${i * 0.07}s` }}
               onClick={() => navigate(`/services/${service.slug}`)}
             >
-              {/* Left: circular icon in small square block */}
+              {/* Left: circular icon on sage-green background */}
               <div className="ServiceCard__icon-wrap">
                 <div className="ServiceCard__icon">
                   {service.icon}
@@ -134,14 +152,13 @@ export default function ServiceCard() {
               {/* Right: content */}
               <div className="ServiceCard__body">
                 <div className="ServiceCard__dots-grid" />
+                {/* Name with red underline */}
                 <h3 className="ServiceCard__name">{service.name}</h3>
                 <p className="ServiceCard__desc">{service.desc}</p>
                 <ul className="ServiceCard__points">
                   {service.points.map((pt) => (
                     <li key={pt}>
-                      <svg className="ServiceCard__check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5l-4.5-4.5 1.41-1.41L10 13.67l7.09-7.09 1.41 1.41L10 16.5z"/>
-                      </svg>
+                      <GreenCheck />
                       {pt}
                     </li>
                   ))}
@@ -151,6 +168,9 @@ export default function ServiceCard() {
           ))}
         </div>
       </div>
+      <div className="hero__middle-image">
+          <img src={Hero_image_s} alt="Service highlight" />
+        </div>
     </section>
   );
 }
