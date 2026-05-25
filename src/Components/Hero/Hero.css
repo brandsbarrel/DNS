@@ -176,3 +176,9 @@
         justify-content: center;
     }
 }
+
+@media (max-width: 768px) {
+    .hero + * {
+        margin: 10px 87px;
+    }
+}
