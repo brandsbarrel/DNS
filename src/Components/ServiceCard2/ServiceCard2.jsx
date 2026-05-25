@@ -105,7 +105,7 @@ export default function ServiceCard2() {
     const [visible, setVisible] = useState(false);
     const navigate = useNavigate();
     const { user } = useContext(UserContext);
-    const location =  useLocation();
+    const location = useLocation();
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -123,13 +123,15 @@ export default function ServiceCard2() {
     return (
         <>
             {/* ── Service Banner (Top) ── */}
-            <div className="sc2-banner-wrap">
-                <img
-                    src={serviceBanner}
-                    alt="SNG Maintenance Banner"
-                    className="sc2-banner-img"
-                />
-            </div>
+            {(location.pathname === "/services") &&
+                <div className="sc2-banner-wrap">
+                    <img
+                        src={serviceBanner}
+                        alt="SNG Maintenance Banner"
+                        className="sc2-banner-img"
+                    />
+                </div>
+            }
 
             <section ref={ref} className={`sc2-section ${visible ? "sc2-show" : ""}`}>
                 <div className="sc2-container">
