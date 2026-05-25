@@ -19,7 +19,7 @@
 /* ── Section ── */
 .sc2-section {
   background-color: #e8f0e0;
-  padding: 25px 16px 80px;
+  padding: 25px 16px 40px;
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.6s ease, transform 0.6s ease;

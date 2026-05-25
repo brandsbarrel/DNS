@@ -48,6 +48,7 @@
 /* ---------- BUTTON ---------- */
 
 .About_Hero__bottom {
+  margin-top: 10px;
   padding: 0 24px;
   display: flex;
   justify-content: center;

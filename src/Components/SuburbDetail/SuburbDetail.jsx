@@ -1,5 +1,8 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import "./SuburbDetail.css";
+
+// ─── Services ────────────────────────────────────────────────────────────────
 
 const services = [
   {
@@ -49,17 +52,53 @@ const services = [
   },
 ];
 
-const suburbs = [
-  "Ryde",
-  "Meadowbank",
-  "Gladesville",
-  "Parramatta",
-  "Inner West",
-  "Hills District",
-  "Northern Suburbs",
+const stats = [
+  { num: "10+", label: "Years of Experience" },
+  { num: "500+", label: "Properties Maintained" },
+  { num: "100%", label: "Fully Insured" },
+  { num: "7", label: "Service Areas" },
 ];
 
-export default function SuburbDetail({ suburb = "Ryde" }) {
+// ─── Slug → area data map ─────────────────────────────────────────────────────
+
+const areaData = {
+  "eastern-suburbs": {
+    name: "Eastern Suburbs",
+    p1: `The Eastern Suburbs is one of Sydney's most sought-after regions — a mix of beachside apartments, terraced homes, and high-end strata complexes from Bondi Beach to Randwick, Bronte to Clovelly. Properties here face a unique challenge: the salt-laden coastal air accelerates surface deterioration, stains sandstone, corrodes ironwork, and takes a toll on gardens year-round. SNG Maintenance Services understands these conditions and provides maintenance solutions specifically suited to the Eastern Suburbs' coastal environment.`,
+    p2: `Our pressure cleaning services are in high demand across Bondi and Coogee, where salt spray leaves a visible film on driveways, pool surrounds, and outdoor entertaining areas. We use the right pressure and technique for each surface — sandstone, concrete, timber decking, and rendered walls — restoring them without causing damage. Our lawn and garden crews also work extensively across the unit complexes and strata buildings of Randwick and Kensington, keeping shared garden spaces tidy, healthy, and compliant with strata committee requirements.`,
+    p3: `For residential properties throughout Maroubra, Bronte, and Waverley, we provide full garden maintenance programs including fertilising schedules suited to sandy coastal soils, irrigation systems designed to cope with the area's warm, dry summers, and soft fall installations for family homes with young children. Whether you manage a single beachside property or a multi-lot strata complex, SNG delivers consistent, professional results across the Eastern Suburbs every season.`,
+  },
+  "western-suburbs": {
+    name: "Western Suburbs",
+    p1: `The Western Suburbs span one of Sydney's largest and most diverse residential regions — from the unit-dense streets of Auburn and Merrylands to the large family blocks of Penrith, Blacktown, and Fairfield. With properties typically featuring bigger backyards, established trees, and wide frontages, maintenance needs here are more demanding than in inner Sydney. SNG Maintenance Services has been working across the Western Suburbs for over a decade, providing practical, no-nonsense property care suited to the scale and pace of life in the west.`,
+    p2: `Lawn care is one of our most popular services across the Western Suburbs, where warm summers and clay-heavy soils create ongoing challenges for homeowners. We provide regular mowing, edge trimming, aeration, and fertilising programs tailored to the soil conditions found in suburbs like Liverpool, Campbelltown, and Parramatta. Our spray treatment teams also handle weed control across larger block sizes where manual management simply isn't practical — keeping front yards and back paddocks clear without damaging surrounding lawn or garden beds.`,
+    p3: `For the growing number of new estates in Rouse Hill, Marsden Park, and the Penrith corridor, we offer full property setup and ongoing maintenance packages — from initial soft fall installation in family play areas to drip-line irrigation systems designed to keep new turf and garden beds established through the region's hot, dry summers. Our teams operate efficiently across the Western Suburbs, covering both established homes and newly built properties with the same standard of service.`,
+  },
+  "northern-beaches": {
+    name: "Northern Beaches",
+    p1: `The Northern Beaches stretches from Manly to Palm Beach — a peninsula defined by ocean frontage, native bushland, and some of Sydney's most distinctive residential properties. Homes here sit on cliff tops, back onto bush reserves, or front directly onto beach dunes, each presenting its own maintenance challenges. SNG Maintenance Services has extensive experience working across the Northern Beaches, from the densely developed streets of Dee Why and Brookvale to the private acreage properties of Avalon and Whale Beach.`,
+    p2: `Coastal exposure is the defining factor for Northern Beaches garden maintenance. Salt wind, sandy soil, and strong UV all place stress on plants, lawns, and hard surfaces that simply don't apply to inland properties. Our teams select and maintain plant species that are proven performers in these conditions — natives, succulents, and salt-tolerant groundcovers that look good without constant intervention. We also manage pressure cleaning of the timber decks, sandstone paths, and boat ramp surrounds that are common throughout suburbs like Seaforth, Balgowlah, and Narrabeen.`,
+    p3: `Irrigation is critical on the Northern Beaches, where sandy soils drain quickly and properties can go from lush to dry within days during summer. We design and install drip-line and pop-up irrigation systems suited to each property's layout — whether it's a compact cottage garden in Curl Curl or a sprawling native garden in Pittwater. Our bark blowing and garden bed preparation services are also popular across the area, helping homeowners maintain the natural bushland aesthetic that defines the Northern Beaches lifestyle.`,
+  },
+  "north-west": {
+    name: "North West",
+    p1: `Sydney's North West — encompassing the Hills District suburbs of Castle Hill, Baulkham Hills, Kellyville, Rouse Hill, and beyond — has seen significant residential growth over the past decade. New estates, townhouse developments, and established family homes on generous blocks all have different maintenance demands, and SNG Maintenance Services has built a strong presence across the region by delivering reliable, high-quality care for both new and long-standing properties.`,
+    p2: `Large lawns are a hallmark of the North West, and our mowing and lawn care teams are set up specifically to handle them efficiently. We service everything from standard suburban blocks in Winston Hills to the expansive grounds of acreage properties in Glenhaven and Dural. Our fertilising and weed spray programs are designed around the red clay soils common throughout the Hills District — soils that compact easily, hold moisture unevenly, and require specific treatment to support healthy turf and garden growth.`,
+    p3: `For the many new developments springing up across Rouse Hill, Box Hill, and the North West Growth Corridor, we offer comprehensive property setup and maintenance packages. This includes soft fall installation for playgrounds and childcare centres, irrigation system installation for newly laid turf, retaining wall construction for sloped blocks, and strata garden maintenance for the increasing number of townhouse and villa complexes in the area. We understand the fast pace of development in the North West and work to timelines that keep properties looking finished and well-maintained from day one.`,
+  },
+  "ryde": {
+    name: "Ryde",
+    p1: `The City of Ryde — covering suburbs like Meadowbank, Gladesville, West Ryde, and Eastwood — is one of Sydney's most densely populated inner-north areas, with a mix of apartment towers, strata complexes, and established family homes sitting side by side. This variety means property maintenance here requires a flexible approach: one week our crews are maintaining the shared gardens of a high-rise strata in Meadowbank, the next they're caring for a heritage-listed garden in Putney. SNG Maintenance Services knows Ryde well and delivers across the full range of property types found here.`,
+    p2: `Strata garden maintenance is one of our most in-demand services in the Ryde area, where residential apartment and townhouse developments are concentrated along the Parramatta River corridor and around Ryde's main commercial centres. We work directly with strata managers and owners corporations to keep common areas — garden beds, lawns, pathways, and courtyards — looking well-maintained and safe throughout the year. Our teams are familiar with the access requirements and scheduling constraints that come with managing shared properties.`,
+    p3: `For homeowners across West Ryde, Eastwood, and Gladesville, we offer regular lawn mowing, fertilising, pressure cleaning of driveways and entertaining areas, and full garden bed maintenance. Irrigation is increasingly popular in these suburbs as water-conscious homeowners look to maintain their gardens efficiently during Sydney's dry spells. We design and install systems suited to the block sizes and soil types found across Ryde, ensuring gardens stay healthy without wasting water.`,
+  },
+};
+
+// ─── Component ───────────────────────────────────────────────────────────────
+
+export default function SuburbDetail() {
+  const { slug } = useParams();
+  const area = areaData[slug] ?? areaData["eastern-suburbs"];
   const [activeService, setActiveService] = useState(null);
 
   return (
@@ -67,49 +106,21 @@ export default function SuburbDetail({ suburb = "Ryde" }) {
       {/* ── Intro ── */}
       <section className="sd-intro section">
         <div className="container">
-          <div className="sd-intro__grid">
-            <div className="sd-intro__text">
-              <h2 className="section-title">
-                Your Local Maintenance Experts in {suburb}
-              </h2>
-              <p>
-                SNG Maintenance Services is dedicated to delivering reliable,
-                high-quality landscaping and property maintenance solutions
-                across {suburb} and surrounding Sydney suburbs. Our services
-                cover everything from garden care and lawn maintenance to
-                high-pressure cleaning and complete property upkeep — for
-                residential, strata, and commercial properties.
-              </p>
-              <p>
-                With more than a decade of industry experience, we have proudly
-                designed, improved, and maintained outdoor spaces for a wide
-                range of developments throughout Sydney. Our team focuses on
-                creating gardens that are visually appealing and practical,
-                helping properties look their best all year round.
-              </p>
-              <p>
-                Over the years, we have expanded our services in {suburb} to
-                include irrigation systems, drip-line watering solutions, water
-                blasting, excavation works, and general property maintenance.
-                Our equipment and expertise allow us to complete projects
-                efficiently — from installing essential service lines to
-                constructing retaining walls, tiered gardens, and raised garden
-                beds.
-              </p>
-            </div>
-            <div className="sd-intro__stats">
-              {[
-                { num: "10+", label: "Years of Experience" },
-                { num: "500+", label: "Properties Maintained" },
-                { num: "100%", label: "Fully Insured" },
-                { num: "7", label: "Service Areas" },
-              ].map((s) => (
-                <div className="sd-stat" key={s.label}>
-                  <span className="sd-stat__num">{s.num}</span>
-                  <span className="sd-stat__label">{s.label}</span>
-                </div>
-              ))}
-            </div>
+          <div style={{ textAlign: "center", maxWidth: 800, margin: "0 auto" }}>
+            <h2 className="section-title">
+              Your Local Maintenance Experts in {area.name}
+            </h2>
+            <p>{area.p1}</p>
+            <p>{area.p2}</p>
+            <p>{area.p3}</p>
+          </div>
+          <div className="sd-intro__stats" style={{ justifyContent: "center", marginTop: 48 }}>
+            {stats.map((s) => (
+              <div className="sd-stat" key={s.label} style={{ textAlign: "center" }}>
+                <span className="sd-stat__num">{s.num}</span>
+                <span className="sd-stat__label">{s.label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -118,11 +129,11 @@ export default function SuburbDetail({ suburb = "Ryde" }) {
       <section className="sd-services section">
         <div className="container">
           <span className="sd-label" style={{ display: "block", textAlign: "center", marginBottom: 8 }}>
-            What We Do in {suburb}
+            What We Do in {area.name}
           </span>
           <h2 className="section-title">
             All Services Available in{" "}
-            <span className="sd-accent-text">{suburb}</span>
+            <span className="sd-accent-text">{area.name}</span>
           </h2>
           <p className="section-sub" style={{ textAlign: "center", margin: "0 auto 48px" }}>
             Reliable. Professional. Always here for you.
@@ -133,6 +144,7 @@ export default function SuburbDetail({ suburb = "Ryde" }) {
                 className={`sd-card${activeService === i ? " sd-card--active" : ""}`}
                 key={svc.title}
                 onClick={() => setActiveService(activeService === i ? null : i)}
+                style={{ textAlign: "center", alignItems: "center" }}
               >
                 <div className="sd-card__icon">{svc.icon}</div>
                 <div className="sd-card__body">
@@ -145,107 +157,6 @@ export default function SuburbDetail({ suburb = "Ryde" }) {
           </div>
         </div>
       </section>
-
-      {/* ── Why Choose Us ── */}
-      <section className="sd-why section">
-        <div className="container">
-          <span className="sd-label" style={{ display: "block", textAlign: "center", marginBottom: 8 }}>
-            Why SNG
-          </span>
-          <h2 className="section-title">Why {suburb} Residents Choose Us</h2>
-          <div className="sd-why__grid">
-            {[
-              {
-                icon: "👷",
-                title: "Experienced & Reliable Team",
-                desc: "Skilled professionals with years of experience you can rely on for every job in " + suburb + ".",
-              },
-              {
-                icon: "🏆",
-                title: "High-Quality Workmanship",
-                desc: "We take pride in delivering top-quality results on every project, no matter the size.",
-              },
-              {
-                icon: "💰",
-                title: "Affordable & Competitive Pricing",
-                desc: "Great value services that fit your budget without any compromise on quality.",
-              },
-              {
-                icon: "🛡️",
-                title: "Fully Insured & Professional",
-                desc: "We are fully insured and committed to providing safe, professional service across " + suburb + ".",
-              },
-            ].map((w) => (
-              <div className="sd-why__card" key={w.title}>
-                <div className="sd-why__icon">{w.icon}</div>
-                <h3>{w.title}</h3>
-                <p>{w.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── How It Works ── */}
-      <section className="sd-how section">
-        <div className="container">
-          <span className="sd-label" style={{ display: "block", textAlign: "center", marginBottom: 8 }}>
-            Simple Process
-          </span>
-          <h2 className="section-title">
-            How It <span className="sd-accent-text">Works</span>
-          </h2>
-          <p className="section-sub" style={{ textAlign: "center", margin: "0 auto 56px" }}>
-            Simple process, great results.
-          </p>
-          <div className="sd-how__steps">
-            {[
-              {
-                num: "01",
-                title: "Request a Quote",
-                desc:
-                  "Send us a message or call us to describe your needs in " +
-                  suburb +
-                  ". We'll get back to you promptly.",
-              },
-              {
-                num: "02",
-                title: "Receive a Clear Proposal",
-                desc: "You'll receive a detailed proposal with transparent pricing — no hidden fees, no surprises.",
-              },
-              {
-                num: "03",
-                title: "We Get the Job Done",
-                desc: "Our team gets to work and delivers exceptional results you'll be proud of.",
-              },
-            ].map((step) => (
-              <div className="sd-step" key={step.num}>
-                <div className="sd-step__num">{step.num}</div>
-                <h3 className="sd-step__title">{step.title}</h3>
-                <p className="sd-step__desc">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── CTA ── */}
-      <section className="sd-cta section">
-        <div className="container">
-          <div className="sd-cta__box">
-            <h2>Ready to Transform Your {suburb} Property?</h2>
-            <p>
-              Contact SNG Maintenance Services today for a free quote. Our team
-              is ready to help you maintain and improve your outdoor spaces in{" "}
-              {suburb} and across Sydney.
-            </p>
-            <button className="btn-primary sd-cta__btn">
-              Get a Free Quote
-            </button>
-          </div>
-        </div>
-      </section>
-
     </div>
   );
 }

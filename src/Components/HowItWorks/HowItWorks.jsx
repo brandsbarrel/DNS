@@ -56,7 +56,7 @@ export default function HowItWorks() {
 
           <div className="areaGrid">
             {areas.map((area, index) => (
-              <div className="areaTag" onClick={() => { navigate("/suburb-details"), handleClick() }} key={index}>
+              <div className="areaTag" onClick={() => { navigate(`/suburb-details/${area.toLowerCase().replace(/\s+/g, "-")}`), handleClick() }} key={index}>
                 <MapPin size={20} />
                 <span className="vertical" />
                 {area}
