@@ -97,9 +97,9 @@ export default function Hero() {
             </div>
 
             {/* ── 2. IMAGE — slider ke baad, button se pehle ── */}
-            <div className="hero__middle-image">
+            {/* <div className="hero__middle-image">
                 <img src={Hero_image_s} alt="Service highlight" />
-            </div>
+            </div> */}
 
         </>
     );
