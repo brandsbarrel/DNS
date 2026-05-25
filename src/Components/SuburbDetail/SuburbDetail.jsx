@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import "./SuburbDetail.css";
+import ServiceCard2 from "../ServiceCard2/ServiceCard2";
+import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
 
 // ─── Services ────────────────────────────────────────────────────────────────
 
@@ -52,13 +54,6 @@ const services = [
   },
 ];
 
-const stats = [
-  { num: "10+", label: "Years of Experience" },
-  { num: "500+", label: "Properties Maintained" },
-  { num: "100%", label: "Fully Insured" },
-  { num: "7", label: "Service Areas" },
-];
-
 // ─── Slug → area data map ─────────────────────────────────────────────────────
 
 const areaData = {
@@ -105,7 +100,7 @@ export default function SuburbDetail() {
     <div className="sd-page">
       {/* ── Intro ── */}
       <section className="sd-intro section">
-        <div className="container">
+        <div className="sd_container">
           <div style={{ textAlign: "center", maxWidth: 800, margin: "0 auto" }}>
             <h2 className="section-title">
               Your Local Maintenance Experts in {area.name}
@@ -114,49 +109,12 @@ export default function SuburbDetail() {
             <p>{area.p2}</p>
             <p>{area.p3}</p>
           </div>
-          <div className="sd-intro__stats" style={{ justifyContent: "center", marginTop: 48 }}>
-            {stats.map((s) => (
-              <div className="sd-stat" key={s.label} style={{ textAlign: "center" }}>
-                <span className="sd-stat__num">{s.num}</span>
-                <span className="sd-stat__label">{s.label}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
       {/* ── Services ── */}
-      <section className="sd-services section">
-        <div className="container">
-          <span className="sd-label" style={{ display: "block", textAlign: "center", marginBottom: 8 }}>
-            What We Do in {area.name}
-          </span>
-          <h2 className="section-title">
-            All Services Available in{" "}
-            <span className="sd-accent-text">{area.name}</span>
-          </h2>
-          <p className="section-sub" style={{ textAlign: "center", margin: "0 auto 48px" }}>
-            Reliable. Professional. Always here for you.
-          </p>
-          <div className="sd-services__grid">
-            {services.map((svc, i) => (
-              <div
-                className={`sd-card${activeService === i ? " sd-card--active" : ""}`}
-                key={svc.title}
-                onClick={() => setActiveService(activeService === i ? null : i)}
-                style={{ textAlign: "center", alignItems: "center" }}
-              >
-                <div className="sd-card__icon">{svc.icon}</div>
-                <div className="sd-card__body">
-                  <h3 className="sd-card__title">{svc.title}</h3>
-                  <p className="sd-card__desc">{svc.desc}</p>
-                </div>
-                <span className="sd-card__arrow">→</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceCard2/>
+      <WhyChooseUs/>
     </div>
   );
 }

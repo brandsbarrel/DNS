@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./ServiceCard2.css";
 import prm from "../../assets/prm.jpeg";
 import mowing from "../../assets/mowing.jpeg";
@@ -105,6 +105,7 @@ export default function ServiceCard2() {
     const [visible, setVisible] = useState(false);
     const navigate = useNavigate();
     const { user } = useContext(UserContext);
+    const location =  useLocation();
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -122,13 +123,14 @@ export default function ServiceCard2() {
     return (
         <>
             {/* ── Service Banner (Top) ── */}
+            {(location.pathname==="/services")&&
             <div className="sc2-banner-wrap">
                 <img
                     src={serviceBanner}
                     alt="SNG Maintenance Banner"
                     className="sc2-banner-img"
                 />
-            </div>
+            </div>}
 
             <section ref={ref} className={`sc2-section ${visible ? "sc2-show" : ""}`}>
                 <div className="sc2-container">

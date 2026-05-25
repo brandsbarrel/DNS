@@ -47,11 +47,12 @@ button {
 /* ══════════════════════════════════════════
    LAYOUT HELPERS
 ══════════════════════════════════════════ */
-.container {
+.sd_container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+  background: #e8f0e0;
 }
 
 .section {
@@ -62,9 +63,10 @@ button {
    PAGE WRAPPER
 ══════════════════════════════════════════ */
 .sd-page {
-  background: var(--off-white);
+  background: #e8f0e0;
   min-height: 100vh;
   font-family: var(--font-body);
+  padding-bottom: 0 !important;
 }
 
 /* ══════════════════════════════════════════
@@ -139,8 +141,11 @@ button {
    INTRO
 ══════════════════════════════════════════ */
 .sd-intro {
-  background: #fff;
+  background: #e8f0e0;
+  padding: 80px 0 0 !important;
 }
+
+
 
 .sd-intro__grid {
   display: grid;

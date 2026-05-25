@@ -6,7 +6,7 @@
     z-index: 1000;
     transition: all 0.3s ease;
     padding: 0;
-    background-color: #E7EAD9;
+    background: #E7EAD9 !important;
 }
 
 .navbar--scrolled {
@@ -95,7 +95,7 @@ a {
 }
 
 .navbar__links a:hover::after {
-    width: 100%;
+    width: 100%
 }
 
 .navbar--scrolled .navbar__links a {
@@ -115,6 +115,10 @@ a {
     cursor: pointer;
     padding: 4px;
     margin-left: auto;
+}
+
+.navbar__hamburger:hover {
+    
 }
 
 .navbar__hamburger span {

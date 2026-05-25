@@ -104,7 +104,6 @@ export default function Services() {
                     ))}
                 </div> */}
                 <ServiceCard2 />
-                <WhyChooseUs/>
             </section>
         </>
     );
