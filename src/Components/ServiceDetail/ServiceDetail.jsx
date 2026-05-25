@@ -29,7 +29,6 @@ import sd_pc1 from "../../assets/sd-pc1.jpeg";
 
 import sd_fertilising_hero from "../../assets/sd-fertilising-hero.jpeg";
 import sd_fertilising1 from "../../assets/sd-fertilising1.jpeg";
-import sd_fertilising2 from "../../assets/sd-fertilising2.jpeg";
 import sd_fertilising3 from "../../assets/sd-fertilising3.jpeg";
 
 import sd_irrigation_hero from "../../assets/sd-irrigation-hero.jpeg";
@@ -37,6 +36,7 @@ import sd_irrigation1 from "../../assets/sd-irrigation-1.jpeg";
 
 import sd_bark_blowing_hero from "../../assets/sd_bark_blowing_hero.jpeg";
 import sd_bark_blowing1 from "../../assets/sd_bark_blowing1.jpeg";
+import sd_bark_blowing2 from "../../assets/sd_bark_blowing2.jpeg";
 
 import sd_spray_treatments_hero from "../../assets/sd-spray-treatment-hero.jpeg";
 import sd_spray_treatments1 from "../../assets/sd-spray-treatment1.jpeg"
@@ -219,7 +219,6 @@ const SERVICES = {
         intro: `At SNG Maintenance, we provide professional fertilising services designed to nourish your lawn and garden, promoting healthy growth, vibrant colour, and long-term vitality. Our team selects the right fertiliser products and application methods based on your specific soil type, grass variety, and garden needs.\n\nRegular fertilising is essential for maintaining a lush, green lawn and healthy garden beds. Our tailored fertilising programs ensure your outdoor spaces receive the nutrients they need throughout every season.`,
         images: [
             { src: sd_fertilising1 },
-            { src: sd_fertilising2 },
             { src: sd_fertilising3 },
         ],
         servicesList: [
@@ -285,6 +284,10 @@ const SERVICES = {
                 src: sd_bark_blowing1,
                 className: "large"
             },
+            {
+                src: sd_bark_blowing2,
+                className:"large"
+            }
         ],
         servicesList: [
             "Bark blowing for garden beds",
@@ -316,7 +319,6 @@ const SERVICES = {
             { src: sd_spray_treatments1,
                 className:"large"
              },
-            { src: sd_spray_treatments2 },
         ],
         servicesList: [
             "Weed spray treatments",

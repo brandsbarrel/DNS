@@ -77,13 +77,13 @@
     object-fit: cover;
 }
 
-.hero__btn-wrapper {
+.hero__btn-wrapper_1 {
     display: none;
-    padding: 20px 20px 20px;
+    padding: 20px 20px 20px !important;
     background: #E7EAD9;
 }
 
-.hero__btn {
+.hero__btn_1 {
     display: inline-flex;
     align-items: center;
     gap: 8px;

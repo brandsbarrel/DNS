@@ -91,8 +91,8 @@ export default function Hero() {
             
             {/* ── 3. GET FREE QUOTE BUTTON — sabse neeche ── */}
             <div className="hero__
-            btn-wrapper">
-                <Link to="/contact" className="hero__btn hero__btn--full">
+            btn-wrapper_1">
+                <Link to="/contact" className="hero__btn_1 hero__btn--full">
                     GET A FREE QUOTE ›
                 </Link>
             </div>
