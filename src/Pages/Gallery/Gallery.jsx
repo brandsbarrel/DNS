@@ -1,7 +1,6 @@
 import "./Gallery.css";
 
 import bg1 from "../../assets/bg1.jpeg";
-import bg2 from "../../assets/bg2.jpeg";
 
 import ta1 from "../../assets/ta1.jpeg";
 import ta2 from "../../assets/ta2.jpeg";

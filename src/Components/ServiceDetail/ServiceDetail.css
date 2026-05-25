@@ -12,9 +12,9 @@
 }
 
 /* ── Hero ── */
-.sd-hero {
-  background: linear-gradient(135deg, #2e5e2e 0%, #4a8a4a 55%, #5cb85c 100%);
-  padding: 100px 24px 88px;
+.sd-hero-b {
+  background: #e8f0e0 ;
+  padding: 80px 0px 10px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -74,8 +74,9 @@
 }
 
 /* ── Intro section ── */
-.sd-intro {
-  padding: 64px 0 0;
+.sd-intro-b {
+  padding: 20px 0 0;
+  text-align: center;
 }
 
 .sd-intro__text {
@@ -113,8 +114,8 @@
 
 .sd-gallery__item img {
   width: 100%;
-  height: 260px;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   display: block;
   transition: transform 0.4s ease;
 }
@@ -324,9 +325,6 @@
     grid-column: auto;
   }
 
-  .sd-gallery__item img {
-    height: 300px;
-  }
 
   .sd-services__list {
     grid-template-columns: repeat(2, 1fr);

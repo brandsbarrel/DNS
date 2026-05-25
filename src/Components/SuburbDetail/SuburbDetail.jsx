@@ -1,58 +1,7 @@
-import { useState } from "react";
 import { useParams } from "react-router-dom";
 import "./SuburbDetail.css";
 import ServiceCard2 from "../ServiceCard2/ServiceCard2";
 import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
-
-// ─── Services ────────────────────────────────────────────────────────────────
-
-const services = [
-  {
-    icon: "🏠",
-    title: "Property Maintenance",
-    desc: "We keep your property in top condition with quality and care — from general repairs to full interior and exterior upkeep.",
-  },
-  {
-    icon: "🌿",
-    title: "Mowing & Lawn Care",
-    desc: "Regular lawn mowing, edge trimming, and weed control to keep your grass neat, healthy, and always looking its best.",
-  },
-  {
-    icon: "🛝",
-    title: "Soft Fall Landscaping",
-    desc: "Safe, durable soft fall solutions for play areas using playground mulch, rubber bark, and wood chips that meet compliance standards.",
-  },
-  {
-    icon: "🌳",
-    title: "Strata Garden Maintenance",
-    desc: "We maintain common garden areas for strata properties — including plant health checks, pruning, and seasonal clean-ups.",
-  },
-  {
-    icon: "💧",
-    title: "Pressure Cleaning",
-    desc: "High-pressure cleaning that blasts away dirt, grime, and buildup from driveways, pathways, patios, courtyards, and exterior surfaces.",
-  },
-  {
-    icon: "🌱",
-    title: "Fertilising",
-    desc: "Nourishing your lawn and plants for stronger, greener growth using both organic and synthetic fertilisation options.",
-  },
-  {
-    icon: "🚿",
-    title: "Irrigation",
-    desc: "Efficient watering solutions including sprinkler system installation, drip irrigation systems, and full system maintenance and repairs.",
-  },
-  {
-    icon: "🍂",
-    title: "Bark Blowing",
-    desc: "Evenly spread bark to enhance the look and health of your garden beds — including delivery, spreading, and full bed preparation.",
-  },
-  {
-    icon: "🌾",
-    title: "Spray Treatments",
-    desc: "Targeted spray solutions to protect your outdoor spaces — weed spray treatments, pest and disease control using safe, effective products.",
-  },
-];
 
 // ─── Slug → area data map ─────────────────────────────────────────────────────
 
@@ -94,7 +43,6 @@ const areaData = {
 export default function SuburbDetail() {
   const { slug } = useParams();
   const area = areaData[slug] ?? areaData["eastern-suburbs"];
-  const [activeService, setActiveService] = useState(null);
 
   return (
     <div className="sd-page">

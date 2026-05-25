@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import "./ServiceDetail.css";
 
 // ── Property Maintenance Images ──
@@ -10,6 +10,27 @@ import PropertyMaintenance3 from "../../assets/PropertyMaintenance3.jpeg";
 // ── Mowing Images ──
 import Mowing1 from "../../assets/Mowing1.jpeg";
 import Mowing2 from "../../assets/Mowing2.jpeg";
+
+import sd_prm_hero from "../../assets/sd-prm.jpeg";
+import sd_mowing_hero from "../../assets/sd-mowing.jpeg";
+
+import sd_soft_lanscape_hero from "../../assets/sd-soft_landscaping-hero.jpeg";
+import sd_soft_lanscape1 from "../../assets/soft_landscaping1.jpeg";
+import sd_soft_lanscape2 from "../../assets/soft_landscaping2.jpeg";
+import sd_soft_lanscape3 from "../../assets/soft_landscaping3.jpeg";
+
+import sd_sgm_hero from "../../assets/sd-sgm-hero.jpeg";
+import sd_sgm1 from "../../assets/sd-sgm1.jpeg";
+import sd_sgm2 from "../../assets/sd-sgm2.jpeg";
+import sd_sgm3 from "../../assets/sd-sgm3.jpeg";
+
+import sd_pc_hero from "../../assets/sd-pressureCleaning-hero.jpeg";
+import sd_pc1 from "../../assets/sd-pc1.jpeg";
+
+import sd_fertilising_hero from "../../assets/sd-fertilising-hero.jpeg";
+import sd_fertilising1 from "../../assets/sd-fertilising1.jpeg";
+import sd_fertilising2 from "../../assets/sd-fertilising2.jpeg";
+import sd_fertilising3 from "../../assets/sd-fertilising3.jpeg";
 
 // ─────────────────────────────────────────────────────────────────
 // Baaki services ki images aane par yahan import karo:
@@ -63,7 +84,6 @@ const SERVICES = {
         images: [
             { src: Mowing1 },
             { src: Mowing2 },
-            { src: Mowing1 },
         ],
         servicesList: [
             "Regular lawn mowing",
@@ -92,9 +112,9 @@ const SERVICES = {
             "Safe, compliant soft fall surfaces professionally installed for playgrounds and outdoor areas.",
         intro: `At SNG Maintenance, we specialise in professional soft fall landscaping solutions designed to create safe, attractive, and compliant outdoor spaces. Whether it's a playground, park, or recreational area, our team delivers expert installation with a focus on safety and aesthetics.\n\nWe use high-quality materials and proven techniques to ensure every soft fall surface meets safety standards while enhancing the visual appeal of your outdoor space.`,
         images: [
-            { src: PropertyMaintenance1 },
-            { src: PropertyMaintenance2 },
-            { src: PropertyMaintenance3 },
+            { src: sd_soft_lanscape1 },
+            { src: sd_soft_lanscape2 },
+            { src: sd_soft_lanscape3 },
         ],
         servicesList: [
             "Soft fall installation",
@@ -123,9 +143,9 @@ const SERVICES = {
             "Consistent, professional garden care tailored for strata and multi-residential properties.",
         intro: `At SNG Maintenance, we understand the unique requirements of strata garden maintenance. We work closely with strata managers and property committees to deliver reliable, scheduled garden care that keeps shared outdoor spaces looking their very best throughout the year.\n\nOur team is experienced in maintaining common area gardens, ensuring residents enjoy beautiful, well-kept outdoor environments that add value to the property.`,
         images: [
-            { src: PropertyMaintenance1 },
-            { src: PropertyMaintenance2 },
-            { src: PropertyMaintenance3 },
+            { src: sd_sgm1 },
+            { src: sd_sgm2 },
+            { src: sd_sgm3 },
         ],
         servicesList: [
             "Scheduled garden maintenance visits",
@@ -155,9 +175,7 @@ const SERVICES = {
             "Powerful, thorough pressure cleaning to restore surfaces to their original condition.",
         intro: `At SNG Maintenance, we deliver professional pressure cleaning services that remove dirt, grime, mould, and stains from a wide range of surfaces. From driveways and pathways to building facades and outdoor areas, our high-pressure equipment and experienced team restore surfaces to a clean, fresh condition.\n\nPressure cleaning not only improves the appearance of your property but also helps protect surfaces from long-term damage caused by built-up grime and mould.`,
         images: [
-            { src: PropertyMaintenance1 },
-            { src: PropertyMaintenance2 },
-            { src: PropertyMaintenance3 },
+            { src: sd_pc1 },
         ],
         servicesList: [
             "Driveway & pathway pressure cleaning",
@@ -186,9 +204,9 @@ const SERVICES = {
             "Targeted fertilising programs to promote lush, healthy lawns and thriving gardens.",
         intro: `At SNG Maintenance, we provide professional fertilising services designed to nourish your lawn and garden, promoting healthy growth, vibrant colour, and long-term vitality. Our team selects the right fertiliser products and application methods based on your specific soil type, grass variety, and garden needs.\n\nRegular fertilising is essential for maintaining a lush, green lawn and healthy garden beds. Our tailored fertilising programs ensure your outdoor spaces receive the nutrients they need throughout every season.`,
         images: [
-            { src: PropertyMaintenance1 },
-            { src: PropertyMaintenance2 },
-            { src: PropertyMaintenance3 },
+            { src: sd_fertilising1 },
+            { src: sd_fertilising2 },
+            { src: sd_fertilising3 },
         ],
         servicesList: [
             "Lawn fertilising treatments",
@@ -311,6 +329,7 @@ export default function ServiceDetail() {
     const { slug } = useParams();
     const service = SERVICES[slug];
     const galleryRef = useRef(null);
+    const location = useLocation();
 
     useEffect(() => {
         if (!galleryRef.current) return;
@@ -347,16 +366,22 @@ export default function ServiceDetail() {
 
     return (
         <>
-            <section className="sd-hero">
-                <span className="sd-hero__badge">{service.badge}</span>
-                <h1 className="sd-hero__title">{service.title}</h1>
-                <p className="sd-hero__subtitle">{service.heroSubtitle}</p>
+            <section className="sd-hero-b">
+               {location.pathname==="/services/mowing" && <img src={sd_mowing_hero} />}
+               {location.pathname==="/services/property-maintenance" && <img src={sd_prm_hero} />}
+               {location.pathname==="/services/soft-fall-landscaping" && <img src={sd_soft_lanscape_hero} />}
+               {location.pathname==="/services/strata-garden-maintenance" && <img src={sd_sgm_hero} />}
+               {location.pathname==="/services/pressure-cleaning" && <img src={sd_pc_hero} />}
+               {location.pathname==="/services/fertilising" && <img src={sd_fertilising_hero} />}
+               {location.pathname==="/services/irrigation" && <img src={sd_prm_hero} />}
+               {location.pathname==="/services/bark-blowing" && <img src={sd_prm_hero} />}
+               {location.pathname==="/services/spray-treatments" && <img src={sd_prm_hero} />}
             </section>
 
             <div className="sd-page">
                 <div className="sd-container">
 
-                    <section className="sd-intro">
+                    <section className="sd-intro-b">
                         {service.intro.split("\n\n").map((para, i, arr) => (
                             <p
                                 key={i}
@@ -373,7 +398,6 @@ export default function ServiceDetail() {
                         {service.images.map((img, i) => (
                             <div className="sd-gallery__item" key={i}>
                                 <img src={img.src} alt={img.caption} loading="lazy" />
-                                <div className="sd-gallery__caption">{img.caption}</div>
                             </div>
                         ))}
                     </div>
@@ -383,18 +407,6 @@ export default function ServiceDetail() {
                         <ul className="sd-services__list">
                             {service.servicesList.map((item, i) => (
                                 <li key={i}>{item}</li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    <div className="sd-why">
-                        <h2 className="sd-why__heading">Why Choose SNG Maintenance?</h2>
-                        <ul className="sd-why__list">
-                            {service.whyList.map((item, i) => (
-                                <li key={i}>
-                                    <span className="sd-why__check">✔</span>
-                                    {item}
-                                </li>
                             ))}
                         </ul>
                     </div>
