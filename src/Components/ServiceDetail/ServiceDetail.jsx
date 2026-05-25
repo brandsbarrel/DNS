@@ -32,6 +32,16 @@ import sd_fertilising1 from "../../assets/sd-fertilising1.jpeg";
 import sd_fertilising2 from "../../assets/sd-fertilising2.jpeg";
 import sd_fertilising3 from "../../assets/sd-fertilising3.jpeg";
 
+import sd_irrigation_hero from "../../assets/sd-irrigation-hero.jpeg";
+import sd_irrigation1 from "../../assets/sd-irrigation-1.jpeg";
+
+import sd_bark_blowing_hero from "../../assets/sd_bark_blowing_hero.jpeg";
+import sd_bark_blowing1 from "../../assets/sd_bark_blowing1.jpeg";
+
+import sd_spray_treatments_hero from "../../assets/sd-spray-treatment-hero.jpeg";
+import sd_spray_treatments1 from "../../assets/sd-spray-treatment1.jpeg"
+import sd_spray_treatments2 from "../../assets/sd-spray-treatment2.jpeg"
+
 // ─────────────────────────────────────────────────────────────────
 // Baaki services ki images aane par yahan import karo:
 // import SoftFall1 from "../../assets/SoftFall1.jpeg";
@@ -175,7 +185,10 @@ const SERVICES = {
             "Powerful, thorough pressure cleaning to restore surfaces to their original condition.",
         intro: `At SNG Maintenance, we deliver professional pressure cleaning services that remove dirt, grime, mould, and stains from a wide range of surfaces. From driveways and pathways to building facades and outdoor areas, our high-pressure equipment and experienced team restore surfaces to a clean, fresh condition.\n\nPressure cleaning not only improves the appearance of your property but also helps protect surfaces from long-term damage caused by built-up grime and mould.`,
         images: [
-            { src: sd_pc1 },
+            {
+                src: sd_pc1,
+                className: "large"
+            },
         ],
         servicesList: [
             "Driveway & pathway pressure cleaning",
@@ -195,6 +208,7 @@ const SERVICES = {
             "Residential and commercial service",
         ],
         tagline: "SNG Maintenance — Clean Surfaces, Fresh Impressions.",
+
     },
 
     "fertilising": {
@@ -235,9 +249,10 @@ const SERVICES = {
             "Smart irrigation solutions to keep your lawns and gardens green with minimal water waste.",
         intro: `At SNG Maintenance, we design, install, and maintain professional irrigation systems that deliver the right amount of water to your lawns and gardens efficiently and reliably. A well-designed irrigation system saves water, reduces manual effort, and ensures your outdoor spaces stay green and healthy even in dry seasons.\n\nOur experienced team works with residential, commercial, and strata properties to provide tailored irrigation solutions that fit your landscape and budget.`,
         images: [
-            { src: PropertyMaintenance1 },
-            { src: PropertyMaintenance2 },
-            { src: PropertyMaintenance3 },
+            {
+                src: sd_irrigation1,
+                className: "large"
+            }
         ],
         servicesList: [
             "Irrigation system design & installation",
@@ -266,9 +281,10 @@ const SERVICES = {
             "Fast, efficient bark and mulch application for neat, weed-suppressing garden beds.",
         intro: `At SNG Maintenance, we provide professional bark blowing services that quickly and evenly apply mulch and bark to garden beds, tree surrounds, and landscaped areas. Bark blowing is a fast, efficient, and cost-effective method to improve the look of your gardens while suppressing weeds and retaining soil moisture.\n\nUsing specialised blower equipment, our team can cover large areas quickly with minimal disruption, making it ideal for strata, commercial, and large residential properties.`,
         images: [
-            { src: PropertyMaintenance1 },
-            { src: PropertyMaintenance2 },
-            { src: PropertyMaintenance3 },
+            {
+                src: sd_bark_blowing1,
+                className: "large"
+            },
         ],
         servicesList: [
             "Bark blowing for garden beds",
@@ -297,9 +313,10 @@ const SERVICES = {
             "Targeted spray treatments for effective weed control and healthy, pest-free outdoor spaces.",
         intro: `At SNG Maintenance, we provide professional spray treatment services to effectively control weeds, pests, and unwanted vegetation across lawns, gardens, pathways, and outdoor areas. Our licensed team uses the right products and techniques to deliver safe, effective results while minimising any impact on surrounding plants and the environment.\n\nRegular spray treatments are a key part of maintaining a healthy, well-kept property. Whether you need routine weed control or targeted treatment for a specific issue, SNG Maintenance has the expertise to get the job done right.`,
         images: [
-            { src: PropertyMaintenance1 },
-            { src: PropertyMaintenance2 },
-            { src: PropertyMaintenance3 },
+            { src: sd_spray_treatments1,
+                className:"large"
+             },
+            { src: sd_spray_treatments2 },
         ],
         servicesList: [
             "Weed spray treatments",
@@ -367,15 +384,15 @@ export default function ServiceDetail() {
     return (
         <>
             <section className="sd-hero-b">
-               {location.pathname==="/services/mowing" && <img src={sd_mowing_hero} />}
-               {location.pathname==="/services/property-maintenance" && <img src={sd_prm_hero} />}
-               {location.pathname==="/services/soft-fall-landscaping" && <img src={sd_soft_lanscape_hero} />}
-               {location.pathname==="/services/strata-garden-maintenance" && <img src={sd_sgm_hero} />}
-               {location.pathname==="/services/pressure-cleaning" && <img src={sd_pc_hero} />}
-               {location.pathname==="/services/fertilising" && <img src={sd_fertilising_hero} />}
-               {location.pathname==="/services/irrigation" && <img src={sd_prm_hero} />}
-               {location.pathname==="/services/bark-blowing" && <img src={sd_prm_hero} />}
-               {location.pathname==="/services/spray-treatments" && <img src={sd_prm_hero} />}
+                {location.pathname === "/services/mowing" && <img src={sd_mowing_hero} />}
+                {location.pathname === "/services/property-maintenance" && <img src={sd_prm_hero} />}
+                {location.pathname === "/services/soft-fall-landscaping" && <img src={sd_soft_lanscape_hero} />}
+                {location.pathname === "/services/strata-garden-maintenance" && <img src={sd_sgm_hero} />}
+                {location.pathname === "/services/pressure-cleaning" && <img src={sd_pc_hero} />}
+                {location.pathname === "/services/fertilising" && <img src={sd_fertilising_hero} />}
+                {location.pathname === "/services/irrigation" && <img src={sd_irrigation_hero} />}
+                {location.pathname === "/services/bark-blowing" && <img src={sd_bark_blowing_hero} />}
+                {location.pathname === "/services/spray-treatments" && <img src={sd_spray_treatments_hero} />}
             </section>
 
             <div className="sd-page">
@@ -394,10 +411,22 @@ export default function ServiceDetail() {
                     </section>
 
                     {/* ── 3 Images — src = imported image variable ── */}
+                    {/* ── Images ── */}
                     <div className="sd-gallery" ref={galleryRef}>
                         {service.images.map((img, i) => (
-                            <div className="sd-gallery__item" key={i}>
-                                <img src={img.src} alt={img.caption} loading="lazy" />
+                            <div
+                                key={i}
+                                className={
+                                    img.className === "large"
+                                        ? "sd-gallery__item_large"
+                                        : "sd-gallery__item"
+                                }
+                            >
+                                <img
+                                    src={img.src}
+                                    alt={img.caption}
+                                    loading="lazy"
+                                />
                             </div>
                         ))}
                     </div>
