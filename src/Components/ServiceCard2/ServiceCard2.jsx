@@ -123,14 +123,13 @@ export default function ServiceCard2() {
     return (
         <>
             {/* ── Service Banner (Top) ── */}
-            {(location.pathname==="/services")&&
             <div className="sc2-banner-wrap">
                 <img
                     src={serviceBanner}
                     alt="SNG Maintenance Banner"
                     className="sc2-banner-img"
                 />
-            </div>}
+            </div>
 
             <section ref={ref} className={`sc2-section ${visible ? "sc2-show" : ""}`}>
                 <div className="sc2-container">

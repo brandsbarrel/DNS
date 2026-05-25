@@ -90,8 +90,7 @@ export default function Hero() {
             </section>
             
             {/* ── 3. GET FREE QUOTE BUTTON — sabse neeche ── */}
-            <div className="hero__
-            btn-wrapper_1">
+            <div className="hero__btn-wrapper_1">
                 <Link to="/contact" className="hero__btn_1 hero__btn--full">
                     GET A FREE QUOTE ›
                 </Link>
