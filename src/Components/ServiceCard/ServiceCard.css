@@ -1,6 +1,6 @@
 /* ── Section ── */
 .ServiceCard {
-  padding: 60px 0 80px;
+  padding: 0px 0 0px;
   background: #f0ede4;
 }
 
@@ -203,7 +203,7 @@
 /* ── Mobile ── */
 @media (max-width: 600px) {
   .ServiceCard {
-    padding: 40px 0 60px;
+    padding: 0px 0 0px;
   }
 
   .ServiceCard__card {
@@ -311,7 +311,7 @@
 @media (max-width: 992px) {
 
   .home_smallTitle {
-    
+
     font-size: 15px;
   }
 
@@ -329,7 +329,7 @@
 @media (max-width: 600px) {
 
   .home_beforeAfter {
-    padding: 45px 15px 25px;
+    padding: 20px 15px 10px;
   }
 
   .home_smallTitle {
