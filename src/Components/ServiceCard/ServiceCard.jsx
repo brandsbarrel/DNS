@@ -169,8 +169,21 @@ export default function ServiceCard() {
         </div>
       </div>
       <div className="hero__middle-image">
-          <img src={Hero_image_s} alt="Service highlight" />
+        <div className="home_beforeAfter">
+
+          <p className="home_smallTitle">
+            QUALITY WORK
+          </p>
+
+          <h2>
+            BEFORE & AFTER
+          </h2>
+
+          <div className="home_line"></div>
+
         </div>
+        <img src={Hero_image_s} alt="Service highlight" />
+      </div>
     </section>
   );
 }

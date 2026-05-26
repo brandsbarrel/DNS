@@ -263,3 +263,88 @@
     display: none;
   }
 } 
+
+.home_beforeAfter {
+  width: 100%;
+  padding: 60px 20px;
+  background: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.home_smallTitle {
+  color: #b32025;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+
+  text-align: center;
+}
+
+.home_beforeAfter h2 {
+  font-size: 72px;
+  font-weight: 900;
+  color: #000;
+  letter-spacing: 2px;
+  margin-bottom: 28px;
+  line-height: 1.1;
+
+  text-align: center;
+}
+
+.home_line {
+  width: 170px;
+  height: 4px;
+  background: #b32025;
+  border-radius: 10px;
+}
+
+/* tablet */
+
+@media (max-width: 992px) {
+
+  .home_smallTitle {
+    font-size: 15px;
+  }
+
+  .home_beforeAfter h2 {
+    font-size: 26px;
+  }
+
+  .home_line {
+    width: 130px;
+  }
+}
+
+/* mobile */
+
+@media (max-width: 600px) {
+
+  .home_beforeAfter {
+    padding: 45px 15px 25px;
+  }
+
+  .home_smallTitle {
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+
+  .home_beforeAfter h2 {
+    font-size: 25px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+
+  .home_line {
+    width: 90px;
+    height: 3px;
+  }
+}
