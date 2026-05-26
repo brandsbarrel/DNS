@@ -4,13 +4,14 @@ import how_img from "../../assets/how_img.jpeg";
 import how_it_works from "../../assets/how_it_works.jpeg";
 import { useLocation, useNavigate } from "react-router-dom";
 import StatsSection from "../StatsSection/StatsSection";
-import what_our_cus_say_home  from "../../assets/what_our_cus_say.jpeg"
-import what_our_cus_say_about  from "../../assets/what_our_cus_say_about.jpeg"
+import what_our_cus_say_home from "../../assets/what_our_cus_say.jpeg"
+import what_our_cus_say_about from "../../assets/what_our_cus_say_about.jpeg"
+import {Eye, ChevronRight } from "lucide-react";
 
 
 
 const areas = [
-  "Eastern suburbs", "western suburbs", "northern beaches", "north west"
+  "Eastern suburbs", "Western Suburbs", "Northern Beaches", "North West"
 ];
 
 
@@ -33,20 +34,25 @@ export default function HowItWorks() {
       </section>
 
       <section className="how-img">
-        
+
         <img src={how_img} alt="Our work" />
       </section>
-      <StatsSection/>
+      <StatsSection />
       <section className="home_what_our_cus_say" >
-      {location.pathname==="/" && <img className="how_it_works_img" src={what_our_cus_say_home} />}
-      {location.pathname==="/about-company" && <img className="how_it_works_img" src={what_our_cus_say_about} />}
-      <button className="How_quote_btn how__btn--full">Read More Testimonials</button>
+        {location.pathname === "/" && <img className="how_it_works_img" src={what_our_cus_say_home} />}
+        {location.pathname === "/about-company" && <img className="how_it_works_img" src={what_our_cus_say_about} />}
+        <button className="How_quote_btn how__btn--full">Read More Testimonials</button>
       </section>
       <section className="works_steps2">
         <div className="areas_back">
+
           <div className="headingWrap">
             <span className="headingLine" />
-            <h2><span>AREAS</span> WE SERVICE</h2>
+
+            <h2>
+              <span>AREAS</span> WE SERVICE
+            </h2>
+
             <span className="headingLine" />
           </div>
 
@@ -54,12 +60,42 @@ export default function HowItWorks() {
             Proudly servicing Sydney and surrounding suburbs.
           </p>
 
-          <div className="areaGrid">
+          <div className="serviceGrid">
             {areas.map((area, index) => (
-              <div className="areaTag" onClick={() => { navigate(`/suburb-details/${area.toLowerCase().replace(/\s+/g, "-")}`), handleClick() }} key={index}>
-                <MapPin size={20} />
-                <span className="vertical" />
-                {area}
+              <div
+                className="serviceCard"
+                key={index}
+                onClick={() => {
+                  navigate(
+                    `/suburb-details/${area
+                      .toLowerCase()
+                      .replace(/\s+/g, "-")}`
+                  );
+
+                  handleClick();
+                }}
+              >
+                <div className="serviceIcon">
+                  <MapPin />
+                </div>
+
+                <div className="serviceContent">
+                  <h3>{area}</h3>
+
+                  <div className="redLine"></div>
+
+                  <p>
+                    Including nearby suburbs and surrounding areas.
+                  </p>
+
+                  <button className="seeMoreBtn">
+                    <Eye size={18} />
+
+                    <span>SEE MORE</span>
+
+                    <ChevronRight size={18} />
+                  </button>
+                </div>
               </div>
             ))}
           </div>
