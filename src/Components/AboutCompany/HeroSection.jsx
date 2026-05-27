@@ -11,8 +11,8 @@ export default function HeroSlider() {
       {/* MOBILE ONLY TOP TEXT */}
       <div className="About_Hero__top">
         <h1 className="About_Hero__heading">
-          Your Best Garden <br />
-          Starts Here!
+          Your <span className="About_Hero__red">Best</span> Garden <br />
+          Starts With Us!
         </h1>
       </div>
 
@@ -32,9 +32,9 @@ export default function HeroSlider() {
         {/* DESKTOP OVERLAY TEXT */}
         <div className="About_Hero__overlay">
           <h1 className="About_Hero__heading">
-            Your Best Garden
+            Your <span className="About_Hero__red">Best</span> Garden
             <br />
-            Starts Here!
+            Starts With Us!
           </h1>
         </div>
 

@@ -8,6 +8,23 @@
     font-weight: bold;
 }
 
+.About_welcome_header .About_sng_s {
+    color: #111111;
+}
+
+.About_welcome_header .About_sng_n {
+    color: #cc1111;
+}
+
+.About_welcome_header .About_sng_g {
+    color: #111111;
+}
+
+.About_welcome_text {
+    text-align: justify;
+    text-align-last: center;
+}
+
 .About_mission_img {
     width: 100%;
     height: 100%;
