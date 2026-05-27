@@ -190,7 +190,7 @@ BOTTOM SECTION
 .home_footerBottom {
     width: 100%;
     padding: 1.2rem 5%;
-    background: #e7ead9;
+    background: #20441d;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -199,7 +199,7 @@ BOTTOM SECTION
 }
 
 .home_footerBottom p {
-    color: #20441d;
+    color: #eef0e6;
     font-size: 0.9rem;
 }
 
@@ -211,7 +211,7 @@ BOTTOM SECTION
 }
 
 .home_bottomLinks span {
-    color: #20441d;
+    color: #eef0e6;
     font-size: 0.9rem;
     position: relative;
 }
