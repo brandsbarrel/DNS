@@ -20,7 +20,7 @@ export default function Footer() {
 
         <h2>Get In Touch!</h2>
 
-        <div className="home_footerTopLine"></div>
+        {/* <div className="home_footerTopLine"></div> */}
 
         <div className="home_contactWrap">
 
