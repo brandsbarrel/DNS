@@ -145,7 +145,7 @@ export default function ServiceCard2() {
                             </svg>
                         </div>
                         <h2 className="sc2-heading">
-                            SNG MAINTENANCE<br />
+                            <span className="About_sng_s">S</span><span className="About_sng_n">N</span><span className="About_sng_g">G</span> MAINTENANCE<br />
                             PROVIDES <span className="sc2-heading--red">SERVICES</span>
                         </h2>
                         <div className="sc2-heading-line"></div>
