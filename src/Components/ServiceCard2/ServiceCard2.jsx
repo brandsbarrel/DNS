@@ -25,6 +25,8 @@ import { FaArrowRight } from "react-icons/fa";
 
 // ── Banner image ──
 import serviceBanner from "../../assets/ServiceBanner.jpeg";
+import HowItWorks from "../HowItWorks/HowItWorks";
+import WhyChooseUs from "../../Components/WhyChooseUs/WhyChooseUs"
 
 const services = [
     {
@@ -42,6 +44,14 @@ const services = [
         slug: "mowing",
         desc: "Keep your lawn neat, healthy, and always looking its best.",
         points: ["Lawn mowing", "Edge trimming", "Weed control"],
+    },
+    {
+        name: "Spray Treatments",
+        icon: <img className="sc2-icon-image" src={spary_t} alt="Spray Treatments" />,
+        image: spray_treatments_second,
+        slug: "spray-treatments",
+        desc: "Targeted spray solutions to protect and maintain your outdoor spaces.",
+        points: ["Weed spray treatments", "Pest & disease control", "Safe & effective products"],
     },
     {
         name: "Soft Fall Landscaping",
@@ -90,14 +100,6 @@ const services = [
         slug: "bark-blowing",
         desc: "Evenly spread bark to enhance the look and health of your garden beds.",
         points: ["Bark delivery & spreading", "Garden bed preparation", "Neat, even coverage"],
-    },
-    {
-        name: "Spray Treatments",
-        icon: <img className="sc2-icon-image" src={spary_t} alt="Spray Treatments" />,
-        image: spray_treatments_second,
-        slug: "spray-treatments",
-        desc: "Targeted spray solutions to protect and maintain your outdoor spaces.",
-        points: ["Weed spray treatments", "Pest & disease control", "Safe & effective products"],
     },
 ];
 
@@ -194,6 +196,8 @@ export default function ServiceCard2() {
                     </div>
                 </div>
             </section>
+            <WhyChooseUs/>
+            <HowItWorks/>
         </>
     );
 }

@@ -62,6 +62,7 @@ export default function HowItWorks() {
       )}
 
       {/* We Love What We Do image */}
+      {location.pathname!="/services"&&
       <section className="how-img">
         <img src={how_img} alt="Our work" />
 
@@ -77,11 +78,13 @@ export default function HowItWorks() {
             Contact Us
           </button>
         )}
-      </section>
+      </section>}
 
-      <StatsSection />
+      {location.pathname!=="/services"&&<StatsSection/>}
 
+        {location.pathname!=="/services"&&
       <section className="home_what_our_cus_say">
+        
         {location.pathname === "/" && (
           <img className="how_it_works_img" src={what_our_cus_say_home} />
         )}
@@ -91,7 +94,7 @@ export default function HowItWorks() {
         <button className="How_quote_btn how__btn--full">
           Read More Testimonials
         </button>
-      </section>
+      </section>}
 
       <section className="works_steps2">
         <div className="areas_back">
