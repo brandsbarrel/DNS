@@ -52,7 +52,7 @@ export default function HowItWorks() {
     <>
       <section className="works_steps1">
         <img className="how_it_works_img" src={how_it_works} alt="How it works" />
-        <button className="How_quote_btn how__btn--full">GET A FREE QUOTE</button>
+        <button className="How_quote_btn how__btn--full">Contact Us</button>
       </section>
 
       <section className="how-img">

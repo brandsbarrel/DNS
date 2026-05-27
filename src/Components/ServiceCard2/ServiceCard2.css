@@ -163,9 +163,9 @@
 
 /* ── More Info Button ── */
 .sc2-more-btn {
-  width: 25%;
+  width: 60%;
   padding: 9px 6px;
-  background: #cc1111;
+  background: #364d1f;
   color: #fff;
   font-size: 0.7rem;
   font-weight: 500;
@@ -178,7 +178,7 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  margin: 0;
+  margin: 5px 0;
 }
 
 .sc2-more-btn:hover {

@@ -197,7 +197,7 @@ export default function Footer() {
       <div className="home_footerBottom">
 
         <p>
-          © 2024 SNG Maintenance. All rights reserved.
+          © 2026 SNG Maintenance. All rights reserved.
         </p>
 
         <div className="home_bottomLinks">

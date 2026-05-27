@@ -21,6 +21,7 @@ import Property_Maintenance_Second from "../../assets/Property_Maintenance_Secon
 import Soft_Fall_Landscaping from "../../assets/Soft_Fall_Landscaping.jpeg";
 import spray_treatments_second from "../../assets/spray_treatments_second.jpeg";
 import strata_garden_maintenance from "../../assets/strata_garden_maintenance.jpeg";
+import { FaArrowRight } from "react-icons/fa";
 
 // ── Banner image ──
 import serviceBanner from "../../assets/ServiceBanner.jpeg";
@@ -186,7 +187,7 @@ export default function ServiceCard2() {
                                     onClick={() => navigate(`/services/${service.slug}`)}
                                     aria-label={`More info about ${service.name}`}
                                 >
-                                    More Info
+                                    More Info <FaArrowRight className="sc2-arrow" />
                                 </button>
                             </div>
                         ))}
