@@ -1,5 +1,4 @@
 import "./Footer.css";
-import home_footerLogo from "../../assets/SNG_red.png"
 import {
   FaPhoneAlt,
   FaFacebookF,
@@ -8,7 +7,6 @@ import {
   FaLinkedinIn,
   FaChevronRight,
 } from "react-icons/fa";
-
 import { FiMapPin } from "react-icons/fi";
 
 export default function Footer() {
@@ -18,8 +16,11 @@ export default function Footer() {
       {/* TOP CONTACT SECTION */}
       <div className="home_footerTop">
 
+        <div className="home_footerTopLine"></div>
+
         <h2>Get In Touch!</h2>
-        <div className="home_footerLine"></div>
+
+        <div className="home_footerTopLine"></div>
 
         <div className="home_contactWrap">
 
@@ -58,10 +59,8 @@ export default function Footer() {
 
         {/* QUICK LINKS */}
         <div className="home_footerBox home_linksBox">
-
           <h3>Quick Links</h3>
           <div className="home_smallLine"></div>
-
           <ul>
             <li><FaChevronRight /><a href="/">Home</a></li>
             <li><FaChevronRight /><a href="/">About Company</a></li>
@@ -70,37 +69,30 @@ export default function Footer() {
             <li><FaChevronRight /><a href="/">Testimonials</a></li>
             <li><FaChevronRight /><a href="/">Contact Us</a></li>
           </ul>
-
         </div>
 
         {/* FOLLOW US */}
         <div className="home_footerBox">
-
           <h3>Follow Us</h3>
           <div className="home_smallLine"></div>
-
           <div className="home_socialIcons">
             <a href="/"><FaFacebookF /></a>
             <a href="/"><FaInstagram /></a>
             <a href="/"><FaPinterestP /></a>
             <a href="/"><FaLinkedinIn /></a>
           </div>
-
         </div>
 
       </div>
 
       {/* BOTTOM */}
       <div className="home_footerBottom">
-
         <p>© 2026 SNG Maintenance. All rights reserved.</p>
-
         <div className="home_bottomLinks">
           <span>Reliable</span>
           <span>Professional</span>
           <span>Exceptional Results</span>
         </div>
-
       </div>
 
     </footer>
