@@ -330,10 +330,10 @@ MOBILE
     line-height:1.5;
 }
 
-.home_footerMiddle{
-    padding:2.8rem 1.2rem;
-    gap:2rem;
-}
+  .home_footerMiddle {
+    padding: 1rem 1.2rem;
+    gap: 1rem;
+  }
 
 .home_footerLogo{
     width:150px;

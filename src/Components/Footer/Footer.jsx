@@ -158,14 +158,6 @@ export default function Footer() {
 
           </div>
 
-          <div className="home_domainBox">
-
-            <FaGlobe />
-
-            <span>dns-cjqy.onrender.com</span>
-
-          </div>
-
         </div>
 
       </div>
