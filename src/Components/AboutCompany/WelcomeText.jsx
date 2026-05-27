@@ -39,7 +39,7 @@ const WelcomeText = () => {
                 <br />
 
                 <div className="About_our_mission">
-                    <div className="About_welcome_header">Our Mission</div>
+                    <div className="About_welcome_header">Our <span className="About_sng_n">Mission</span></div>
                     <p className="About_welcome_text">
                         To create clean, beautiful, and well-maintained outdoor spaces that our
                         clients are proud of

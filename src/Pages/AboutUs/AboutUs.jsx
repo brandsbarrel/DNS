@@ -8,7 +8,7 @@ const AboutUs = () => {
         <>
             <HeroSection />
             <WelcomeText />
-            <WhyChooseUs />
+            {/* <WhyChooseUs /> */}
             <HowItWorks />
         </>
     );

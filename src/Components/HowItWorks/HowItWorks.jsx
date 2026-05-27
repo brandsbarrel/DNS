@@ -17,22 +17,22 @@ const areas = [
   {
     name: "Eastern suburbs",
     icon: EasternS,
-    text : "Including Bondi, Randwick, Coogee and surrounding areas."
+    text: "Including Bondi, Randwick, Coogee and surrounding areas."
   },
   {
     name: "Western Suburbs",
     icon: WesternS,
-    text : "Including Parramatta, Penrith, Blacktown and surrounding areas."
+    text: "Including Parramatta, Penrith, Blacktown and surrounding areas."
   },
-    {
+  {
     name: "Northern Beaches",
     icon: NorthernB,
-    text : "Including Manly, Dee Why, Mona Vale and surrounding areas."
+    text: "Including Manly, Dee Why, Mona Vale and surrounding areas."
   },
   {
     name: "North West",
     icon: NorthW,
-    text : "Including Castle Hill, Rouse Hill, Kellyville and surrounding areas."
+    text: "Including Castle Hill, Rouse Hill, Kellyville and surrounding areas."
   }
 ];
 
@@ -41,100 +41,116 @@ const handleClick = () => {
   window.scrollTo({
     top: 0,
     behavior: "smooth"
-  })
+  });
 };
 
 export default function HowItWorks() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const isAbout = location.pathname === "/about-company";
+
   return (
     <>
-      <section className="works_steps1">
-        <img className="how_it_works_img" src={how_it_works} alt="How it works" />
-        <button className="How_quote_btn how__btn--full">Contact Us</button>
-      </section>
 
+      {/* How It Works image — sirf Home par */}
+      {!isAbout && (
+        <section className="works_steps1">
+          <img className="how_it_works_img" src={how_it_works} alt="How it works" />
+          <button className="How_quote_btn how__btn--full">Contact Us</button>
+        </section>
+      )}
+
+      {/* We Love What We Do image */}
       <section className="how-img">
-
         <img src={how_img} alt="Our work" />
+
+        {/* Button — sirf About Company par */}
+        {isAbout && (
+          <button
+            className="How_quote_btn how__btn--full"
+            onClick={() => {
+              navigate("/contact-us");
+              handleClick();
+            }}
+          >
+            Contact Us
+          </button>
+        )}
       </section>
+
       <StatsSection />
-      <section className="home_what_our_cus_say" >
-        {location.pathname === "/" && <img className="how_it_works_img" src={what_our_cus_say_home} />}
-        {location.pathname === "/about-company" && <img className="how_it_works_img" src={what_our_cus_say_about} />}
-        <button className="How_quote_btn how__btn--full">Read More Testimonials</button>
+
+      <section className="home_what_our_cus_say">
+        {location.pathname === "/" && (
+          <img className="how_it_works_img" src={what_our_cus_say_home} />
+        )}
+        {isAbout && (
+          <img className="how_it_works_img" src={what_our_cus_say_about} />
+        )}
+        <button className="How_quote_btn how__btn--full">
+          Read More Testimonials
+        </button>
       </section>
+
       <section className="works_steps2">
-  <div className="areas_back">
+        <div className="areas_back">
 
-    <div className="headingWrap">
-      <span className="headingLine" />
-
-      <h2>
-        <span>AREAS</span> WE SERVICE
-      </h2>
-
-      <span className="headingLine" />
-    </div>
-
-    <p className="subheading">
-      Proudly servicing Sydney and surrounding suburbs.
-    </p>
-
-    <div className="serviceGrid">
-      {areas.map((area, index) => (
-        <div
-          className="serviceCard"
-          key={index}
-          onClick={() => {
-            navigate(
-              `/suburb-details/${area.name
-                .toLowerCase()
-                .replace(/\s+/g, "-")}`
-            );
-
-            handleClick();
-          }}
-        >
-
-          {/* TOP ROW */}
-          <div className="serviceCard__content__icon_text">
-
-            <div className="serviceIcon">
-              <img src={area.icon} alt={area.name} />
-            </div>
-
-            <div className="serviceContent">
-
-              <h3>{area.name}</h3>
-
-              <div className="redLine"></div>
-
-              <p>
-                {area.text}
-              </p>
-
-            </div>
+          <div className="headingWrap">
+            <span className="headingLine" />
+            <h2>
+              <span>AREAS</span> WE SERVICE
+            </h2>
+            <span className="headingLine" />
           </div>
 
-          {/* BOTTOM ROW */}
-          <div className="serviceBtnWrap">
-            <button className="seeMoreBtn">
-              <Eye size={18} />
+          <p className="subheading">
+            Proudly servicing Sydney and surrounding suburbs.
+          </p>
 
-              <span>SEE MORE</span>
+          <div className="serviceGrid">
+            {areas.map((area, index) => (
+              <div
+                className="serviceCard"
+                key={index}
+                onClick={() => {
+                  navigate(
+                    `/suburb-details/${area.name
+                      .toLowerCase()
+                      .replace(/\s+/g, "-")}`
+                  );
+                  handleClick();
+                }}
+              >
 
-              <ChevronRight size={18} />
-            </button>
+                {/* TOP ROW */}
+                <div className="serviceCard__content__icon_text">
+                  <div className="serviceIcon">
+                    <img src={area.icon} alt={area.name} />
+                  </div>
+                  <div className="serviceContent">
+                    <h3>{area.name}</h3>
+                    <div className="redLine"></div>
+                    <p>{area.text}</p>
+                  </div>
+                </div>
+
+                {/* BOTTOM ROW */}
+                <div className="serviceBtnWrap">
+                  <button className="seeMoreBtn">
+                    <Eye size={18} />
+                    <span>SEE MORE</span>
+                    <ChevronRight size={18} />
+                  </button>
+                </div>
+
+              </div>
+            ))}
           </div>
 
         </div>
-      ))}
-    </div>
+      </section>
 
-  </div>
-</section>
     </>
   );
 }
