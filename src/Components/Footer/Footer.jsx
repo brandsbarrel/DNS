@@ -34,7 +34,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="home_contactDivider"></div>
+          {/* <div className="home_contactDivider"></div> */}
 
           <div className="home_contactCard">
             <div className="home_contactIcon">

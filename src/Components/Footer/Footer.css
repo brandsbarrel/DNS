@@ -12,7 +12,7 @@ TOP SECTION
     width: 100%;
     padding: 1.5rem 0;
     text-align: center;
-    border-bottom: 2px solid #2f4d2d;
+    /* border-bottom: 2px solid #2f4d2d;     */
 }
 
 .home_footerTopLine {
