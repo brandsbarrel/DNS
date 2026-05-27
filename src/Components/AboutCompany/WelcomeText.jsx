@@ -9,7 +9,8 @@ const WelcomeText = () => {
             <div className="About_welcome_container">
 
                 <div className="About_welcome_header">
-                    Welcome to <br/> <span className="About_sng_s">S</span><span className="About_sng_n">N</span><span className="About_sng_g">G</span> Maintenance Services
+                    Welcome to <br />
+                    <span className="About_sng_s">S</span><span className="About_sng_n">N</span><span className="About_sng_g">G</span> Maintenance Services
                 </div>
 
                 <p className="About_welcome_text">

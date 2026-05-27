@@ -22,7 +22,8 @@
 
 .About_welcome_text {
     text-align: justify;
-    text-align-last: center;
+    text-align-last: left;
+    hyphens: auto;
 }
 
 .About_mission_img {
