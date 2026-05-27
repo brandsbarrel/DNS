@@ -86,28 +86,6 @@ export default function Footer() {
 
       <div className="home_footerMiddle">
 
-        {/* LEFT */}
-
-        <div className="home_footerBox">
-
-          <img
-            src={home_footerLogo}
-            alt="logo"
-            className="home_footerLogo"
-          />
-
-          <p>
-            Proudly servicing homes and
-            businesses across Sydney.
-          </p>
-
-          <p>
-            Reliable. Professional.
-            Exceptional results.
-          </p>
-
-        </div>
-
         {/* CENTER */}
 
         <div className="home_footerBox home_linksBox">
