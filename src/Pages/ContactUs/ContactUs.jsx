@@ -187,7 +187,7 @@ export default function ContactUs() {
                         type="submit"
                         disabled={status === "loading"}
                     >
-                        {status === "loading" ? "Sending..." : "Send Message →"}
+                        {status === "loading" ? "Sending..." : "Send message and get quote"}
                     </button>
 
                 </form>
