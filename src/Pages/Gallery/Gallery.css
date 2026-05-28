@@ -168,19 +168,27 @@ body {
 /* ─── PROJECT ────────────────────────── */
 
 .sng-project {
-  margin-bottom: 60px;
+  margin-bottom: 50px;
+}
+
+/* ─── GREEN FRAME — wraps hero + all images ── */
+
+.sng-project-frame {
+  border: 3px solid #355323;
+  border-radius: 24px;
+  padding: 16px;
+  background: #E7EAD9;
 }
 
 /* ─── HERO CARD ──────────────────────── */
 
 .sng-hero-card {
   display: flex;
-  /* align-items: stretch; */
-  background: #fff;
-  border-radius: 20px;
+  align-items: stretch;
+  background: #E7EAD9;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, .10);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   min-height: 200px;
 }
 
@@ -191,7 +199,7 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 30px 28px;
-  background: #fff;
+  background: #E7EAD9;
   gap: 8px;
 }
 
@@ -214,11 +222,25 @@ body {
   font-weight: 500;
   color: #555;
   line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.sng-address-text {
+  display: block;
+}
+
+.sng-address-icon {
+  color: #355323;
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 /* RIGHT — image */
 .sng-hero-right {
-  /* flex: 1; */
+  flex: 1;
 }
 
 .sng-hero-img {
@@ -227,12 +249,13 @@ body {
   min-height: 220px;
   object-fit: cover;
   display: block;
+  border-radius: 14px;
 }
 
-/* ─── SECTION (sub-titles + rows) ────── */
+/* ─── SECTION ────────────────────────── */
 
 .sng-section {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .sng-sub-title {
@@ -258,7 +281,7 @@ body {
   height: 320px;
   object-fit: cover;
   display: block;
-  border-radius: 20px;
+  border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, .12);
 }
 
@@ -283,28 +306,40 @@ body {
     text-align: center;
   }
 
-  /* Hero card stacks vertically on mobile */
+  .sng-project-frame {
+    padding: 10px;
+    border-radius: 18px;
+  }
+
+  /* Hero card stays side-by-side on mobile */
   .sng-hero-card {
-    /* flex-direction: column; */
-    min-height: unset;
+    min-height: 140px;
   }
 
   .sng-hero-left {
-    flex: unset;
-    padding: 20px 18px;
-    gap: 6px;
+    flex: 0 0 42%;
+    padding: 16px 14px;
+    gap: 5px;
+  }
+
+  .sng-project-label {
+    font-size: 12px;
   }
 
   .sng-hero-name {
-    font-size: 18px;
+    font-size: 14px;
+  }
+
+  .sng-hero-address {
+    font-size: 11px;
   }
 
   .sng-hero-img {
-    min-height: 200px;
+    min-height: 140px;
   }
 
   .sng-project {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 
   .sng-sub-title {
@@ -318,7 +353,7 @@ body {
   .sng-image {
     width: 50%;
     height: 170px;
-    border-radius: 16px;
+    border-radius: 12px;
   }
 
   .sng-image:only-child {
