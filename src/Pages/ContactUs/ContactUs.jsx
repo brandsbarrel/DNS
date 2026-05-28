@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./ContactUs.css";
-
+import contactUs from "../../assets/contactus.jpeg"
 export default function ContactUs() {
 
     const [formData, setFormData] = useState({
@@ -59,9 +59,9 @@ export default function ContactUs() {
             <div className="contact-heading">
                 <h1>Contact <span>Us</span></h1>
                 <div className="contact-underline" />
-                <p className="contact-subtitle">
-                    Get in touch with us — we'd love to hear from you.
-                </p>
+                <div className="contact__img__container">
+                <img className="contact__img" src={contactUs} />
+                </div>            
             </div>
 
             {/* CONTACT CARDS */}

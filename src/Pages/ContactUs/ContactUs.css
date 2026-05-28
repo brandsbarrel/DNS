@@ -29,6 +29,17 @@
   color: #4a8c2a;
 }
 
+.contact__img{
+  border-radius: 50%;
+  height: 200px;
+  width: auto;
+}
+
+.contact__img__container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .sng-logo-sub {
   font-size: 9px;
   font-weight: 600;
