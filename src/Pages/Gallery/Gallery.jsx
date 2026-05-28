@@ -73,229 +73,200 @@ import mgs6 from "../../assets/MGS6.jpeg";
 import mi1 from "../../assets/MI1.jpeg";
 import mi2 from "../../assets/MI2.jpeg";
 
-import avista from "../../assets/avista.png"
-import shores from "../../assets/balmain shores.png"
+import avista from "../../assets/avista.png";
+import shores from "../../assets/balmain shores.png";
 import cove from "../../assets/cove.png";
 import union from "../../assets/union.png";
 import garden from "../../assets/garden.png";
 
-import {
-  LuGrid2X2,
-  LuBuilding2,
-  LuTreePine
-} from "react-icons/lu";
-
-import { PiPlantLight } from "react-icons/pi";
-
+import { LuGrid2X2 } from "react-icons/lu";
 import { useState } from "react";
 
+/* ─────────────────────────────────────────
+   Hero Card — left: name+address, right: image
+───────────────────────────────────────── */
+function HeroCard({ projectLabel, name, address, heroImage }) {
+  return (
+    <div className="sng-hero-card">
+      {/* LEFT */}
+      <div className="sng-hero-left">
+        <span className="sng-project-label">Project:</span>
+        <span className="sng-hero-name">{name}</span>
+        {address && (
+          <span className="sng-hero-address">
+            {address.split("\n").map((line, i) => (
+              <span key={i}>
+                {line}
+                {i !== address.split("\n").length - 1 && <br />}
+              </span>
+            ))}
+          </span>
+        )}
+      </div>
+
+      {/* RIGHT */}
+      <div className="sng-hero-right">
+        <img src={heroImage} alt={name} className="sng-hero-img" />
+      </div>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────
+   Sub-section title (Topiary trees, Mowing…)
+───────────────────────────────────────── */
+function SubTitle({ text }) {
+  return <div className="sng-sub-title">{text}</div>;
+}
+
+/* ─────────────────────────────────────────
+   Image pair / single row
+───────────────────────────────────────── */
+function ImageRow({ images, alt }) {
+  return (
+    <div className="sng-card">
+      {images.map((img, i) => (
+        <img key={i} src={img} alt={alt} className="sng-image" />
+      ))}
+    </div>
+  );
+}
+
 export default function Gallery() {
-
   const [activeTab, setActiveTab] = useState("all");
+
+  /* ── PROJECTS DATA ── */
   const projects = [
+    /* ── BALMAIN SHORES ── */
     {
-      id: 1,
-      site: "Balmainshores Site:",
-      location: "Corner of Victoria Road and\nTerry Street Rozelle",
-      image: [bg1],
-      showLabel: true,
-      align: "center",
+      id: "shores",
       category: "shores",
+      hero: {
+        name: "Balmainshores Site",
+        address: "Corner of Victoria Road and\nTerry Street Rozelle",
+        image: bg1,
+      },
+      sections: [
+        {
+          title: "Topiary trees is an art:",
+          rows: [[ta2, ta1]],
+        },
+        {
+          title: "Mowing:",
+          rows: [[mg2, mg1]],
+        },
+        {
+          title: "Granular and liquid fertilising:",
+          rows: [[ga1, ga2]],
+        },
+        {
+          title: "Balmainshores site: Stage 3 Foreshore water front area",
+          rows: [[bsf1, bsf2], [bsf3]],
+        },
+        {
+          title: "Balmainshores site: Stage 3 — Irrigation repairs",
+          rows: [[bi1, bi2]],
+        },
+        {
+          title: "Balmainshores site: Stage 3 Turf Restoration",
+          rows: [[bt1, bt2]],
+        },
+      ],
     },
 
+    /* ── BALMAIN COVE ── */
     {
-      id: 2,
-      site: "Topiary trees is an art:",
-      location: "",
-      image: [ta2, ta1],
-      showLabel: false,
-      align: "left",
-      category: "shores",
-    },
-
-    {
-      id: 3,
-      site: "Mowing:",
-      location: "",
-      image: [mg2, mg1],
-      showLabel: false,
-      align: "left",
-      category: "shores",
-    },
-
-    {
-      id: 4,
-      site: "Granular and liquid fertilising:",
-      location: "",
-      image: [ga1, ga2],
-      showLabel: false,
-      align: "left",
-      category: "shores",
-    },
-
-    {
-      id: 5,
-      site: "Balmain Cove:",
-      location: "Foreshore water front area",
-      image: [],
-      imageSingle: bc,
-      imagePairs: [[bc2, bc3]],
-      showLabel: true,
-      align: "center",
+      id: "cove",
       category: "cove",
+      hero: {
+        name: "Balmain Cove:",
+        address: "Foreshore water front area",
+        image: bc,
+      },
+      sections: [
+        {
+          title: null,
+          rows: [[bc2, bc3]],
+        },
+        {
+          title: "Balmain Cove site",
+          rows: [[bc9, bc4], [bc5, bc6], [bc7, bc8]],
+        },
+      ],
     },
 
+    /* ── BALMAIN UNION ── */
     {
-      id: 6,
-      site: "Balmain Cove site",
-      location: "",
-      image: [],
-      imageSingle: null,
-      imagePairs: [[bc9, bc4], [bc5, bc6], [bc7, bc8]],
-      showLabel: false,
-      align: "left",
-      category: "cove",
+      id: "union",
+      category: "union",
+      hero: {
+        name: "Union Site",
+        address: "",
+        image: us1,
+      },
+      sections: [
+        {
+          title: null,
+          rows: [[us2, us3], [us4, us5], [us6, us7]],
+        },
+        {
+          title: "Union site: Application of soft fall mulch and application of mulch to garden beds",
+          rows: [[ua1, ua2], [ua3, ua4], [ua5]],
+        },
+        {
+          title: "Union site: Irrigation repairs",
+          rows: [[ui1, ui2], [ui3, ui4]],
+        },
+      ],
     },
 
+    /* ── AVISTA ── */
     {
-      id: 7,
-      site: "Union site",
-      location: "",
-      image: [],
-      imageSingle: null,
-      imagePairs: [[us1, us2], [us3, us4], [us5, us6], [us7]],
-      showLabel: false,
-      align: "left",
-      category: "union"
-    },
-
-    {
-      id: 8,
-      site: "Union site: Application of soft fall mulch and application of mulch to garden beds",
-      location: "",
-      image: [],
-      imageSingle: null,
-      imagePairs: [[ua1, ua2], [ua3, ua4], [ua5]],
-      showLabel: false,
-      align: "left",
-      category: "union"
-    },
-
-    {
-      id: 9,
-      site: "Union site: Irrigation repairs",
-      location: "",
-      image: [],
-      imageSingle: null,
-      imagePairs: [[ui1, ui2], [ui3, ui4]],
-      showLabel: false,
-      align: "left",
-      category: "union"
-    },
-
-    {
-      id: 10,
-      site: "Balmainshores site: Stage 3 Foreshore water front area",
-      location: "",
-      image: [],
-      imageSingle: null,
-      imagePairs: [[bsf1, bsf2], [bsf3]],
-      showLabel: false,
-      align: "left",
-      category: "shores",
-    },
-
-    {
-      id: 11,
-      site: "Balmainshores site: Stage 3 - irrigation repairs",
-      location: "",
-      image: [],
-      imageSingle: null,
-      imagePairs: [[bi1, bi2]],
-      showLabel: false,
-      align: "left",
-      category: "shores",
-    },
-
-    {
-      id: 12,
-      site: "Balmainshores site: Stage 3 Turf Restoration",
-      location: "",
-      image: [],
-      imageSingle: null,
-      imagePairs: [[bt1, bt2]],
-      showLabel: false,
-      align: "left",
-      category: "shores",
-    },
-
-    {
-      id: 13,
-      site: "Avista site",
-      location: "",
-      image: [],
-      imageSingle: null,
-      imagePairs: [[av1, av2], [av3, av4], [av5]],
-      showLabel: false,
-      align: "left",
+      id: "avista",
       category: "avista",
+      hero: {
+        name: "Avista Site",
+        address: "",
+        image: av1,
+      },
+      sections: [
+        {
+          title: null,
+          rows: [[av2, av3], [av4, av5]],
+        },
+        {
+          title: "Avista site: Application of mulch to garden areas",
+          rows: [[as1, as2], [as3, as4]],
+        },
+      ],
     },
 
+    /* ── MARSFIELD GARDENS ── */
     {
-      id: 14,
-      site: "Avista site: Application of mulch to garden areas",
-      location: "",
-      image: [],
-      imageSingle: null,
-      imagePairs: [[as1, as2], [as3, as4]],
-      showLabel: false,
-      align: "left",
-      category: "avista",
-    },
-
-    {
-      id: 15,
-      site: "Marsfield Gardens Site: Mowing Epping Road",
-      location: "",
-      image: [],
-      imageSingle: mm1,
-      imagePairs: [],
-      showLabel: true,
-      align: "center",
-      category: "marsfield"
-    },
-
-    {
-      id: 16,
-      site: "Marsfield Gardens Site",
-      location: "",
-      image: [],
-      imageSingle: null,
-      imagePairs: [[mgs1, mgs2], [mgs3, mgs4], [mgs5, mgs6]],
-      showLabel: false,
-      align: "left",
-      category: "marsfield"
-    },
-
-    {
-      id: 17,
-      site: "Marsfield Gardens Site Irrigation repairs",
-      location: "",
-      image: [],
-      imageSingle: null,
-      imagePairs: [[mi1, mi2]],
-      showLabel: false,
-      align: "left",
+      id: "marsfield",
       category: "marsfield",
+      hero: {
+        name: "Marsfield Gardens Site",
+        address: "Mowing Epping Road",
+        image: mm1,
+      },
+      sections: [
+        {
+          title: null,
+          rows: [[mgs1, mgs2], [mgs3, mgs4], [mgs5, mgs6]],
+        },
+        {
+          title: "Marsfield Gardens Site: Irrigation repairs",
+          rows: [[mi1, mi2]],
+        },
+      ],
     },
   ];
 
-  const filteredProjects =
+  const filtered =
     activeTab === "all"
       ? projects
-      : projects.filter(
-        project => project.category === activeTab
-      );
+      : projects.filter((p) => p.category === activeTab);
 
   return (
     <div className="sng-page">
@@ -306,12 +277,8 @@ export default function Gallery() {
           <div className="sng-logo-top">
             SN<span>G</span>
           </div>
-
-          <div className="sng-logo-sub">
-            — MAINTENANCE —
-          </div>
+          <div className="sng-logo-sub">— MAINTENANCE —</div>
         </div>
-
         <div className="sng-hamburger">
           <span />
           <span />
@@ -334,13 +301,13 @@ export default function Gallery() {
           Quality work, every time.
         </p>
 
+        {/* FILTER BAR */}
         <div className="sng-filter-bar">
-
           <button
             className={`sng-filter-btn ${activeTab === "all" ? "active" : ""}`}
             onClick={() => setActiveTab("all")}
           >
-            <div className="sng-filter-icon"><LuGrid2X2/></div>
+            <div className="sng-filter-icon"><LuGrid2X2 /></div>
             <span>All Projects</span>
           </button>
 
@@ -348,7 +315,7 @@ export default function Gallery() {
             className={`sng-filter-btn ${activeTab === "shores" ? "active" : ""}`}
             onClick={() => setActiveTab("shores")}
           >
-            <div className="sng-filter-icon"><img src={shores} /></div>
+            <div className="sng-filter-icon"><img src={shores} alt="" /></div>
             <span>Balmain Shores</span>
           </button>
 
@@ -356,15 +323,15 @@ export default function Gallery() {
             className={`sng-filter-btn ${activeTab === "cove" ? "active" : ""}`}
             onClick={() => setActiveTab("cove")}
           >
-            <div className="sng-filter-icon"><img src={cove} /></div>
-            <span>Balmain cove</span>
+            <div className="sng-filter-icon"><img src={cove} alt="" /></div>
+            <span>Balmain Cove</span>
           </button>
 
           <button
             className={`sng-filter-btn ${activeTab === "union" ? "active" : ""}`}
             onClick={() => setActiveTab("union")}
           >
-            <div className="sng-filter-icon"><img src={union} /></div>
+            <div className="sng-filter-icon"><img src={union} alt="" /></div>
             <span>Balmain Union</span>
           </button>
 
@@ -372,7 +339,7 @@ export default function Gallery() {
             className={`sng-filter-btn ${activeTab === "avista" ? "active" : ""}`}
             onClick={() => setActiveTab("avista")}
           >
-            <div className="sng-filter-icon"><img src={avista} /></div>
+            <div className="sng-filter-icon"><img src={avista} alt="" /></div>
             <span>Avista</span>
           </button>
 
@@ -380,92 +347,39 @@ export default function Gallery() {
             className={`sng-filter-btn ${activeTab === "marsfield" ? "active" : ""}`}
             onClick={() => setActiveTab("marsfield")}
           >
-            <div className="sng-filter-icon"><img src={garden} /></div>
+            <div className="sng-filter-icon"><img src={garden} alt="" /></div>
             <span>Marsfield Gardens</span>
           </button>
-
         </div>
 
-        {filteredProjects.map((project) => (
-          <div
-            className="sng-project"
-            key={project.id}
-          >
-            <div
-              className="sng-project-title"
-              style={{ textAlign: project.align }}
-            >
-              {project.showLabel && (
-                <span className="sng-project-label">Project: </span>
-              )}
+        {/* PROJECTS */}
+        {filtered.map((project) => (
+          <div className="sng-project" key={project.id}>
 
-              {project.site}
+            {/* HERO CARD */}
+            <HeroCard
+              name={project.hero.name}
+              address={project.hero.address}
+              heroImage={project.hero.image}
+            />
 
-              {project.location && (
-                <>
-                  <br />
-
-                  {project.location
-                    .split("\n")
-                    .map((line, i) => (
-                      <span key={i}>
-                        {line}
-
-                        {i !==
-                          project.location.split("\n").length - 1 && (
-                            <br />
-                          )}
-                      </span>
-                    ))}
-                </>
-              )}
-            </div>
-
-            <div className="sng-card">
-              {project.image.map(
-                (img, index) => (
-                  <img
-                    key={index}
-                    src={img}
-                    alt={project.site}
-                    className="sng-image"
+            {/* SECTIONS */}
+            {project.sections.map((section, si) => (
+              <div className="sng-section" key={si}>
+                {section.title && <SubTitle text={section.title} />}
+                {section.rows.map((row, ri) => (
+                  <ImageRow
+                    key={ri}
+                    images={row}
+                    alt={project.hero.name}
                   />
-                )
-              )}
-            </div>
-
-            {project.imagePairs && (
-              <>
-                {project.imageSingle && (
-                  <div className="sng-card" style={{ marginBottom: "15px" }}>
-                    <img
-                      src={project.imageSingle}
-                      alt={project.site}
-                      className="sng-image"
-                    />
-                  </div>
-                )}
-
-                {project.imagePairs.map((pair, pairIndex) => (
-                  <div
-                    className="sng-card"
-                    key={pairIndex}
-                    style={{ marginBottom: "15px" }}
-                  >
-                    {pair.map((img, index) => (
-                      <img
-                        key={index}
-                        src={img}
-                        alt={project.site}
-                        className="sng-image"
-                      />
-                    ))}
-                  </div>
                 ))}
-              </>
-            )}
+              </div>
+            ))}
+
           </div>
         ))}
+
       </div>
     </div>
   );
