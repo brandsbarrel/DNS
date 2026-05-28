@@ -117,13 +117,14 @@
 
 @media (max-width: 768px) {
     .hero {
-        position: relative;
+         position: relative;
         top: 0;
         height: auto;
         flex-direction: column;
         align-items: stretch;
-        overflow: visible;
+        overflow: hidden;        /* visible tha — isko hidden karo */
         background: #f0f2eb;
+        width: 100%; 
     }
 
     .hero__content{
@@ -144,6 +145,9 @@
         display: flex !important;
         flex-direction: column;
         width: 100%;
+        overflow: hidden;        /* ← add karo */
+        margin: 0;               /* ← add karo */
+        padding: 0;  
     }
 
     .hero__content--mobile {
@@ -157,9 +161,11 @@
     }
 
     .hero__img-wrapper {
-        width: 100%;
+       width: 100%;
         aspect-ratio: 4 / 3;
         overflow: hidden;
+        margin: 0;               /* ← add karo */
+        padding: 0;
     }
 
     .hero__img--mobile {

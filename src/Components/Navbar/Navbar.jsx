@@ -6,7 +6,6 @@ import { UserContext } from "../../context/UserContext";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
     const { setUser } = useContext(UserContext);
 
     const handleClick = () => {
@@ -19,24 +18,14 @@ export default function Navbar() {
     const closeMenu = () => setMenuOpen(false);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 60);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    useEffect(() => {
         document.body.style.overflow = menuOpen ? "hidden" : "auto";
     }, [menuOpen]);
 
     return (
-        <header className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
+        <header className={`navbar`}>
 
             {/* Bottom Line */}
-            {!scrolled && <div className="navbar__bottomLine"></div>}
+            <div className="navbar__bottomLine"></div>
 
             <nav className="container navbar__inner">
 
