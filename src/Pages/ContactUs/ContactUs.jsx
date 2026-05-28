@@ -76,7 +76,7 @@ export default function ContactUs() {
                         </svg>
                     </div>
                     <div className="contact-card-content">
-                        <h2 className="contact-card-label">LOOKING FOR CONSULTATION.</h2>
+                        <h2 className="contact-card-label">Looking for Consultation. Call us.</h2>
                         <p className="contact-card-value">
                             <a href="tel:0407460010" className="contact-link">0407 460 010</a>
                         </p>
