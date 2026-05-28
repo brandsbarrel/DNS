@@ -211,7 +211,7 @@ body {
 }
 
 .sng-hero-name {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 800;
   color: #111;
   line-height: 1.3;
@@ -289,6 +289,61 @@ body {
   width: 100%;
 }
 
+/* ─── CONTACT BUTTON ─────────────────── */
+
+.sng-contact-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.sng-contact-btn {
+  background: #d62828;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 48px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.2s;
+}
+
+.sng-contact-btn:hover {
+  background: #b31f1f;
+}
+
+/* ─── HOW IMG ────────────────────────── */
+
+.how-img {
+  width: calc(100% + 50px);
+  margin-left: -25px;
+  margin-right: -25px;
+  margin-bottom: -70px;
+}
+
+.how-img img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.sng-gallery-bottom-img {
+  /* width: calc(100% + 50px); */
+  margin-left: -25px;
+  margin-right: -25px;
+  margin-top: 40px;
+}
+
+.sng-gallery-bottom-img img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
 /* ─── MOBILE ─────────────────────────── */
 
 @media (max-width: 768px) {
@@ -323,11 +378,11 @@ body {
   }
 
   .sng-project-label {
-    font-size: 16px;
+    font-size: 12px;
   }
 
   .sng-hero-name {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .sng-hero-address {
@@ -374,4 +429,16 @@ body {
     font-size: 30px;
   }
 
+  .how-img {
+    width: calc(100% + 36px);
+    margin-left: -18px;
+    margin-right: -18px;
+    margin-bottom: -50px;
+  }
+
+  .sng-gallery-bottom-img {
+    margin-left: -18px;
+    margin-right: -18px;
+    margin-top: 25px;
+  }
 }

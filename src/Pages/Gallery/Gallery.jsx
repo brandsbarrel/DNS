@@ -64,9 +64,14 @@ import cove from "../../assets/cove.png";
 import union from "../../assets/union.png";
 import garden from "../../assets/garden.png";
 
+import how_img from "../../assets/how_img.jpeg";
+import gallery_img from "../../assets/gallary_image.jpeg";
+
 import { LuGrid2X2 } from "react-icons/lu";
 import { MdLocationOn } from "react-icons/md";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import StatsSection from "../../Components/StatsSection/StatsSection";
 
 function HeroCard({ name, address, heroImage }) {
   return (
@@ -111,6 +116,14 @@ function ImageRow({ images, alt }) {
 
 export default function Gallery() {
   const [activeTab, setActiveTab] = useState("all");
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
 
   const projects = [
     {
@@ -269,6 +282,19 @@ export default function Gallery() {
           </div>
         ))}
 
+        {/* CONTACT US BUTTON */}
+        <div className="sng-contact-wrap">
+          <button className="sng-contact-btn">Contact Us</button>
+        </div>
+        <section className="sng-gallery-bottom-img">
+          <img src={how_img} alt="Our work" />
+        </section>
+
+        <StatsSection />
+
+          <section className="sng-gallery-bottom-img">
+            <img src={gallery_img} alt="SNG Maintenance" />
+          </section>
       </div>
     </div>
   );
