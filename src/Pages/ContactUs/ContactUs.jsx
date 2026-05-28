@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./ContactUs.css";
 import contactUs from "../../assets/contactus.jpeg"
+import gallaryImage from "../../assets/gallary_image.jpeg"
 export default function ContactUs() {
 
     const [formData, setFormData] = useState({
@@ -67,56 +68,59 @@ export default function ContactUs() {
             {/* CONTACT CARDS */}
             <div className="contact-cards">
 
-                {/* ADDRESS */}
+                {/* PHONE */}
                 <div className="contact-card">
-                    <div className="contact-icon-wrap">
-                        <div className="contact-icon-circle">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="32" height="32">
-                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
-                            </svg>
-                        </div>
+                    <div className="contact-icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="28" height="28">
+                            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/>
+                        </svg>
                     </div>
-                    <h2 className="contact-card-title">Address</h2>
-                    <p className="contact-card-text">
-                        U33-94/116 Culloden Road<br />
-                        Marsfield NSW 2122 Australia
-                    </p>
+                    <div className="contact-card-content">
+                        <h2 className="contact-card-label">LOOKING FOR CONSULTATION.</h2>
+                        <p className="contact-card-value">
+                            <a href="tel:0407460010" className="contact-link">0407 460 010</a>
+                        </p>
+                    </div>
                 </div>
 
                 {/* EMAIL */}
                 <div className="contact-card">
-                    <div className="contact-icon-wrap">
-                        <div className="contact-icon-circle">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="32" height="32">
-                                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                            </svg>
-                        </div>
+                    <div className="contact-icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="28" height="28">
+                            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
                     </div>
-                    <h2 className="contact-card-title">Email Us</h2>
-                    <p className="contact-card-text">
-                        <a href="mailto:info@dnsmaintenance.com.au" className="contact-link">
-                            info@dnsmaintenance.com.au
-                        </a>
-                    </p>
+                    <div className="contact-card-content">
+                        <h2 className="contact-card-label">EMAIL US</h2>
+                        <p className="contact-card-value">
+                            <a href="mailto:info@sngmaintenance.com.au" className="contact-link">
+                                info@sngmaintenance.com.au
+                            </a>
+                        </p>
+                    </div>
                 </div>
 
-                {/* PHONE */}
+                {/* ADDRESS */}
                 <div className="contact-card">
-                    <div className="contact-icon-wrap">
-                        <div className="contact-icon-circle">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="32" height="32">
-                                <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/>
-                            </svg>
-                        </div>
+                    <div className="contact-icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="28" height="28">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                        </svg>
                     </div>
-                    <h2 className="contact-card-title">Call Us</h2>
-                    <p className="contact-card-text">
-                        <a href="tel:+61200000000" className="contact-link">
-                            +61 2 0000 0000
-                        </a>
-                    </p>
+                    <div className="contact-card-content">
+                        <h2 className="contact-card-label">VISIT OUR LOCATION.</h2>
+                        <p className="contact-card-value">
+                            U33-94/116 Culloden Rd,<br />
+                            Marsfield NSW 2122
+                        </p>
+                    </div>
                 </div>
 
+            </div>
+
+            {/* GALLERY IMAGE */}
+            <div className="contact-gallery">
+                <img className="contact-gallery-img" src={gallaryImage} alt="Gallery" />
             </div>
 
             {/* CONTACT FORM */}
