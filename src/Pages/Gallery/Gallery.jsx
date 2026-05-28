@@ -341,7 +341,7 @@ export default function Gallery() {
             onClick={() => setActiveTab("all")}
           >
             <div className="sng-filter-icon"><LuGrid2X2/></div>
-            <span>All</span>
+            <span>All Projects</span>
           </button>
 
           <button
