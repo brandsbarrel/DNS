@@ -81,8 +81,12 @@ body{
 
 .sng-gallery-title{
   font-size:38px;
-  color:#d62828;
+  color:#000;
   font-weight:800;
+}
+
+.galley__ll{
+  color:#d62828;
 }
 
 .sng-title-underline{
@@ -200,13 +204,13 @@ body{
   background:#fff;
   border-radius:20px;
   overflow:hidden;
-  border:1px solid #e5e5e5;
+  border:2px solid #355323;
   margin-bottom:35px;
 }
 
 .sng-filter-btn{
   border:none;
-  background:#fff;
+  background:#E7EAD9;
 
   display:flex;
   flex-direction:column;
@@ -226,11 +230,11 @@ body{
 }
 
 .sng-filter-btn:not(:last-child){
-  border-right:1px solid #ececec;
+  border-right:2px solid #355323;
 }
 
 .sng-filter-icon{
-  font-size:24px;
+  font-size:40px;
   line-height:1;
 }
 
@@ -259,7 +263,7 @@ body{
   }
 
   .sng-filter-icon{
-    font-size:16px;
+    font-size:30px;
   }
 
 }

@@ -73,6 +73,20 @@ import mgs6 from "../../assets/MGS6.jpeg";
 import mi1 from "../../assets/MI1.jpeg";
 import mi2 from "../../assets/MI2.jpeg";
 
+import avista from "../../assets/avista.png"
+import shores from "../../assets/balmain shores.png"
+import cove from "../../assets/cove.png";
+import union from "../../assets/union.png";
+import garden from "../../assets/garden.png";
+
+import {
+  LuGrid2X2,
+  LuBuilding2,
+  LuTreePine
+} from "react-icons/lu";
+
+import { PiPlantLight } from "react-icons/pi";
+
 import { useState } from "react";
 
 export default function Gallery() {
@@ -272,7 +286,7 @@ export default function Gallery() {
       imagePairs: [[mi1, mi2]],
       showLabel: false,
       align: "left",
-      category: "marsfield"
+      category: "marsfield",
     },
   ];
 
@@ -309,7 +323,7 @@ export default function Gallery() {
       <div className="sng-content">
 
         <h1 className="sng-gallery-title">
-          GALLERY
+          GA<span className="galley__ll">LL</span>ERY
         </h1>
 
         <div className="sng-title-underline" />
@@ -326,7 +340,7 @@ export default function Gallery() {
             className={`sng-filter-btn ${activeTab === "all" ? "active" : ""}`}
             onClick={() => setActiveTab("all")}
           >
-            <div className="sng-filter-icon">☷</div>
+            <div className="sng-filter-icon"><LuGrid2X2/></div>
             <span>All</span>
           </button>
 
@@ -334,31 +348,31 @@ export default function Gallery() {
             className={`sng-filter-btn ${activeTab === "shores" ? "active" : ""}`}
             onClick={() => setActiveTab("shores")}
           >
-            <div className="sng-filter-icon">🏢</div>
-            <span>Shores</span>
+            <div className="sng-filter-icon"><img src={shores} /></div>
+            <span>Balmain Shores</span>
           </button>
 
           <button
             className={`sng-filter-btn ${activeTab === "cove" ? "active" : ""}`}
             onClick={() => setActiveTab("cove")}
           >
-            <div className="sng-filter-icon">🏬</div>
-            <span>Cove</span>
+            <div className="sng-filter-icon"><img src={cove} /></div>
+            <span>Balmain cove</span>
           </button>
 
           <button
             className={`sng-filter-btn ${activeTab === "union" ? "active" : ""}`}
             onClick={() => setActiveTab("union")}
           >
-            <div className="sng-filter-icon">🏢</div>
-            <span>Union</span>
+            <div className="sng-filter-icon"><img src={union} /></div>
+            <span>Balmain Union</span>
           </button>
 
           <button
             className={`sng-filter-btn ${activeTab === "avista" ? "active" : ""}`}
             onClick={() => setActiveTab("avista")}
           >
-            <div className="sng-filter-icon">🌳</div>
+            <div className="sng-filter-icon"><img src={avista} /></div>
             <span>Avista</span>
           </button>
 
@@ -366,8 +380,8 @@ export default function Gallery() {
             className={`sng-filter-btn ${activeTab === "marsfield" ? "active" : ""}`}
             onClick={() => setActiveTab("marsfield")}
           >
-            <div className="sng-filter-icon">🌿</div>
-            <span>Marsfield</span>
+            <div className="sng-filter-icon"><img src={garden} /></div>
+            <span>Marsfield Gardens</span>
           </button>
 
         </div>
