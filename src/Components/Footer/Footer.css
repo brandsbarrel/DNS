@@ -77,8 +77,8 @@ TOP SECTION
 
 .home_contactInfo h3 {
     font-size: clamp(0.75rem, 1vw, 0.9rem);
-    color: #cc1111;
-    font-weight: 800;
+    /* color: #cc1111; */
+    font-weight: 600;
     margin-bottom: 0.2rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
