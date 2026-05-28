@@ -72,10 +72,11 @@ body{
 /* CONTENT */
 
 .sng-content{
-  max-width:1100px;
+  width:100%;
+  max-width:1200px;
   margin:auto;
   padding:45px 25px 70px;
-  background: #E7EAD9;
+  background:#E7EAD9;
 }
 
 .sng-gallery-title{
@@ -182,5 +183,83 @@ body{
 .sng-image:only-child{
   width:100%;
 }
+
+}
+
+
+
+
+
+/* ===================================
+   FILTER BAR
+=================================== */
+
+.sng-filter-bar{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid #e5e5e5;
+  margin-bottom:35px;
+}
+
+.sng-filter-btn{
+  border:none;
+  background:#fff;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  gap:8px;
+  padding:18px 8px;
+
+  font-family:'Montserrat',sans-serif;
+  font-size:13px;
+  font-weight:600;
+  color:#222;
+
+  cursor:pointer;
+  transition:.25s;
+}
+
+.sng-filter-btn:not(:last-child){
+  border-right:1px solid #ececec;
+}
+
+.sng-filter-icon{
+  font-size:24px;
+  line-height:1;
+}
+
+.sng-filter-btn span{
+  text-align:center;
+  line-height:1.2;
+}
+
+.sng-filter-btn.active{
+  background:#355323;
+  color:#fff;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .sng-filter-bar{
+    grid-template-columns:repeat(6,1fr);
+  }
+
+  .sng-filter-btn{
+    padding:10px 2px;
+    font-size:9px;
+    gap:5px;
+  }
+
+  .sng-filter-icon{
+    font-size:16px;
+  }
 
 }

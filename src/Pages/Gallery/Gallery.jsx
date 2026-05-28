@@ -73,7 +73,11 @@ import mgs6 from "../../assets/MGS6.jpeg";
 import mi1 from "../../assets/MI1.jpeg";
 import mi2 from "../../assets/MI2.jpeg";
 
+import { useState } from "react";
+
 export default function Gallery() {
+
+  const [activeTab, setActiveTab] = useState("all");
   const projects = [
     {
       id: 1,
@@ -82,6 +86,7 @@ export default function Gallery() {
       image: [bg1],
       showLabel: true,
       align: "center",
+      category: "shores",
     },
 
     {
@@ -91,6 +96,7 @@ export default function Gallery() {
       image: [ta2, ta1],
       showLabel: false,
       align: "left",
+      category: "shores",
     },
 
     {
@@ -100,6 +106,7 @@ export default function Gallery() {
       image: [mg2, mg1],
       showLabel: false,
       align: "left",
+      category: "shores",
     },
 
     {
@@ -109,6 +116,7 @@ export default function Gallery() {
       image: [ga1, ga2],
       showLabel: false,
       align: "left",
+      category: "shores",
     },
 
     {
@@ -120,6 +128,7 @@ export default function Gallery() {
       imagePairs: [[bc2, bc3]],
       showLabel: true,
       align: "center",
+      category: "cove",
     },
 
     {
@@ -131,6 +140,7 @@ export default function Gallery() {
       imagePairs: [[bc9, bc4], [bc5, bc6], [bc7, bc8]],
       showLabel: false,
       align: "left",
+      category: "cove",
     },
 
     {
@@ -142,6 +152,7 @@ export default function Gallery() {
       imagePairs: [[us1, us2], [us3, us4], [us5, us6], [us7]],
       showLabel: false,
       align: "left",
+      category: "union"
     },
 
     {
@@ -153,6 +164,7 @@ export default function Gallery() {
       imagePairs: [[ua1, ua2], [ua3, ua4], [ua5]],
       showLabel: false,
       align: "left",
+      category: "union"
     },
 
     {
@@ -164,6 +176,7 @@ export default function Gallery() {
       imagePairs: [[ui1, ui2], [ui3, ui4]],
       showLabel: false,
       align: "left",
+      category: "union"
     },
 
     {
@@ -175,6 +188,7 @@ export default function Gallery() {
       imagePairs: [[bsf1, bsf2], [bsf3]],
       showLabel: false,
       align: "left",
+      category: "shores",
     },
 
     {
@@ -186,6 +200,7 @@ export default function Gallery() {
       imagePairs: [[bi1, bi2]],
       showLabel: false,
       align: "left",
+      category: "shores",
     },
 
     {
@@ -197,6 +212,7 @@ export default function Gallery() {
       imagePairs: [[bt1, bt2]],
       showLabel: false,
       align: "left",
+      category: "shores",
     },
 
     {
@@ -208,6 +224,7 @@ export default function Gallery() {
       imagePairs: [[av1, av2], [av3, av4], [av5]],
       showLabel: false,
       align: "left",
+      category: "avista",
     },
 
     {
@@ -219,6 +236,7 @@ export default function Gallery() {
       imagePairs: [[as1, as2], [as3, as4]],
       showLabel: false,
       align: "left",
+      category: "avista",
     },
 
     {
@@ -230,6 +248,7 @@ export default function Gallery() {
       imagePairs: [],
       showLabel: true,
       align: "center",
+      category: "marsfield"
     },
 
     {
@@ -241,6 +260,7 @@ export default function Gallery() {
       imagePairs: [[mgs1, mgs2], [mgs3, mgs4], [mgs5, mgs6]],
       showLabel: false,
       align: "left",
+      category: "marsfield"
     },
 
     {
@@ -252,8 +272,16 @@ export default function Gallery() {
       imagePairs: [[mi1, mi2]],
       showLabel: false,
       align: "left",
+      category: "marsfield"
     },
   ];
+
+  const filteredProjects =
+    activeTab === "all"
+      ? projects
+      : projects.filter(
+        project => project.category === activeTab
+      );
 
   return (
     <div className="sng-page">
@@ -292,7 +320,59 @@ export default function Gallery() {
           Quality work, every time.
         </p>
 
-        {projects.map((project) => (
+        <div className="sng-filter-bar">
+
+          <button
+            className={`sng-filter-btn ${activeTab === "all" ? "active" : ""}`}
+            onClick={() => setActiveTab("all")}
+          >
+            <div className="sng-filter-icon">☷</div>
+            <span>All</span>
+          </button>
+
+          <button
+            className={`sng-filter-btn ${activeTab === "shores" ? "active" : ""}`}
+            onClick={() => setActiveTab("shores")}
+          >
+            <div className="sng-filter-icon">🏢</div>
+            <span>Shores</span>
+          </button>
+
+          <button
+            className={`sng-filter-btn ${activeTab === "cove" ? "active" : ""}`}
+            onClick={() => setActiveTab("cove")}
+          >
+            <div className="sng-filter-icon">🏬</div>
+            <span>Cove</span>
+          </button>
+
+          <button
+            className={`sng-filter-btn ${activeTab === "union" ? "active" : ""}`}
+            onClick={() => setActiveTab("union")}
+          >
+            <div className="sng-filter-icon">🏢</div>
+            <span>Union</span>
+          </button>
+
+          <button
+            className={`sng-filter-btn ${activeTab === "avista" ? "active" : ""}`}
+            onClick={() => setActiveTab("avista")}
+          >
+            <div className="sng-filter-icon">🌳</div>
+            <span>Avista</span>
+          </button>
+
+          <button
+            className={`sng-filter-btn ${activeTab === "marsfield" ? "active" : ""}`}
+            onClick={() => setActiveTab("marsfield")}
+          >
+            <div className="sng-filter-icon">🌿</div>
+            <span>Marsfield</span>
+          </button>
+
+        </div>
+
+        {filteredProjects.map((project) => (
           <div
             className="sng-project"
             key={project.id}
@@ -319,8 +399,8 @@ export default function Gallery() {
 
                         {i !==
                           project.location.split("\n").length - 1 && (
-                          <br />
-                        )}
+                            <br />
+                          )}
                       </span>
                     ))}
                 </>
