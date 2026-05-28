@@ -145,7 +145,7 @@ export default function ContactUs() {
                             <input
                                 type="email"
                                 name="email"
-                                placeholder="Your Mail"
+                                placeholder="Your E-Mail"
                                 value={formData.email}
                                 onChange={handleChange}
                                 required
