@@ -90,11 +90,13 @@ body{
 }
 
 .sng-title-underline{
-  width:60px;
-  height:4px;
-  background:#d62828;
-  margin-top:10px;
-  margin-bottom:18px;
+  width: 60px;
+  height: 4px;
+  background: #d62828;
+  margin-top: 10px;
+  margin-bottom: 18px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .sng-subtitle{
@@ -161,7 +163,12 @@ body{
 }
 
 .sng-gallery-title{
+  text-align: center;
   font-size:32px;
+}
+
+.sng-subtitle{
+  text-align: center;
 }
 
 .sng-project{
