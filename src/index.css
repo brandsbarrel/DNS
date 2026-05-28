@@ -15,16 +15,16 @@
 
     :root {
         --primary: #415D2F;
-        --primary-dark: #3b0f8a;
-        --primary-light: #7C3AED;
-
-        --accent: #F59E0B;
+        --primary-dark: #3b0
 
         --white: #415D2Fff;
         --off-white: #E7EAD9;
         --gray-50: #F8F7FF;
         --gray-100: #f1f0f8;
-        --gray-200: #e2e0f0;
+        --gray-200: #e2e0f0;f8a;
+        --primary-light: #7C3AED;
+
+        --accent: #F59E0B;
         --gray-600: #6B7280;
         --gray-800: #1F2937;
 
@@ -47,12 +47,6 @@
 
     html {
         scroll-behavior: smooth;
-    }
-
-    html,
-    body,
-    #root {
-        /* background: #E7EAD9; */
     }
 
     #root,

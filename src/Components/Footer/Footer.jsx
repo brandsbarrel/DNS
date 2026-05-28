@@ -6,6 +6,7 @@ import {
   FaPinterestP,
   FaLinkedinIn,
   FaChevronRight,
+  FaEnvelope,
 } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
 
@@ -15,12 +16,8 @@ export default function Footer() {
 
       {/* TOP CONTACT SECTION */}
       <div className="home_footerTop">
-
         <div className="home_footerTopLine"></div>
-
         <h2>Get In Touch!</h2>
-
-        {/* <div className="home_footerTopLine"></div> */}
 
         <div className="home_contactWrap">
 
@@ -29,35 +26,39 @@ export default function Footer() {
               <FaPhoneAlt />
             </div>
             <div className="home_contactInfo">
-              <h3>Call Us</h3>
-              <span>0407 460 010</span>
+              <h3>Looking for Consultation.</h3>
+               <a href="tel:0407460010">0407 460 010</a>
             </div>
           </div>
 
-          {/* <div className="home_contactDivider"></div> */}
+          <div className="home_contactCard">
+            <div className="home_contactIcon">
+              <FaEnvelope />
+            </div>
+            <div className="home_contactInfo">
+              <h3>Email Us</h3>
+              <a href="mailto:info@sngmaintenance.com.au">info@sngmaintenance.com.au</a>
+            </div>
+          </div>
 
           <div className="home_contactCard">
             <div className="home_contactIcon">
               <FiMapPin />
             </div>
             <div className="home_contactInfo">
-              <h3>Our Location</h3>
+              <h3>Visit our Location.</h3>
               <span>
-                U33-94/116 Culloden Rd,
-                <br />
+                U33-94/116 Culloden Rd,<br />
                 Marsfield NSW 2122
               </span>
             </div>
           </div>
 
         </div>
-
       </div>
 
       {/* MIDDLE SECTION */}
       <div className="home_footerMiddle">
-
-        {/* QUICK LINKS */}
         <div className="home_footerBox home_linksBox">
           <h3>Quick Links</h3>
           <div className="home_smallLine"></div>
@@ -71,7 +72,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* FOLLOW US */}
         <div className="home_footerBox">
           <h3>Follow Us</h3>
           <div className="home_smallLine"></div>
@@ -82,7 +82,6 @@ export default function Footer() {
             <a href="/"><FaLinkedinIn /></a>
           </div>
         </div>
-
       </div>
 
       {/* BOTTOM */}
