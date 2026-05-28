@@ -147,7 +147,7 @@ export default function Gallery() {
       id: "union",
       category: "union",
       hero: {
-        name: "Union Site",
+        name: "Balmain Union",
         address: "118-124 Terry Street, Rozelle 2039",
         image: us1,
       },
@@ -161,7 +161,7 @@ export default function Gallery() {
       id: "avista",
       category: "avista",
       hero: {
-        name: "Avista Site",
+        name: "Avista",
         address: "18 Edgewood Crescent, Cabarita 2137",
         image: av1,
       },
@@ -174,7 +174,7 @@ export default function Gallery() {
       id: "marsfield",
       category: "marsfield",
       hero: {
-        name: "Marsfield Gardens Site",
+        name: "Marsfield Gardens",
         address: "94-116 Culloden Road, Marsfield 2122",
         image: mm1,
       },

@@ -205,13 +205,13 @@ body {
 
 .sng-project-label {
   color: #d62828;
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 800;
   letter-spacing: 0.5px;
 }
 
 .sng-hero-name {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 800;
   color: #111;
   line-height: 1.3;
