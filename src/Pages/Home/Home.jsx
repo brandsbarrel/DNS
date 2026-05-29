@@ -4,6 +4,7 @@ import WhyChooseUs from "../../Components/WhyChooseUs/WhyChooseUs"
 import ServiceCard from '../../Components/ServiceCard/ServiceCard'
 import HowItWorks from '../../Components/HowItWorks/HowItWorks'
 import home_bottom from "../../assets/home_bottom.jpeg"
+import SubursCard from "../../Components/SuburbsCard/SuburbsCard"
 import "./Home.css"
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
             <ServiceCard />
             <WhyChooseUs />
             <HowItWorks />
+            <SubursCard/>
             <img className="home__bottom__img" src={home_bottom} ></img>
         </>
     )

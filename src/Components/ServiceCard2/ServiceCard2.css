@@ -202,6 +202,21 @@
   transform: scale(0.98);
 }
 
+/* ── Gallery Image (page end) ── */
+.sc2-gallery-wrap {
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.sc2-gallery-img {
+  width: 100%;
+  display: block;
+  max-height: 600px;
+  object-fit: cover;
+  object-position: center;
+}
 /* ── Mobile ── */
 @media (max-width: 480px) {
   .sc2-grid {

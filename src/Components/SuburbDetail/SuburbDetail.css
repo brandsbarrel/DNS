@@ -183,6 +183,13 @@ button {
   border-bottom: 3px solid var(--primary);
 }
 
+.suburds_detail{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .sd-stat__num {
   display: block;
   font-family: var(--font-display);

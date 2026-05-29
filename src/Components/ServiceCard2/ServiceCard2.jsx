@@ -21,12 +21,13 @@ import Property_Maintenance_Second from "../../assets/Property_Maintenance_Secon
 import Soft_Fall_Landscaping from "../../assets/Soft_Fall_Landscaping.jpeg";
 import spray_treatments_second from "../../assets/spray_treatments_second.jpeg";
 import strata_garden_maintenance from "../../assets/strata_garden_maintenance.jpeg";
+import SuburbsCard from "../../Components/SuburbsCard/SuburbsCard"
 import { FaArrowRight } from "react-icons/fa";
 
 // ── Banner image ──
 import serviceBanner from "../../assets/ServiceBanner.jpeg";
 import HowItWorks from "../HowItWorks/HowItWorks";
-import WhyChooseUs from "../../Components/WhyChooseUs/WhyChooseUs"
+import WhyChooseUs from "../../Components/WhyChooseUs/WhyChooseUs";
 
 const services = [
     {
@@ -139,7 +140,7 @@ export default function ServiceCard2() {
             <section ref={ref} className={`sc2-section ${visible ? "sc2-show" : ""}`}>
                 <div className="sc2-container">
 
-                    {/* ── Heading (screenshot style) ── */}
+                    {/* ── Heading ── */}
                     <div className="sc2-header">
                         <div className="ServiceCard__header-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
@@ -164,17 +165,14 @@ export default function ServiceCard2() {
                                 key={service.name}
                                 style={{ transitionDelay: `${i * 0.07}s` }}
                             >
-                                {/* TOP: Small circular icon */}
                                 <div className="sc2-icon-wrapper">
                                     <div className="sc2-icon-circle">
                                         {service.icon}
                                     </div>
                                 </div>
 
-                                {/* Service Name */}
                                 <h3 className="sc2-name">{service.name}</h3>
 
-                                {/* Service Image */}
                                 <div className="sc2-image-wrap">
                                     <img
                                         src={service.image}
@@ -183,7 +181,6 @@ export default function ServiceCard2() {
                                     />
                                 </div>
 
-                                {/* More Info Button */}
                                 <button
                                     className="sc2-more-btn"
                                     onClick={() => navigate(`/services/${service.slug}`)}
@@ -196,8 +193,10 @@ export default function ServiceCard2() {
                     </div>
                 </div>
             </section>
-            <WhyChooseUs/>
-            <HowItWorks/>
+
+            <WhyChooseUs />
+            <HowItWorks />
+            
         </>
     );
 }

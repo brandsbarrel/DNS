@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import "./SuburbDetail.css";
 import ServiceCard2 from "../ServiceCard2/ServiceCard2";
 import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
+import gallaryImage from "../../assets/gallary_image.jpeg";
 
 // ─── Slug → area data map ─────────────────────────────────────────────────────
 
@@ -49,7 +50,7 @@ export default function SuburbDetail() {
       {/* ── Intro ── */}
       <section className="sd-intro section">
         <div className="sd_container">
-          <div style={{ textAlign: "center", maxWidth: 800, margin: "0 auto" }}>
+          <div className="suburds_detail" style={{ textAlign: "center", maxWidth: 800, margin: "0 auto" }}>
             <h2 className="section-title">
               Your Local Maintenance Experts in {area.name}
             </h2>
@@ -61,8 +62,11 @@ export default function SuburbDetail() {
       </section>
 
       {/* ── Services ── */}
-      <ServiceCard2/>
-      <WhyChooseUs/>
+      <ServiceCard2 />
+
+      <div className="sc2-gallery-wrap">
+        <img src={gallaryImage} alt="SNG Maintenance Gallery" className="sc2-gallery-img" />
+      </div>
     </div>
   );
 }

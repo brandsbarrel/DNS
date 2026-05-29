@@ -7,34 +7,7 @@ import StatsSection from "../StatsSection/StatsSection";
 import what_our_cus_say_home from "../../assets/what_our_cus_say.jpeg"
 import what_our_cus_say_about from "../../assets/what_our_cus_say_about.jpeg"
 import { Eye, ChevronRight } from "lucide-react";
-import EasternS from "../../assets/EasternSububrs.jpeg";
-import WesternS from "../../assets/WesternSuburbs.jpeg";
-import NorthernB from "../../assets/NorthernBeaches.jpeg";
-import NorthW from "../../assets/NorthWest.jpeg";
 
-
-const areas = [
-  {
-    name: "Eastern suburbs",
-    icon: EasternS,
-    text: "Including Bondi, Randwick, Coogee and surrounding areas."
-  },
-  {
-    name: "Western Suburbs",
-    icon: WesternS,
-    text: "Including Parramatta, Penrith, Blacktown and surrounding areas."
-  },
-  {
-    name: "Northern Beaches",
-    icon: NorthernB,
-    text: "Including Manly, Dee Why, Mona Vale and surrounding areas."
-  },
-  {
-    name: "North West",
-    icon: NorthW,
-    text: "Including Castle Hill, Rouse Hill, Kellyville and surrounding areas."
-  }
-];
 
 
 const handleClick = () => {
@@ -80,7 +53,7 @@ export default function HowItWorks() {
         )}
       </section>}
 
-      {location.pathname!=="/services"&&<StatsSection/>}
+      {!["/services", "/about-company"].includes(location.pathname) && <StatsSection />}
 
         {location.pathname!=="/services"&&
       <section className="home_what_our_cus_say">
@@ -95,64 +68,6 @@ export default function HowItWorks() {
           Read More Testimonials
         </button>
       </section>}
-
-      <section className="works_steps2">
-        <div className="areas_back">
-
-          <div className="headingWrap">
-            <span className="headingLine" />
-            <h2>
-              <span>AREAS</span> <br></br>WE SERVICE
-            </h2>
-            <span className="headingLine" />
-          </div>
-
-          <p className="subheading">
-            Proudly servicing Sydney and surrounding suburbs.
-          </p>
-
-          <div className="serviceGrid">
-            {areas.map((area, index) => (
-              <div
-                className="serviceCard"
-                key={index}
-                onClick={() => {
-                  navigate(
-                    `/suburb-details/${area.name
-                      .toLowerCase()
-                      .replace(/\s+/g, "-")}`
-                  );
-                  handleClick();
-                }}
-              >
-
-                {/* TOP ROW */}
-                <div className="serviceCard__content__icon_text">
-                  <div className="serviceIcon">
-                    <img src={area.icon} alt={area.name} />
-                  </div>
-                  <div className="serviceContent">
-                    <h3>{area.name}</h3>
-                    <div className="redLine"></div>
-                    <p>{area.text}</p>
-                  </div>
-                </div>
-
-                {/* BOTTOM ROW */}
-                <div className="serviceBtnWrap">
-                  <button className="seeMoreBtn">
-                    <Eye size={18} />
-                    <span>SEE MORE</span>
-                    <ChevronRight size={18} />
-                  </button>
-                </div>
-
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
 
     </>
   );

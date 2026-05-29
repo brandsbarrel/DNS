@@ -1,0 +1,329 @@
+/* =========================
+   SECTION WRAPPER
+========================= */
+
+.suburbs__section {
+    padding: 45px 20px;
+    background: #E7EAD9;
+    overflow: hidden;
+}
+
+.suburbs__back {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.suburbs__headingWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+}
+
+.suburbs__headingLine {
+    height: 2px;
+    width: 85px;
+    background: #355323;
+    flex-shrink: 0;
+}
+
+.suburbs__headingWrap h2 {
+    font-size: 58px;
+    font-weight: 900;
+    margin: 0;
+    line-height: 1;
+    color: #000;
+    text-align: center;
+}
+
+.suburbs__headingWrap h2 span {
+    color: #d31313;
+}
+
+.suburbs__subheading {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 70px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* =========================
+   SUBURBS GRID
+========================= */
+
+.suburbsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.suburbsCard {
+    background: #fff;
+    border: 3px solid #355323;
+    border-radius: 30px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.suburbsCard:hover {
+    transform: translateY(-5px);
+}
+
+/* TOP ROW */
+
+.suburbsCard__iconText {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+}
+
+.suburbsCard__icon {
+    width: 145px;
+    height: 145px;
+    min-width: 145px;
+    border-radius: 50%;
+    background: #f3f2e7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.suburbsCard__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.suburbsCard__content {
+    flex: 1;
+}
+
+.suburbsCard__content h3 {
+    font-size: 38px;
+    line-height: 1.15;
+    color: #355323;
+    font-weight: 800;
+    margin: 0;
+}
+
+.suburbsCard__redLine {
+    width: 60px;
+    height: 4px;
+    background: #d31313;
+    margin: 18px 0 22px;
+    border-radius: 10px;
+}
+
+.suburbsCard__content p {
+    font-size: 24px;
+    line-height: 1.7;
+    color: #333;
+    margin: 0;
+}
+
+/* BOTTOM ROW */
+
+.suburbsCard__btnWrap {
+    display: flex;
+}
+
+.suburbsCard__seeMoreBtn {
+    border: 2px solid #d31313;
+    background: transparent;
+    color: #d31313;
+    height: 56px;
+    padding: 0 28px;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.suburbsCard__seeMoreBtn:hover {
+    background: #d31313;
+    color: #fff;
+}
+
+/* =========================
+   LARGE DESKTOP
+========================= */
+
+@media (max-width: 1200px) {
+
+    .suburbs__headingWrap h2 {
+        font-size: 48px;
+    }
+
+    .suburbsCard__content h3 {
+        font-size: 30px;
+    }
+
+    .suburbsCard__content p {
+        font-size: 19px;
+    }
+
+    .suburbsCard__icon {
+        width: 120px;
+        height: 120px;
+        min-width: 120px;
+    }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px) {
+
+    .suburbs__headingWrap h2 {
+        font-size: 42px;
+    }
+
+    .suburbs__subheading {
+        font-size: 20px;
+    }
+
+    .suburbs__headingWrap {
+        gap: 20px;
+    }
+
+    .suburbs__headingLine {
+        width: 55px;
+    }
+
+    .suburbsCard {
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .suburbsCard__iconText {
+        gap: 16px;
+    }
+
+    .suburbsCard__icon {
+        width: 100px;
+        height: 100px;
+        min-width: 100px;
+    }
+
+    .suburbsCard__content h3 {
+        font-size: 26px;
+    }
+
+    .suburbsCard__content p {
+        font-size: 16px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .suburbs__section {
+        padding: 35px 12px;
+    }
+
+    .suburbs__headingWrap {
+        gap: 10px;
+    }
+
+    .suburbs__headingLine {
+        width: 35px;
+    }
+
+    .suburbs__headingWrap h2 {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .suburbs__subheading {
+        font-size: 16px;
+        margin-bottom: 35px;
+        padding: 0 10px;
+    }
+
+    .suburbsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .suburbsCard {
+        padding: 7px;
+        border-radius: 18px;
+        gap: 0;
+        aspect-ratio: 1.2 / 1;
+        overflow: hidden;
+        justify-content: space-between;
+    }
+
+    .suburbsCard__iconText {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .suburbsCard__icon {
+        width: 62px;
+        height: 62px;
+        min-width: 62px;
+        flex-shrink: 0;
+    }
+
+    .suburbsCard__content h3 {
+        font-size: 12px;
+        line-height: 1.2;
+    }
+
+    .suburbsCard__redLine {
+        width: 30px;
+        height: 3px;
+        margin: 6px 0;
+    }
+
+    .suburbsCard__content p {
+        font-size: 8px;
+        line-height: 1.4;
+        margin: 0;
+    }
+
+    .suburbsCard__btnWrap {
+        margin-top: 4px;
+    }
+
+    .suburbsCard__seeMoreBtn {
+        width: 51%;
+        height: 20px;
+        font-size: 6px;
+        padding: 0 4px;
+        gap: 2px;
+        border-radius: 50px;
+    }
+
+    .suburbsCard__seeMoreBtn svg {
+        width: 13px;
+        height: 13px;
+    }
+}
