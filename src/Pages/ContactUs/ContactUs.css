@@ -251,7 +251,7 @@
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 0.5px;
-  background: #5aaa2a;
+  background: #20441d;
   color: #fff;
   border: none;
   border-radius: 50px;
@@ -326,7 +326,7 @@
   }
 
   .contact-card {
-    padding: 20px;
+    padding: 15px;
     gap: 16px;
   }
 
