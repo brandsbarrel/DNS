@@ -1,12 +1,15 @@
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar {
     position: fixed;
     width: 100%;
-    left: 0;          /* -4px tha, 0 karo */
+    left: 0;
     top: 0;
     z-index: 9998;
-    transition: all 0.3s ease;
     padding: 0;
-    background: #E7EAD9 !important;
+    background: #E7EAD9;
 }
 
 .navbar__bottomLine {
@@ -16,7 +19,6 @@
     position: absolute;
     left: 0;
     bottom: -10px;
-    transition: opacity 0.3s ease;
 }
 
 .navbar__inner {
@@ -29,20 +31,14 @@
     box-sizing: border-box;
 }
 
+/* =========================
+   LOGO
+========================= */
+
 .navbar__logo {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-family: var(--font-display);
-    font-size: 18px;
-    font-weight: 700;
-    color: #415D2F;
-    transition: color 0.3s ease;
     line-height: 0;
-    text-decoration: none !important;
-}
-
-a {
     text-decoration: none;
 }
 
@@ -53,22 +49,24 @@ a {
     display: block;
 }
 
-.logo-icon {
-    font-size: 22px;
-}
+/* =========================
+   LINKS
+========================= */
 
 .navbar__links {
     display: flex;
     gap: 32px;
     list-style: none;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar__links a {
     font-size: 15px;
     font-weight: 600;
     color: #415D2F;
-    transition: all 0.25s ease;
+    text-decoration: none;
     position: relative;
 }
 
@@ -84,13 +82,21 @@ a {
 }
 
 .navbar__links a:hover::after {
-    width: 100%
+    width: 100%;
 }
 
+/* =========================
+   CTA BUTTON
+========================= */
 
 .navbar__cta {
     margin-left: 20px;
+    text-decoration: none;
 }
+
+/* =========================
+   HAMBURGER — animations only here
+========================= */
 
 .navbar__hamburger {
     display: none;
@@ -103,17 +109,13 @@ a {
     margin-left: auto;
 }
 
-.navbar__hamburger:hover {
-    
-}
-
 .navbar__hamburger span {
     display: block;
     width: 26px;
     height: 2px;
     background: #415D2F;
-    transition: all 0.3s ease;
     border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .navbar__hamburger.open span:nth-child(1) {
@@ -128,16 +130,19 @@ a {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-@media (max-width: 768px) {
+/* =========================
+   MOBILE
+========================= */
 
-    .navbar {
-        left: 0px;
-    }
+@media (max-width: 768px) {
 
     .navbar__inner {
         height: 80px;
-        justify-content: space-between;
         padding: 0 16px;
+    }
+
+    .navbar__logo img {
+        height: 60px;
     }
 
     .navbar__links {
@@ -152,16 +157,17 @@ a {
         padding: 24px 20px;
         gap: 20px;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-        z-index: 9999;   /* ← 1001 se 9999 karo */
+        z-index: 9999;
     }
+
     .navbar__links.open {
         display: flex;
     }
 
     .navbar__links a {
-        color: #415D2F;
         font-size: 16px;
         font-weight: 600;
+        color: #415D2F;
     }
 
     .navbar__cta {
@@ -171,22 +177,7 @@ a {
     .navbar__hamburger {
         display: flex;
         flex-direction: column;
-        align-items: end;
+        align-items: flex-end;
         justify-content: center;
-        margin-left: auto;
-    }
-
-    .navbar__logo img {
-        height: 60px;
-    }
-
-    .mobile-cta {
-        margin-top: 10px;
-        width: 100%;
-    }
-
-    .mobile-cta .btn-primary {
-        width: 100%;
-        text-align: center;
     }
 }
