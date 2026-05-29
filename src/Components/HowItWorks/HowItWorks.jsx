@@ -102,7 +102,7 @@ export default function HowItWorks() {
           <div className="headingWrap">
             <span className="headingLine" />
             <h2>
-              <span>AREAS</span> WE SERVICE
+              <span>AREAS</span> <br></br>WE SERVICE
             </h2>
             <span className="headingLine" />
           </div>
