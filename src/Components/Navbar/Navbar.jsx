@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { MdCall } from "react-icons/md";
 import "./Navbar.css";
 import Logo from "../../assets/SNG_red.png";
 import { UserContext } from "../../context/UserContext";
@@ -69,16 +70,22 @@ export default function Navbar() {
                 >
                     Check Availability
                 </Link>
+                {/* Call + Hamburger wrapper */}
+                <div className="navbar__right">
+                    <a href="tel:0407460010" className="navbar__call-btn" aria-label="Call us">
+                        <MdCall size={22} />
+                    </a>
 
-                <button
-                    className={`navbar__hamburger ${menuOpen ? "open" : ""}`}
-                    onClick={() => setMenuOpen(prev => !prev)}
-                    aria-label="Toggle Menu"
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                    <button
+                        className={`navbar__hamburger ${menuOpen ? "open" : ""}`}
+                        onClick={() => setMenuOpen(prev => !prev)}
+                        aria-label="Toggle Menu"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
 
             </nav>
         </header>

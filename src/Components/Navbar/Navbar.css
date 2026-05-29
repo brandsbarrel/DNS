@@ -96,7 +96,15 @@
 }
 
 /* =========================
-   HAMBURGER — animations only here
+   CALL BUTTON
+========================= */
+
+.navbar__call-btn {
+    display: none;
+}
+
+/* =========================
+   HAMBURGER
 ========================= */
 
 .navbar__hamburger {
@@ -107,7 +115,6 @@
     border: none;
     cursor: pointer;
     padding: 4px;
-    margin-left: auto;
 }
 
 .navbar__hamburger span {
@@ -149,7 +156,7 @@
     .navbar__links {
         display: none;
         position: fixed;
-        top: 90px; /* 80px navbar height + 10px bottomLine */
+        top: 90px;
         left: 0;
         right: 0;
         width: 100%;
@@ -173,6 +180,25 @@
 
     .navbar__cta {
         display: none;
+    }
+
+    /* Call + Hamburger group — right side pe saath */
+    .navbar__right {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-left: auto;
+    }
+
+    .navbar__call-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #415D2F;
+        border: 2px solid #415D2F;
+        border-radius: 8px;
+        padding: 6px 8px;
+        line-height: 0;
     }
 
     .navbar__hamburger {
