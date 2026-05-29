@@ -10,6 +10,7 @@
     z-index: 9998;
     padding: 0;
     background: #E7EAD9;
+    overflow: visible;
 }
 
 .navbar__bottomLine {
@@ -148,7 +149,7 @@
     .navbar__links {
         display: none;
         position: fixed;
-        top: 80px;
+        top: 90px; /* 80px navbar height + 10px bottomLine */
         left: 0;
         right: 0;
         width: 100%;
