@@ -9,6 +9,15 @@ import {
 } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
 import footerImg from "../../assets/Footer_image.jpeg";
+import { Link } from "react-router-dom";
+
+
+const handleClick = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+};
 
 export default function Footer() {
   return (
@@ -31,7 +40,7 @@ export default function Footer() {
             <div className="home_contactInfo">
               <h3>Looking for Consultation.
                 <br />Call Us.</h3>
-              <span>0407 460 010</span>
+              <span><a href="tel:0407460010">0407 460 010</a></span>
             </div>
           </div>
 
@@ -62,12 +71,12 @@ export default function Footer() {
           <h3>Quick Links</h3>
           <div className="home_smallLine"></div>
           <ul>
-            <li><FaChevronRight /><a href="/">Home</a></li>
-            <li><FaChevronRight /><a href="/">About Company</a></li>
-            <li><FaChevronRight /><a href="/">Services</a></li>
-            <li><FaChevronRight /><a href="/">Gallery</a></li>
-            <li><FaChevronRight /><a href="/">Testimonials</a></li>
-            <li><FaChevronRight /><a href="/">Contact Us</a></li>
+            <li><FaChevronRight /><Link onClick={() => { handleClick() }} to="/">Home</Link></li>
+            <li><FaChevronRight /><Link onClick={() => { handleClick() }} to="/about-company">About Company</Link></li>
+            <li><FaChevronRight /><Link onClick={() => { handleClick() }} to="/services">Services</Link></li>
+            <li><FaChevronRight /><Link onClick={() => { handleClick() }} to="/gallery">Gallery</Link></li>
+            <li><FaChevronRight /><Link onClick={() => { handleClick() }} to="/testimonials">Testimonials</Link></li>
+            <li><FaChevronRight /><Link onClick={() => { handleClick() }} to="/contact-us">Contact Us</Link></li>
           </ul>
         </div>
 

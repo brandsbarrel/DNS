@@ -44,7 +44,7 @@ export default function HeroSlider() {
       <div className="About_Hero__bottom">
         <button
           className="About_Hero__cta"
-          onClick={() => navigate("/contact")}
+          onClick={() => navigate("/contact-us")}
         >
           GET A FREE QUOTE
         </button>

@@ -8,6 +8,15 @@ import testi5 from "../../assets/Testi5.jpeg";
 import WhyChooseUs from "../../Components/WhyChooseUs/WhyChooseUs";
 import how_it_works from "../../assets/how_it_works.jpeg";
 import testi6 from "../../assets/Testi6.jpeg"
+import { Link } from "react-router-dom";
+
+
+const handleClick = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
 
 export default function Testimonials() {
 
@@ -70,9 +79,9 @@ export default function Testimonials() {
                         alt="CTA"
                         className="testi-cta-img1"
                     />
-                    <a href="/contact" className="testi-cta-btn">
+                    <Link to="/contact-us" onClick={() => { handleClick() }} className="testi-cta-btn">
                         Get a Free Quote →
-                    </a>
+                    </Link>
                     <img
                         src={testi6}
                         alt="CTA"
@@ -84,7 +93,7 @@ export default function Testimonials() {
             <WhyChooseUs />
             <section className="works_steps1">
                 <img className="how_it_works_img" src={how_it_works} alt="How it works" />
-                <button className="How_quote_btn how__btn--full">GET A FREE QUOTE</button>
+                <Link to="/contact-us" onClick={() => { handleClick() }} className="How_quote_btn how__btn--full">GET A FREE QUOTE</Link>
             </section>
         </div>
     );
