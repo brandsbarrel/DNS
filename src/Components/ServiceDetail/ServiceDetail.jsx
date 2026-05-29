@@ -41,6 +41,7 @@ import sd_bark_blowing2 from "../../assets/sd_bark_blowing2.jpeg";
 import sd_spray_treatments_hero from "../../assets/sd-spray-treatment-hero.jpeg";
 import sd_spray_treatments1 from "../../assets/sd-spray-treatment1.jpeg"
 import sd_spray_treatments2 from "../../assets/sd-spray-treatment2.jpeg"
+import service_detail_bottom from "../../assets/service_detail_bottom.jpeg";
 
 // ─────────────────────────────────────────────────────────────────
 // Baaki services ki images aane par yahan import karo:
@@ -442,8 +443,6 @@ export default function ServiceDetail() {
                         </ul>
                     </div>
 
-                    <div className="sd-tagline">{service.tagline}</div>
-
                     <div className="sd-cta-wrap">
                         <Link to="/contact" className="sd-cta-btn">
                             Get a Free Quote
@@ -454,7 +453,10 @@ export default function ServiceDetail() {
                         </Link>
                     </div>
 
+                    
+
                 </div>
+                <img className="service_detail__bottom" src={service_detail_bottom}/>
             </div>
         </>
     );

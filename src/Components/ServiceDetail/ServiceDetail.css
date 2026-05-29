@@ -76,7 +76,7 @@
 /* ── Intro section ── */
 .sd-intro-b {
   padding: 20px 0 0;
-  text-align: center;
+  text-align: justify;
 }
 
 .sd-intro__text {
@@ -158,7 +158,7 @@
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 36px 32px;
-  margin-bottom: 48px;
+  margin-bottom: 20px;
 }
 
 .sd-services__heading {
@@ -226,6 +226,10 @@
   gap: 14px;
 }
 
+.service_detail__bottom{
+  margin: 5px 0;
+}
+
 .sd-why__list li {
   display: flex;
   align-items: flex-start;
@@ -266,14 +270,14 @@
 /* ── CTA Button ── */
 .sd-cta-wrap {
   text-align: center;
-  margin: 40px 0 0;
+  margin: 10px 0 20px;
 }
 
 .sd-cta-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: var(--green-mid);
+  background: #cc1111;
   color: #fff;
   font-size: 15px;
   font-weight: 600;
