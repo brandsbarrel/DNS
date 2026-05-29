@@ -292,6 +292,22 @@
   transform: none;
 }
 
+
+.contact-footer-img-wrap {
+    width: 100%;
+    margin-top: -2rem;
+    padding: 10px 0;
+    overflow: hidden;
+}
+ 
+.contact-footer-img {
+    width: 100%;
+    display: block;
+    max-height: 420px;
+    object-fit: cover;
+    object-position: center;
+}
+
 /* ─── MOBILE ─── */
 
 @media (max-width: 768px) {

@@ -32,18 +32,19 @@ TOP SECTION
 /* CONTACT */
 
 .home_contactWrap {
-      margin-top: 1.2rem;
+    margin-top: 1.2rem;
     padding: 0 5%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;  /* ← 3 columns */
+    grid-template-columns: 1fr 1fr;
     align-items: stretch;
     gap: 1.5rem;
 }
 
-.home_contactDivider {
-    width: 1px;
-    height: 80px;
-    background: #d9d9d9;
+/* No-frame variant — removes background, border-radius, padding card look */
+.home_contactCard--plain {
+    background: transparent !important;
+    border-radius: 0 !important;
+    padding: 0.4rem 0 !important;
 }
 
 .home_contactCard {
@@ -52,7 +53,6 @@ TOP SECTION
     gap: 1rem;
     text-align: left;
     justify-content: flex-start;
-    /* border: 2px solid #20441d; */
     border-radius: 16px;
     padding: 1.2rem 1.5rem;
     background: #f5f7ee;
@@ -76,12 +76,10 @@ TOP SECTION
 
 .home_contactInfo h3 {
     font-size: clamp(0.75rem, 1vw, 0.9rem);
-    /* color: #cc1111; */
     font-weight: 600;
     margin-bottom: 0.2rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-
 }
 
 .home_contactInfo span {
@@ -242,10 +240,6 @@ TABLET
         gap: 1.5rem;
     }
 
-    .home_contactDivider {
-        display: none;
-    }
-
     .home_footerMiddle {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -254,7 +248,6 @@ TABLET
     .home_footerBox {
         border-right: none !important;
         padding-right: 0 !important;
-        /* padding-bottom: 1.5rem; */
     }
 
     .home_footerBox:last-child {
@@ -291,6 +284,7 @@ MOBILE
         margin-top: 1rem;
         padding: 0 1.2rem;
         gap: 1rem;
+        grid-template-columns: 1fr;
     }
 
     .home_contactCard {
@@ -315,11 +309,23 @@ MOBILE
         font-size: 0.88rem;
     }
 
+    .home_ctaWrap {
+        padding: 0 1.2rem;
+    }
+
+    .home_ctaBtn {
+        font-size: 0.95rem;
+        padding: 0.8rem 1.8rem;
+    }
+
+    .home_footerImg {
+        max-height: 240px;
+    }
+
     .home_footerMiddle {
         padding: 1.2rem 1.2rem;
         gap: 1.5rem;
         grid-template-columns: 1fr;
-        direction: ltr;
     }
 
     .home_linksBox ul {
@@ -369,4 +375,3 @@ MOBILE
     }
 
 }
-

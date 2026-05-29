@@ -8,6 +8,7 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
+import footerImg from "../../assets/Footer_image.jpeg";
 
 export default function Footer() {
   return (
@@ -20,23 +21,22 @@ export default function Footer() {
 
         <h2>Get In Touch!</h2>
 
-        {/* <div className="home_footerTopLine"></div> */}
-
         <div className="home_contactWrap">
 
-          <div className="home_contactCard">
+          {/* CALL US — no frame */}
+          <div className="home_contactCard home_contactCard--plain">
             <div className="home_contactIcon">
               <FaPhoneAlt />
             </div>
             <div className="home_contactInfo">
-              <h3>Call Us</h3>
+              <h3>Looking for Consultation.
+                <br />Call Us.</h3>
               <span>0407 460 010</span>
             </div>
           </div>
 
-          {/* <div className="home_contactDivider"></div> */}
-
-          <div className="home_contactCard">
+          {/* OUR LOCATION — no frame */}
+          <div className="home_contactCard home_contactCard--plain">
             <div className="home_contactIcon">
               <FiMapPin />
             </div>
