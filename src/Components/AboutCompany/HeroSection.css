@@ -87,7 +87,7 @@
 @media (min-width: 768px) {
 
   .About_Hero {
-    padding: 120px 0 40px;
+    padding: 110px 0 38px;
   }
 
   .About_Hero__top {
@@ -95,10 +95,10 @@
   }
 
   .About_Hero__media-wrap {
-    width: 92%;
-    margin: auto;
-    border-radius: 28px;
-    aspect-ratio: 16/7;
+    width: min(92%, 1280px);
+    margin: 0 auto;
+    border-radius: 24px;
+    aspect-ratio: 16/7.5;
   }
 
   .About_Hero__overlay {
@@ -108,6 +108,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 40px;
     background: linear-gradient(
       rgba(0, 0, 0, .20),
       rgba(0, 0, 0, .35)
@@ -116,8 +117,9 @@
 
   .About_Hero__overlay .About_Hero__heading {
     color: white;
-    font-size: clamp(52px, 5vw, 82px);
-    max-width: 900px;
+    font-size: clamp(48px, 5vw, 78px);
+    line-height: 1.04;
+    max-width: 980px;
     text-shadow: 0 6px 20px rgba(0, 0, 0, .45);
   }
 
@@ -126,10 +128,13 @@
   }
 
   .About_Hero__bottom {
-    padding-top: 35px;
+    margin-top: 0;
+    padding-top: 30px;
   }
 
   .About_Hero__cta {
+    width: auto;
+    min-width: 260px;
     max-width: 280px;
   }
 
@@ -143,12 +148,12 @@
 @media (min-width: 1300px) {
 
   .About_Hero__media-wrap {
-    max-width: 1450px;
-    aspect-ratio: 16/6;
+    max-width: 1420px;
+    aspect-ratio: 16/6.8;
   }
 
   .About_Hero__overlay .About_Hero__heading {
-    font-size: 95px;
+    font-size: clamp(78px, 6vw, 90px);
   }
 
 }

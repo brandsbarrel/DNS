@@ -59,7 +59,7 @@ export default function Services() {
 
     return (
         <>
-            <section className="hero">
+            <section className="services-page">
                 <ServiceCard2 />
                 <SuburbsCard />
                 <div className="sc2-gallery-wrap">
