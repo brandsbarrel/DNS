@@ -2,26 +2,26 @@ import "./Hero.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import image1 from "../../assets/4.jpeg";
-import image2 from "../../assets/6.jpeg";
+import image1 from "../../assets/hero1.jpeg";
+import image2 from "../../assets/hero2.jpeg";
 import Hero_image from "../../assets/Hero_image.jpeg";
 import Hero_image_s from "../../assets/Hero_image_s.jpeg";
 
 const slides = [
     {
-        src: Hero_image,
+        src: image1,
         title: "Professional",
         titleRed: "Property",
         titleEnd: "Maintenance Services",
     },
     {
-        src: image1,
+        src: image2,
         title: "Quality",
         titleRed: "Garden",
         titleEnd: "& Lawn Care",
     },
     {
-        src: image2,
+        src: Hero_image,
         title: "Trusted",
         titleRed: "Home",
         titleEnd: "Maintenance Experts",
