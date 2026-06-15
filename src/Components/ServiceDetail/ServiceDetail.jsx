@@ -130,8 +130,8 @@ const SERVICES = {
         servicesList: [
             "Soft fall installation",
             "Soft fall repairs & maintenance",
-            "Rubber soft fall surfaces",
-            "Wood chip & bark installation",
+            // "Rubber soft fall surfaces",
+            // "Wood chip & bark installation",
             "Playground safety compliance",
             "Commercial & strata soft fall",
             "Custom landscaping solutions",
