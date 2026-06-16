@@ -72,7 +72,7 @@ export default function Navbar() {
                 </Link>
                 {/* Call + Hamburger wrapper */}
                 <div className="navbar__right">
-                    <a href="tel:0407460010" className="navbar__call-btn" aria-label="Call us">
+                    <a href="tel:0417698433" className="navbar__call-btn" aria-label="Call us">
                         <MdCall size={22} />
                     </a>
 
