@@ -1,6 +1,7 @@
 import "./Testimonials.css";
 
 import testiHero from "../../assets/Testi_Hero.jpeg";
+import testi1 from "../../assets/testi-updated-1.jpeg"
 import testi2 from "../../assets/Testi2.jpeg";
 import testi3 from "../../assets/Testi3.jpeg";
 import testi4 from "../../assets/Testi4.jpeg";
@@ -20,7 +21,7 @@ const handleClick = () => {
 
 export default function Testimonials() {
 
-    const testimonials = [testi2, testi3, testi4];
+    const testimonials = [testi1];
 
     return (
         <div className="testi-page">
