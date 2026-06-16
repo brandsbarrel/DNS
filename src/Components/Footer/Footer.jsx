@@ -40,7 +40,7 @@ export default function Footer() {
             <div className="home_contactInfo">
               <h3>Looking for Consultation.
                 <br />Call Us.</h3>
-              <span><a href="tel:0407460010">0407 460 010</a></span>
+              <span><a href="tel:0417698433">0417 698 433</a></span>
             </div>
           </div>
 

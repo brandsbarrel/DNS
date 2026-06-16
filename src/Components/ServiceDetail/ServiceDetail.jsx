@@ -125,12 +125,11 @@ const SERVICES = {
         images: [
             { src: sd_soft_lanscape1 },
             { src: sd_soft_lanscape2 },
-            { src: sd_soft_lanscape3 },
+            // { src: sd_soft_lanscape3 },
         ],
         servicesList: [
             "Soft fall installation",
             "Soft fall repairs & maintenance",
-            "Rubber soft fall surfaces",
             "Wood chip & bark installation",
             "Playground safety compliance",
             "Commercial & strata soft fall",
