@@ -14,7 +14,7 @@
 /* ── Hero ── */
 .sd-hero-b {
   background: #e8f0e0;
-  padding: 80px 0px 10px;
+  padding: 0px 0px 10px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -268,9 +268,14 @@
 }
 
 /* ── CTA Button ── */
+.sd-cta-wrap1{
+  padding: 15px;
+  margin-top: 8%;
+}
+
 .sd-cta-wrap {
   text-align: center;
-  margin: 10px 0 20px;
+  /* margin: 10px 0 20px; */
 }
 
 .sd-cta-btn {
@@ -313,7 +318,7 @@
    RESPONSIVE
 ──────────────────────────────── */
 
-@media (min-width: 600px) {
+@media (max-width: 600px) {
   .sd-gallery {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -328,6 +333,11 @@
 
   .sd-why__list {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sd-cta-wrap1{
+  padding: 15px;
+  margin-top: 25%;
   }
 }
 
