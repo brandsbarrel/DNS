@@ -119,6 +119,7 @@
     text-decoration: none;
     text-transform: uppercase;
     transition: background 0.25s ease, transform 0.2s ease;
+    text-align: center;
 }
 
 .hero__btn:hover {

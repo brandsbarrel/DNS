@@ -92,7 +92,7 @@ export default function Hero() {
             {/* ── 3. GET FREE QUOTE BUTTON — sabse neeche ── */}
             <div className="hero__btn-wrapper_1">
                 <Link to="/contact-us" className="hero__btn_1 hero__btn--full">
-                    GET A FREE QUOTE ›
+                     Contact SNG Maintenance speak with our team ›
                 </Link>
             </div>
 
