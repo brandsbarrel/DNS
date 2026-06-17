@@ -120,7 +120,7 @@ const SERVICES = {
         "Professional turf management services to keep lawns, gardens, strata grounds and commercial outdoor areas looking clean, healthy and well-maintained all year round.",
     intro: `At SNG Maintenance, we provide professional turf management services to keep lawns, gardens, strata grounds and commercial outdoor areas looking clean, healthy and well-maintained all year round.\n\nOur team focuses on high quality turf presentation, regular care and practical solutions to improve the appearance, health and durability of your grassed areas.\n\nWe help maintain lush, green and professionally presented lawns for residential complexes, commercial properties, strata buildings, schools, parks and outdoor common areas.`,
     images: [
-        { src:  sd_turf },
+        { src:  sd_turf,className: "large" },
     ],
     servicesList: [
         "Lawn mowing and edging",
@@ -416,7 +416,7 @@ export default function ServiceDetail() {
         <>
             <div className="sd-cta-wrap1">
                 <div className="sd-cta-wrap">
-                    <Link to="/contact-us" className="sd-cta-btn">Contact SNG Maintenance Speak With Our Team
+                    <Link to="/contact-us" className="sd-cta-btn">Contact SNG Maintenance <br/>Speak with our Team
 
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12" />
@@ -485,7 +485,7 @@ export default function ServiceDetail() {
 
                     <div className="sd-cta-wrap">
                         <Link to="/contact-us" className="sd-cta-btn">
-                            Contact SNG Maintenance Speak With Our Team
+                            Contact SNG Maintenance <br/>Speak with our Team
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12" />
                                 <polyline points="12 5 19 12 12 19" />
