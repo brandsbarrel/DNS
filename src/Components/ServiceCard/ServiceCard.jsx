@@ -12,6 +12,7 @@ import barkBlowing from "../../assets/bark-blowing.jpeg";
 import spary_t from "../../assets/sprat-treatment.jpeg";
 import Hero_image_s from "../../assets/Hero_image_s.jpeg";
 import { UserContext } from "../../context/UserContext";
+import turf_management from "../../assets/turfManagement.jpeg"
 
 const services = [
   {
@@ -28,6 +29,13 @@ const services = [
     slug: "mowing",
     desc: "Keep your lawn neat, healthy, and always looking its best.",
     points: ["Lawn mowing", "Edge trimming", "Weed control"],
+  },
+  {
+    name: "Turf Management",
+    icon: <img className="icon-image" src={turf_management} alt="" />,
+    slug: "mowing",
+    desc: "Professional Turf Care & Solutions",
+    points: ["Turf fertilising and treatment", "Lawn repair and patch improvement", "Seasonal turf maintenance"],
   },
   {
     name: "Soft Fall Landscaping",

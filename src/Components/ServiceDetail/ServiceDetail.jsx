@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { useParams, Link, useLocation, useNavigate } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import "./ServiceDetail.css";
 
 // ── Property Maintenance Images ──
@@ -8,37 +8,37 @@ import PropertyMaintenance2 from "../../assets/PropertyMaintenance2.jpeg";
 import PropertyMaintenance3 from "../../assets/PropertyMaintenance3.jpeg";
 
 // ── Mowing Images ──
-import Mowing1 from "../../assets/sd1.jpeg";
-import Mowing2 from "../../assets/sd2.jpeg";
+import Mowing1 from "../../assets/Mowing1.jpeg";
+import Mowing2 from "../../assets/Mowing2.jpeg";
 
-import sd_prm_hero from "../../assets/sd7.jpeg";
-import sd_mowing_hero from "../../assets/sd5.jpeg";
+import sd_prm_hero from "../../assets/sd-prm.jpeg";
+import sd_mowing_hero from "../../assets/sd-mowing.jpeg";
 
-import sd_soft_lanscape_hero from "../../assets/sd9.jpeg";
+import sd_soft_lanscape_hero from "../../assets/sd-soft_landscaping-hero.jpeg";
 import sd_soft_lanscape1 from "../../assets/soft_landscaping1.jpeg";
 import sd_soft_lanscape2 from "../../assets/soft_landscaping2.jpeg";
 import sd_soft_lanscape3 from "../../assets/soft_landscaping3.jpeg";
 
-import sd_sgm_hero from "../../assets/sd8.jpeg";
+import sd_sgm_hero from "../../assets/sd-sgm-hero.jpeg";
 import sd_sgm1 from "../../assets/sd-sgm1.jpeg";
 import sd_sgm2 from "../../assets/sd-sgm2.jpeg";
 import sd_sgm3 from "../../assets/sd-sgm3.jpeg";
 
-import sd_pc_hero from "../../assets/sd6.jpeg";
+import sd_pc_hero from "../../assets/sd-pressureCleaning-hero.jpeg";
 import sd_pc1 from "../../assets/sd-pc1.jpeg";
 
-import sd_fertilising_hero from "../../assets/sd4.jpeg";
+import sd_fertilising_hero from "../../assets/sd-fertilising-hero.jpeg";
 import sd_fertilising1 from "../../assets/sd-fertilising1.jpeg";
 import sd_fertilising3 from "../../assets/sd-fertilising3.jpeg";
 
-import sd_irrigation_hero from "../../assets/sd2.jpeg";
+import sd_irrigation_hero from "../../assets/sd-irrigation-hero.jpeg";
 import sd_irrigation1 from "../../assets/sd-irrigation-1.jpeg";
 
-import sd_bark_blowing_hero from "../../assets/sd1.jpeg";
+import sd_bark_blowing_hero from "../../assets/sd_bark_blowing_hero.jpeg";
 import sd_bark_blowing1 from "../../assets/sd_bark_blowing1.jpeg";
 import sd_bark_blowing2 from "../../assets/sd_bark_blowing2.jpeg";
 
-import sd_spray_treatments_hero from "../../assets/sd3.jpeg";
+import sd_spray_treatments_hero from "../../assets/sd-spray-treatment-hero.jpeg";
 import sd_spray_treatments1 from "../../assets/sd-spray-treatment1.jpeg"
 import sd_spray_treatments2 from "../../assets/sd-spray-treatment2.jpeg"
 import service_detail_bottom from "../../assets/service_detail_bottom.jpeg";
@@ -279,7 +279,7 @@ const SERVICES = {
             },
             {
                 src: sd_bark_blowing2,
-                className: "large"
+                className:"large"
             }
         ],
         servicesList: [
@@ -309,10 +309,9 @@ const SERVICES = {
             "Targeted spray treatments for effective weed control and healthy, pest-free outdoor spaces.",
         intro: `At SNG Maintenance, we provide professional spray treatment services to effectively control weeds, pests, and unwanted vegetation across lawns, gardens, pathways, and outdoor areas. Our licensed team uses the right products and techniques to deliver safe, effective results while minimising any impact on surrounding plants and the environment.\n\nRegular spray treatments are a key part of maintaining a healthy, well-kept property. Whether you need routine weed control or targeted treatment for a specific issue, SNG Maintenance has the expertise to get the job done right.`,
         images: [
-            {
-                src: sd_spray_treatments1,
-                className: "large"
-            },
+            { src: sd_spray_treatments1,
+                className:"large"
+             },
         ],
         servicesList: [
             "Weed spray treatments",
@@ -343,7 +342,6 @@ export default function ServiceDetail() {
     const service = SERVICES[slug];
     const galleryRef = useRef(null);
     const location = useLocation();
-    const navigate = useNavigate();
 
     useEffect(() => {
         if (!galleryRef.current) return;
@@ -378,22 +376,8 @@ export default function ServiceDetail() {
         );
     }
 
-
-
-
     return (
         <>
-            <div className="sd-cta-wrap1">
-                <div className="sd-cta-wrap sd-cta-wrap1">
-                    <Link to="/contact-us" className="sd-cta-btn">
-                        Contact Us
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                            <polyline points="12 5 19 12 12 19" />
-                        </svg>
-                    </Link>
-                </div>
-            </div>
             <section className="sd-hero-b">
                 {location.pathname === "/services/mowing" && <img src={sd_mowing_hero} />}
                 {location.pathname === "/services/property-maintenance" && <img src={sd_prm_hero} />}
@@ -452,7 +436,7 @@ export default function ServiceDetail() {
                     </div>
 
                     <div className="sd-cta-wrap">
-                        <Link to="/contact-us" className="sd-cta-btn">
+                        <Link to="/contact" className="sd-cta-btn">
                             Get a Free Quote
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12" />
@@ -461,10 +445,10 @@ export default function ServiceDetail() {
                         </Link>
                     </div>
 
-
+                    
 
                 </div>
-                <img className="service_detail__bottom" src={service_detail_bottom} />
+                <img className="service_detail__bottom" src={service_detail_bottom}/>
             </div>
         </>
     );

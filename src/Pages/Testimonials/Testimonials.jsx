@@ -81,7 +81,7 @@ export default function Testimonials() {
                         className="testi-cta-img1"
                     />
                     <Link to="/contact-us" onClick={() => { handleClick() }} className="testi-cta-btn">
-                        Get a Free Quote →
+                         Contact SNG Maintenance speak with our team →
                     </Link>
                     <img
                         src={testi6}
@@ -94,7 +94,7 @@ export default function Testimonials() {
             <WhyChooseUs />
             <section className="works_steps1">
                 <img className="how_it_works_img" src={how_it_works} alt="How it works" />
-                <Link to="/contact-us" onClick={() => { handleClick() }} className="How_quote_btn how__btn--full">GET A FREE QUOTE</Link>
+                <Link to="/contact-us" onClick={() => { handleClick() }} className="How_quote_btn how__btn--full"> Contact SNG Maintenance speak with our team</Link>
             </section>
         </div>
     );

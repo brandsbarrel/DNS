@@ -46,7 +46,7 @@ export default function HeroSlider() {
           className="About_Hero__cta"
           onClick={() => navigate("/contact-us")}
         >
-          GET A FREE QUOTE
+           Contact SNG Maintenance speak with our team
         </button>
       </div>
 
