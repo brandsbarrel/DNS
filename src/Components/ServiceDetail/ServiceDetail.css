@@ -320,7 +320,7 @@
 
 @media (max-width: 600px) {
   .sd-gallery {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .sd-gallery__item:last-child {
@@ -328,11 +328,11 @@
   }
 
   .sd-services__list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .sd-why__list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .sd-cta-wrap1{
@@ -359,7 +359,7 @@
   }
 
   .sd-services__list {
-    grid-template-columns: repeat(2z, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .sd-why__list {
