@@ -43,13 +43,6 @@ import sd_spray_treatments1 from "../../assets/sd-spray-treatment1.jpeg"
 import sd_spray_treatments2 from "../../assets/sd-spray-treatment2.jpeg"
 import service_detail_bottom from "../../assets/service_detail_bottom.jpeg";
 
-// ─────────────────────────────────────────────────────────────────
-// Baaki services ki images aane par yahan import karo:
-// import SoftFall1 from "../../assets/SoftFall1.jpeg";
-// import PressureCleaning1 from "../../assets/PressureCleaning1.jpeg";
-// ... etc
-// Phir neeche SERVICES object mein src: SoftFall1 kar do
-// ─────────────────────────────────────────────────────────────────
 
 const SERVICES = {
     "property-maintenance": {

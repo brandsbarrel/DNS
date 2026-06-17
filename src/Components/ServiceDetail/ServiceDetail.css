@@ -357,7 +357,7 @@
   }
 
   .sd-services__list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2z, 1fr);
   }
 
   .sd-why__list {
