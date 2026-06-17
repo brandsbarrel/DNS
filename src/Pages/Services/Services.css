@@ -1,5 +1,4 @@
 .services-page {
-    margin-top: 20%;
     width: 100%;
     min-height: 100vh;
     background: #E7EAD9;
@@ -9,4 +8,10 @@
 
 .services-page > * {
     width: 100%;
+}
+
+@media (max-width: 600px) {
+    .services-page{
+        margin-top: 20%;
+    }
 }

@@ -34,13 +34,15 @@ export default function Footer() {
 
           {/* CALL US — no frame */}
           <div className="home_contactCard home_contactCard--plain">
-            <div className="home_contactIcon">
-              <FaPhoneAlt />
-            </div>
+            <a href="tel:0417698433">
+              <div className="home_contactIcon">
+                <FaPhoneAlt />
+              </div>
+            </a>
             <div className="home_contactInfo">
               <h3>Looking for Consultation.
                 <br />Call Us.</h3>
-              <span><a href="tel:0407460010">0407 460 010</a></span>
+              <span><a href="tel:0417698433">0417 698 433</a></span>
             </div>
           </div>
 
@@ -104,6 +106,6 @@ export default function Footer() {
         </div>
       </div>
 
-    </footer>
+    </footer >
   );
 }

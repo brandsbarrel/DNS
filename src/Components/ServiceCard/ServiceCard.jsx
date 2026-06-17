@@ -20,7 +20,8 @@ const services = [
     icon: <img className="icon-image" src={prm} alt="" />,
     slug: "property-maintenance",
     desc: "We keep your property in top condition with quality and care.",
-    points: ["General repairs & maintenance", "Garden & landscape maintenance" ,"Lawn mowing & edging"], //"Painting & finishing", "Plumbing & electrical work"
+
+    points: ["Garden & Landscape maintenance", "General repair", "Lawn mowing & edging"],
   },
   {
     name: "Mowing",
@@ -41,7 +42,8 @@ const services = [
     icon: <img className="icon-image" src={sfl} alt="" />,
     slug: "soft-fall-landscaping",
     desc: "Safe, durable, and attractive soft fall solutions for play areas.",
-    points: ["Playground mulch installation", "custom landscaping solutions", "Safe and compliant materials"],
+
+    points: ["Playground mulch installation", "Custom landscaping solutions", "Safe and compliant materials"],
   },
   {
     name: "Strata Garden Maintenance",

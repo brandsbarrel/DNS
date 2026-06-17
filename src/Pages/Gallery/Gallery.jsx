@@ -284,7 +284,7 @@ export default function Gallery() {
 
         {/* CONTACT US BUTTON */}
         <div className="sng-contact-wrap">
-          <button className="sng-contact-btn">Contact Us</button>
+          <button className="sng-contact-btn" onClick={() => { handleClick(), navigate("/contact-us") }}>Contact Us</button>
         </div>
         <section className="sng-gallery-bottom-img">
           <img src={how_img} alt="Our work" />
