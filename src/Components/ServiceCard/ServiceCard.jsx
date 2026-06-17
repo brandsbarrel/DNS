@@ -33,7 +33,7 @@ const services = [
   {
     name: "Turf Management",
     icon: <img className="icon-image" src={turf_management} alt="" />,
-    slug: "mowing",
+    slug: "turf-management",
     desc: "Professional Turf Care & Solutions",
     points: ["Turf fertilising and treatment", "Lawn repair and patch improvement", "Seasonal turf maintenance"],
   },

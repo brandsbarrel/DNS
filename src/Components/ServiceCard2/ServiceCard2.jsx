@@ -29,6 +29,9 @@ import serviceBanner from "../../assets/ServiceBanner.jpeg";
 import HowItWorks from "../HowItWorks/HowItWorks";
 import WhyChooseUs from "../../Components/WhyChooseUs/WhyChooseUs";
 
+import turf_management from "../../assets/turfManagement.jpeg"
+import h_turf_management from "../../assets/servicePage_turfM.jpeg"
+
 const services = [
     {
         name: "Property Maintenance",
@@ -46,6 +49,14 @@ const services = [
         desc: "Keep your lawn neat, healthy, and always looking its best.",
         points: ["Lawn mowing", "Edge trimming", "Weed control"],
     },
+    {
+        name: "Turf Management",
+        icon: <img className="icon-image" src={turf_management} alt="" />,
+        image: h_turf_management,
+        slug: "turf-management",
+        desc: "Professional Turf Care & Solutions",
+        points: ["Turf fertilising and treatment", "Lawn repair and patch improvement", "Seasonal turf maintenance"],
+      },
     {
         name: "Spray Treatments",
         icon: <img className="sc2-icon-image" src={spary_t} alt="Spray Treatments" />,

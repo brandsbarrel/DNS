@@ -43,6 +43,9 @@ import sd_spray_treatments1 from "../../assets/sd-spray-treatment1.jpeg"
 import sd_spray_treatments2 from "../../assets/sd-spray-treatment2.jpeg"
 import service_detail_bottom from "../../assets/service_detail_bottom.jpeg";
 
+import sd_turf_hero from "../../assets/sd-turf-hero.jpeg"
+
+import sd_turf from "../../assets/servicePage_turfM.jpeg"
 
 const SERVICES = {
     "property-maintenance": {
@@ -67,6 +70,8 @@ const SERVICES = {
             "Mulching & bark blowing",
             "General property upkeep",
             "Strata & commercial maintenance",
+            "Schedule a Property Maintenance Consultation",
+            "SNG Maintenance can provide professional advice and reliable maintenance solutions"
         ],
         whyList: [
             "Professional and experienced team",
@@ -108,6 +113,36 @@ const SERVICES = {
         ],
         tagline: "SNG Maintenance — Professional Lawn Care You Can Rely On.",
     },
+    "turf-management": {
+    badge: "Our Services",
+    title: "Professional Turf Care & Solutions",
+    heroSubtitle:
+        "Professional turf management services to keep lawns, gardens, strata grounds and commercial outdoor areas looking clean, healthy and well-maintained all year round.",
+    intro: `At SNG Maintenance, we provide professional turf management services to keep lawns, gardens, strata grounds and commercial outdoor areas looking clean, healthy and well-maintained all year round.\n\nOur team focuses on high quality turf presentation, regular care and practical solutions to improve the appearance, health and durability of your grassed areas.\n\nWe help maintain lush, green and professionally presented lawns for residential complexes, commercial properties, strata buildings, schools, parks and outdoor common areas.`,
+    images: [
+        { src:  sd_turf },
+    ],
+    servicesList: [
+        "Lawn mowing and edging",
+        "Turf fertilising and treatment",
+        "Weed control",
+        "Lawn repair and patch improvement",
+        "Aeration and soil care",
+        "Irrigation checks",
+        "Seasonal turf maintenance",
+        "Strata and commercial lawn presentation",
+    ],
+    whyList: [
+        "High quality turf presentation",
+        "Lush, green lawns",
+        "Professionally presented lawns",
+        "Residential complexes",
+        "Commercial properties",
+        "Strata buildings",
+        "Schools, parks and outdoor common areas",
+    ],
+    tagline: "SNG Maintenance — Professional Turf Care & Solutions.",
+},
 
     "soft-fall-landscaping": {
         badge: "Our Services",
@@ -381,8 +416,8 @@ export default function ServiceDetail() {
         <>
             <div className="sd-cta-wrap1">
                 <div className="sd-cta-wrap">
-                    <Link to="/contact" className="sd-cta-btn">
-                        Get a Free Quote
+                    <Link to="/contact-us" className="sd-cta-btn">Contact SNG Maintenance Speak With Our Team
+
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12" />
                             <polyline points="12 5 19 12 12 19" />
@@ -393,6 +428,7 @@ export default function ServiceDetail() {
             <section className="sd-hero-b">
                 {location.pathname === "/services/mowing" && <img src={sd_mowing_hero} />}
                 {location.pathname === "/services/property-maintenance" && <img src={sd_prm_hero} />}
+                {location.pathname === "/services/turf-management" && <img src={sd_turf_hero} />}
                 {location.pathname === "/services/soft-fall-landscaping" && <img src={sd_soft_lanscape_hero} />}
                 {location.pathname === "/services/strata-garden-maintenance" && <img src={sd_sgm_hero} />}
                 {location.pathname === "/services/pressure-cleaning" && <img src={sd_pc_hero} />}
@@ -448,8 +484,8 @@ export default function ServiceDetail() {
                     </div>
 
                     <div className="sd-cta-wrap">
-                        <Link to="/contact" className="sd-cta-btn">
-                            Get a Free Quote
+                        <Link to="/contact-us" className="sd-cta-btn">
+                            Contact SNG Maintenance Speak With Our Team
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12" />
                                 <polyline points="12 5 19 12 12 19" />
