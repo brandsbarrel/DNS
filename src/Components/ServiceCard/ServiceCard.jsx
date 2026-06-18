@@ -12,7 +12,9 @@ import barkBlowing from "../../assets/bark-blowing.jpeg";
 import spary_t from "../../assets/sprat-treatment.jpeg";
 import Hero_image_s from "../../assets/Hero_image_s.jpeg";
 import { UserContext } from "../../context/UserContext";
-import turf_management from "../../assets/turfManagement.jpeg"
+import turf_management from "../../assets/turfManagement.jpeg";
+import LES from "../../assets/LES.jpeg";
+import LRP from "../../assets/LRP.jpeg";
 
 const services = [
   {
@@ -51,6 +53,28 @@ const services = [
     slug: "strata-garden-maintenance",
     desc: "We maintain common areas to keep your strata gardens clean and welcoming.",
     points: ["Garden maintenance", "Plant health & pruning", "Seasonal clean-ups"],
+  },
+  {
+    name: "Landscape Enhancement Services",
+    icon: <img className="icon-image" src={LES} alt="" />,
+    slug: "landscape-enhancement",
+    desc: "Professional Landscape Enhancement Solutions",
+    points: [
+      "Planting upgrades & garden enhancements",
+      "Mulching & soil improvement",
+      "Feature landscaping & visual upgrades"
+    ],
+  },
+  {
+    name: "Landscape Refresh Projects",
+    icon: <img className="icon-image" src={LRP} alt="" />,
+    slug: "landscape-refresh-projects",
+    desc: "Landscape Rejuvenation & Refresh Solutions",
+    points: [
+      "Garden clean-ups & rejuvenation",
+      "Plant replacement & mulch renewal",
+      "Edging and landscape restoration"
+    ],
   },
   {
     name: "Pressure Cleaning",

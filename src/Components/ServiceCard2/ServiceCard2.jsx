@@ -31,6 +31,11 @@ import WhyChooseUs from "../../Components/WhyChooseUs/WhyChooseUs";
 
 import turf_management from "../../assets/turfManagement.jpeg"
 import h_turf_management from "../../assets/servicePage_turfM.jpeg"
+import LES from "../../assets/LES.jpeg";
+import LRP from "../../assets/LRP.jpeg";
+import Cover_lrp from "../../assets/serviceCover-LRP.jpeg"
+import Cover_les from "../../assets/serviceCover-LES.jpeg"
+
 
 const services = [
     {
@@ -81,6 +86,30 @@ const services = [
         desc: "We maintain common areas to keep your strata gardens clean and welcoming.",
         points: ["Garden maintenance", "Plant health & pruning", "Seasonal clean-ups"],
     },
+    {
+        name: "Landscape Enhancement Services",
+        icon: <img className="icon-image" src={LES} alt="" />,
+        image: Cover_les,
+        slug: "landscape-enhancement",
+        desc: "Professional Landscape Enhancement Solutions",
+        points: [
+          "Planting upgrades & garden enhancements",
+          "Mulching & soil improvement",
+          "Feature landscaping & visual upgrades"
+        ],
+      },
+      {
+        name: "Landscape Refresh Projects",
+        icon: <img className="icon-image" src={LRP} alt="" />,
+        image: Cover_lrp,
+        slug: "landscape-refresh-projects",
+        desc: "Landscape Rejuvenation & Refresh Solutions",
+        points: [
+          "Garden clean-ups & rejuvenation",
+          "Plant replacement & mulch renewal",
+          "Edging and landscape restoration"
+        ],
+      },
     {
         name: "Pressure Cleaning",
         icon: <img className="sc2-icon-image" src={pressure_cleaning} alt="Pressure Cleaning" />,

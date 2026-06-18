@@ -47,6 +47,8 @@ import sd_turf_hero from "../../assets/sd-turf-hero.jpeg"
 
 import sd_turf from "../../assets/servicePage_turfM.jpeg"
 
+import sd_lrp1 from "../../assets/sd-lrp1.jpeg"
+
 const SERVICES = {
     "property-maintenance": {
         badge: "Our Services",
@@ -114,35 +116,35 @@ const SERVICES = {
         tagline: "SNG Maintenance — Professional Lawn Care You Can Rely On.",
     },
     "turf-management": {
-    badge: "Our Services",
-    title: "Professional Turf Care & Solutions",
-    heroSubtitle:
-        "Professional turf management services to keep lawns, gardens, strata grounds and commercial outdoor areas looking clean, healthy and well-maintained all year round.",
-    intro: `At SNG Maintenance, we provide professional turf management services to keep lawns, gardens, strata grounds and commercial outdoor areas looking clean, healthy and well-maintained all year round.\n\nOur team focuses on high quality turf presentation, regular care and practical solutions to improve the appearance, health and durability of your grassed areas.\n\nWe help maintain lush, green and professionally presented lawns for residential complexes, commercial properties, strata buildings, schools, parks and outdoor common areas.`,
-    images: [
-        { src:  sd_turf,className: "large" },
-    ],
-    servicesList: [
-        "Lawn mowing and edging",
-        "Turf fertilising and treatment",
-        "Weed control",
-        "Lawn repair and patch improvement",
-        "Aeration and soil care",
-        "Irrigation checks",
-        "Seasonal turf maintenance",
-        "Strata and commercial lawn presentation",
-    ],
-    whyList: [
-        "High quality turf presentation",
-        "Lush, green lawns",
-        "Professionally presented lawns",
-        "Residential complexes",
-        "Commercial properties",
-        "Strata buildings",
-        "Schools, parks and outdoor common areas",
-    ],
-    tagline: "SNG Maintenance — Professional Turf Care & Solutions.",
-},
+        badge: "Our Services",
+        title: "Professional Turf Care & Solutions",
+        heroSubtitle:
+            "Professional turf management services to keep lawns, gardens, strata grounds and commercial outdoor areas looking clean, healthy and well-maintained all year round.",
+        intro: `At SNG Maintenance, we provide professional turf management services to keep lawns, gardens, strata grounds and commercial outdoor areas looking clean, healthy and well-maintained all year round.\n\nOur team focuses on high quality turf presentation, regular care and practical solutions to improve the appearance, health and durability of your grassed areas.\n\nWe help maintain lush, green and professionally presented lawns for residential complexes, commercial properties, strata buildings, schools, parks and outdoor common areas.`,
+        images: [
+            { src: sd_turf, className: "large" },
+        ],
+        servicesList: [
+            "Lawn mowing and edging",
+            "Turf fertilising and treatment",
+            "Weed control",
+            "Lawn repair and patch improvement",
+            "Aeration and soil care",
+            "Irrigation checks",
+            "Seasonal turf maintenance",
+            "Strata and commercial lawn presentation",
+        ],
+        whyList: [
+            "High quality turf presentation",
+            "Lush, green lawns",
+            "Professionally presented lawns",
+            "Residential complexes",
+            "Commercial properties",
+            "Strata buildings",
+            "Schools, parks and outdoor common areas",
+        ],
+        tagline: "SNG Maintenance — Professional Turf Care & Solutions.",
+    },
 
     "soft-fall-landscaping": {
         badge: "Our Services",
@@ -204,6 +206,37 @@ const SERVICES = {
             "Fully insured and reliable",
         ],
         tagline: "SNG Maintenance — Expert Care for Strata Communities.",
+    },
+    "landscape-enhancement": {
+        badge: "Our Services",
+        title: "Landscape Enhancement Services",
+        heroSubtitle: "Transform and improve the appearance, functionality and value of your outdoor spaces with our professional landscape enhancement solutions.",
+        intro: `Transform and improve the appearance, functionality and value of your outdoor spaces with our professional landscape enhancement solutions.\n\nWe provide planting upgrades, garden bed improvements, mulching, feature installations, soil conditioning and seasonal enhancements to create attractive and sustainable landscapes for residential, commercial and strata properties.`,
+        images: [],
+        servicesList: [
+            "Planting upgrades & garden enhancements",
+            "Mulching & soil improvement",
+            "Feature landscaping & visual upgrades"],
+        whyList: [
+            "Improve appearance",
+            "Improve functionality",
+            "Increase property value",
+            "Attractive landscapes",
+            "Sustainable landscapes",
+            "Suitable for residential, commercial and strata properties",],
+        tagline: "SNG Maintenance — Professional Landscape Enhancement Solutions.",
+    },
+    "landscape-refresh-projects": {
+        badge: "Our Services",
+        title: "Landscape Refresh Projects",
+        heroSubtitle: "Revitalise tired and overgrown landscapes with our tailored refresh projects.",
+        intro: `Revitalise tired and overgrown landscapes with our tailored refresh projects.\n\nFrom garden clean-ups and plant replacements to mulch renewal, edging improvements and landscape rejuvenation, we help restore outdoor areas to a fresh, neat and inviting condition while maintaining long-term visual appeal.`,
+        images: [{ src: sd_lrp1,className:"large" }],
+        servicesList: ["Garden clean-ups & rejuvenation",
+            "Plant replacement & mulch renewal",
+            "Edging and landscape restoration",],
+        whyList: ["Restore outdoor areas", "Fresh and neat presentation", "Inviting outdoor spaces", "Long-term visual appeal",],
+        tagline: "SNG Maintenance — Professional Landscape Refresh Projects.",
     },
 
     "pressure-cleaning": {
@@ -416,7 +449,7 @@ export default function ServiceDetail() {
         <>
             <div className="sd-cta-wrap1">
                 <div className="sd-cta-wrap">
-                    <Link to="/contact-us" className="sd-cta-btn">Contact SNG Maintenance <br/>Speak with our Team
+                    <Link to="/contact-us" className="sd-cta-btn">Contact SNG Maintenance <br />Speak with our Team
 
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12" />
@@ -485,7 +518,7 @@ export default function ServiceDetail() {
 
                     <div className="sd-cta-wrap">
                         <Link to="/contact-us" className="sd-cta-btn">
-                            Contact SNG Maintenance <br/>Speak with our Team
+                            Contact SNG Maintenance <br />Speak with our Team
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12" />
                                 <polyline points="12 5 19 12 12 19" />
