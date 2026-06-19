@@ -521,7 +521,7 @@ export default function ServiceDetail() {
                         </ul>
                     </div>
 
-                    <div className="sd-cta-wrap">
+                    {/* <div className="sd-cta-wrap">
                         <Link to="/contact-us" className="sd-cta-btn">
                             Contact SNG Maintenance <br />Speak with our Team
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -529,7 +529,7 @@ export default function ServiceDetail() {
                                 <polyline points="12 5 19 12 12 19" />
                             </svg>
                         </Link>
-                    </div>
+                    </div> */}
 
 
 
