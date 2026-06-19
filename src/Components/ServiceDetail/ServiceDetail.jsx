@@ -49,6 +49,9 @@ import sd_turf from "../../assets/servicePage_turfM.jpeg"
 
 import sd_lrp1 from "../../assets/sd-lrp1.jpeg"
 
+import sd_LES_hero from "../../assets/sd-LES-hero.jpeg";
+import sd_LPR_hero from "../../assets/sd-LPR-hero.jpeg";
+
 const SERVICES = {
     "property-maintenance": {
         badge: "Our Services",
@@ -462,6 +465,8 @@ export default function ServiceDetail() {
                 {location.pathname === "/services/mowing" && <img src={sd_mowing_hero} />}
                 {location.pathname === "/services/property-maintenance" && <img src={sd_prm_hero} />}
                 {location.pathname === "/services/turf-management" && <img src={sd_turf_hero} />}
+                {location.pathname === "/services/landscape-enhancement" && <img src={sd_LES_hero} />}
+                {location.pathname === "/services/landscape-refresh-projects" && <img src={sd_LPR_hero} />}
                 {location.pathname === "/services/soft-fall-landscaping" && <img src={sd_soft_lanscape_hero} />}
                 {location.pathname === "/services/strata-garden-maintenance" && <img src={sd_sgm_hero} />}
                 {location.pathname === "/services/pressure-cleaning" && <img src={sd_pc_hero} />}
