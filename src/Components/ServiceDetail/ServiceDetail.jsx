@@ -156,15 +156,13 @@ const SERVICES = {
             "Safe, compliant soft fall surfaces professionally installed for playgrounds and outdoor areas.",
         intro: `At SNG Maintenance, we specialise in professional soft fall landscaping solutions designed to create safe, attractive, and compliant outdoor spaces. Whether it's a playground, park, or recreational area, our team delivers expert installation with a focus on safety and aesthetics.\n\nWe use high-quality materials and proven techniques to ensure every soft fall surface meets safety standards while enhancing the visual appeal of your outdoor space.`,
         images: [
-            { src: sd_soft_lanscape1 },
-            { src: sd_soft_lanscape2 },
+            // { src: sd_soft_lanscape1 },
+            // { src: sd_soft_lanscape2 },
             // { src: sd_soft_lanscape3 },
         ],
         servicesList: [
             "Soft fall installation",
             "Soft fall repairs & maintenance",
-            "Wood chip & bark installation",
-            "Playground safety compliance",
             "Commercial & strata soft fall",
             "Custom landscaping solutions",
         ],
