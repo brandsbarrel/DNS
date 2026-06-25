@@ -4,6 +4,10 @@
   min-height: 100vh;
   background: #E7EAD9;
   font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* CONTENT */
