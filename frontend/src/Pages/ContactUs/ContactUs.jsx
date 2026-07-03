@@ -24,7 +24,7 @@ export default function ContactUs() {
         setStatus("loading");
 
         try {
-            const response = await fetch("http://localhost:6001/contact", {
+            const response = await fetch("https://api.sngmaintenance.com.au/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
